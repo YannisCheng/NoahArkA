@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/AppRun" />
+            <option value="$PROJECT_DIR$/AsmLib" />
             <option value="$PROJECT_DIR$/Common" />
             <option value="$PROJECT_DIR$/Configuration" />
             <option value="$PROJECT_DIR$/DataSource" />
