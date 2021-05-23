@@ -1,0 +1,45 @@
+buildscript {
+
+    ext {
+        springbootVersion = '2.4.4'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springbootVersion")
+    }
+}
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'war'
+    apply plugin: 'idea'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+
+    group 'org.cwj.noah'
+    version '1.0-SNAPSHOT'
+
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+
+    bootJar {
+        enabled = false  // 默认不需要打可执行jar包
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    //所有子项目公用的依赖。每个项目单独的依赖请在子项目的 build.gradle 中配置
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+    }
+}
