@@ -1,4 +1,4 @@
-package com.cwj.asm.utils;
+package com.cwj.asm;
 
 import com.cwj.asm.core_api.class_loader.MyClassLoader;
 import com.cwj.asm.core_api.class_type.MainClassOpCode;
