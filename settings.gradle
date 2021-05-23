@@ -1,5 +1,6 @@
 rootProject.name = 'NoahArkA'
 include 'Common'
+include 'AsmLib'
 include 'Configuration'
 include 'ScriptLib'
 include 'DataSource'
