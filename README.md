@@ -32,11 +32,8 @@
  - Nexus
  - Jenkins
 
-## 工程实现进度
+## Time：Plans & Complete
 
-### 持续进度：
-工程配置
-### 进度1：数据库
+[展示项目的实时进度](/docs/TimeLine.md)
 
-### 进度2：
 
