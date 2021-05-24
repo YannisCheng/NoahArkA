@@ -20,7 +20,7 @@
  - AppRun —— **工程的主App**
  - AsmLib —— **ASM库使用**
  - Common —— **公共基础依赖**
- - Configuration —— ***工程配置**
+ - Configuration —— **工程配置**
  - DataSource —— **数据库相关**
  - Script —— **与其他语言彼此间的互相调用**
 
