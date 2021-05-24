@@ -43,8 +43,8 @@
 `Plugin` **类型**： 
 
 - [Binary Plugins](https://docs.gradle.org/current/userguide/plugins.html#sec:binary_plugins)
- - 核心插件
- - 社区插件
+ 1. 核心插件
+ 2. 社区插件
 - [Script Plugins](https://docs.gradle.org/current/userguide/plugins.html#sec:script_plugins)
 
 `Plugin` **应用方式**：
