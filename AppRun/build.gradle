@@ -1,3 +1,13 @@
+// 示例：
+//plugins{
+//    id 'application'
+//}
+//
+//application {
+//    mainClassName = "com.father.Main"
+//}
+
+
 dependencies {
     implementation project(':Common')
 }
