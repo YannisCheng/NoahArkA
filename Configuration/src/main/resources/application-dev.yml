@@ -1,0 +1,15 @@
+# 开发环境配置
+server:
+  # 内置端口号修改
+  port: 8881
+  servlet:
+    # 上下文起始路径
+    context-path: /dev
+
+# MySQL配置
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/area_database?characterEncoding=utf-8&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: Admin_1126
+    driver-class-name: com.mysql.cj.jdbc.Driver

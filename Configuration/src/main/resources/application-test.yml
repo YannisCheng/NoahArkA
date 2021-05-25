@@ -1,0 +1,7 @@
+# 测试环境配置
+server:
+  # 内置端口号修改
+  port: 8882
+  servlet:
+    # 上下文起始路径
+    context-path: /test
