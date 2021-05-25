@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--开启组件扫描-->
+    <!--<context:component-scan base-package="com.cwj.genesis.annotation"/>-->
+    <!--多个路径扫描：方式1：-->
+    <!--<context:component-scan base-package="com.cwj.genesis.annotation,com.cwj.genesis.xml"/>-->
+    <!--多个路径扫描：方式2：-->
+    <!--<context:component-scan base-package="com.cwj.genesis"/>-->
+
+    <!--扫描过滤：实例1：-->
+    <!--语句含义：仅扫描"com.cwj.genesis"路径下的"Controller"类型的"annotation"注解-->
+    <!--<context:component-scan base-package="com.cwj.genesis" use-default-filters="false">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>-->
+
+    <!--扫描过滤：实例2：-->
+    <!--语句含义：除了"com.cwj.genesis"路径下的"Controller"类型的"annotation"注解外都扫描-->
+    <context:component-scan base-package="com.cwj.genesis">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+</beans>

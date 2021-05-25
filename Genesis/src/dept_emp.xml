@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emp" class="com.cwj.genesis.xml.bean.Emp">
+        <property name="name" value="lucy"></property>
+        <property name="genter" value="male"></property>
+        <!--<property name="dept" ref="dept">-->
+        <property name="dept">
+            <!--内部Bean的写法-->
+            <bean id="dept" class="com.cwj.genesis.xml.bean.Dept">
+                <property name="name" value="baoan"></property>
+            </bean>
+        </property>
+    </bean>
+    <!--<bean id="dept" class="com.cwj.genesis.xml.bean.Dept">
+        <property name="name" value="baoan"></property>
+    </bean>-->
+</beans>

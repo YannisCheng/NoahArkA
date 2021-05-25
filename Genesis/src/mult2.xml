@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="stu" class="com.cwj.genesis.xml.bean.Stu">
+        <property name="courses" >
+            <array>
+                <value>Java</value>
+                <value>Database</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>jone</value>
+                <value>bob</value>
+            </list>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="JAVA" value="java"></entry>
+                <entry key="DATA" value="data"></entry>
+            </map>
+        </property>
+        <property name="sets">
+            <set>
+                <value>MySQL</value>
+                <value>MyBaits</value>
+            </set>
+        </property>
+        <!--集合中使用：对象-->
+        <property name="coursesList">
+            <list>
+                <ref bean="course1"/>
+                <ref bean="course2"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--在外部声明 list集合 中使用到的各个对象-->
+    <bean id="course1" class="com.cwj.genesis.xml.bean.Course">
+        <property name="name" value="spring"/>
+    </bean>
+    <bean id="course2" class="com.cwj.genesis.xml.bean.Course">
+        <property name="name" value="Java"/>
+    </bean>
+</beans>

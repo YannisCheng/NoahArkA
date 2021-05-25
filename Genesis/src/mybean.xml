@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--默认的实例方式：singleton-->
+    <!--<bean id="mybean" class="com.cwj.genesis.xml.MyFactoryBean" scope="singleton">-->
+    <!--修改后的实例方式：prototype-->
+    <bean id="mybean" class="com.cwj.genesis.xml.factory_bean.MyFactoryBean" scope="prototype">
+    </bean>
+</beans>

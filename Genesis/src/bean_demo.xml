@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置User对象的创建-->
+    <bean id="user" class="com.cwj.genesis.xml.declare.User"/>
+
+    <!--配置Book对象的创建，并注入属性-->
+    <!--<bean id="book" class="com.cwj.genesis.xml.declare.Book">
+        <property name="name" value="shengjing"/>
+        <property name="price" value="333"/>
+    </bean>-->
+
+    <bean id="book" class="com.cwj.genesis.xml.declare.Book">
+        <!--有参构造注入-->
+        <constructor-arg name="address" value="jinan"/>
+        <!--属性注入-->
+        <property name="name" value="shengjing"/>
+        <property name="price" value="333"/>
+        <!--为属性注入null值-->
+        <property name="out">
+            <null/>
+        </property>
+
+        <!--为属性注入 特殊符号 ：
+        1：转义字符
+        2：CDATA 结构
+        -->
+        <property name="out2">
+            <value><![CDATA[<<jinan-out>>]]></value>
+        </property>
+    </bean>
+
+</beans>

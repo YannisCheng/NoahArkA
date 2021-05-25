@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--设置： Bean的"初始化方法"、"销毁方法"-->
+    <bean id="lifecycle" class="com.cwj.genesis.xml.lifecycle.LifeCycleBean5" init-method="initMethod" destroy-method="destroyMethod">
+        <property name="name" value="生命周期"/>
+    </bean>
+
+    <bean id="life7" class="com.cwj.genesis.xml.lifecycle.LifeCycleBean7" init-method="initMethod"
+          destroy-method="destroyMethod">
+        <property name="name" value="nanan"/>
+    </bean>
+</beans>
