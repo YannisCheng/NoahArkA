@@ -19,6 +19,8 @@
 - **思想：**
 
  `IoC思想`基于`IoC容器`，IoC容器 **底层** 就是 `工厂模式`
+ 
+ [](/images/spring_ioc.png)
 
 
 - **Spring中IoC容器实现的2种方式(接口)：**

@@ -19,4 +19,7 @@
 * [x] 完善 `IDEA_Configure.md`
 * [x] 完善 `DataSource/docs/` 目录下各个说明文件的编写
 
+- **2021-05-25 周二**
 
+* [x] 添加 `Genesis` Module，该Module为学习Spring的最基本知识点。
+* [x] 在 `Genesis` Module中包含了 `Bean管理` 知识。
