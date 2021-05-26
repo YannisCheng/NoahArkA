@@ -15,9 +15,12 @@ public class AspectJTest {
         userDao.add();
         /*
          * 运行结果：
+         * Around before。。。。。
          * before 。。。。。
          * add ......
+         * afterReturning 。。。。。
          * after 。。。。。
+         * Around after。。。。。
          */
     }
 }

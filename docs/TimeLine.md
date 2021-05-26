@@ -3,6 +3,8 @@
 ## Plans
 
 * [ ] 子项目 `DataSource` 中集成 `Java+Spring+MySQL`，并完成文档。
+* [ ] 宋红康java基础29天第5集：反射、动态代理
+* [ ] ASM相关知识点总结文档转移至AsmLib/docs
 
 ## Complete
 
@@ -23,3 +25,9 @@
 
 * [x] 添加 `Genesis` Module，该Module为学习Spring的最基本知识点。
 * [x] 在 `Genesis` Module中包含了 `Bean管理` 知识。
+
+- **2021-05-26 周三**
+
+* [x] 添加 `AOP` 中 `JDK-Proxy` 的代理实现原理测试代码。
+* [x] 添加 `AOP` 中 `AspectJ`的`注解`方式进行方法增强。
+* [x] 修改 `Genesis` Module中的文档命名及内容。

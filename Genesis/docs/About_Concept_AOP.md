@@ -265,9 +265,36 @@ public class UserDaoProxy {
         System.out.println("before 。。。。。");
     }
 
+    /**
+     * 最终通知
+     */
     @After(value = "execution(* com.cwj.genesis.aop.aspectj_anno.UserDao.add())")
     public void after(){
         System.out.println("after 。。。。。");
+    }
+
+    /**
+     * 返回通知
+     */
+    @AfterReturning(value = "execution(* com.cwj.genesis.aop.aspectj_anno.UserDao.add())")
+    public void afterReturning(){
+        System.out.println("afterReturning 。。。。。");
+    }
+
+    /**
+     * 异常通知
+     */
+    @AfterThrowing(value = "execution(* com.cwj.genesis.aop.aspectj_anno.UserDao.add())")
+    public void afterThrowing(){
+        System.out.println("afterThrowing 。。。。。");
+    }
+
+    @Around(value = "execution(* com.cwj.genesis.aop.aspectj_anno.UserDao.add())")
+    public void Around(ProceedingJoinPoint point) throws Throwable {
+        System.out.println("Around before。。。。。");
+        // 被增强的方法
+        point.proceed();
+        System.out.println("Around after。。。。。");
     }
 }
 ```
@@ -277,13 +304,34 @@ public class UserDaoProxy {
 
 ```Java
 AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringScan.class);
-UserDao userDao = context.getBean("userDao", UserDao.class);
-userDao.add();
+        UserDao userDao = context.getBean("userDao", UserDao.class);
+        userDao.add();
 /*
  * 运行结果：
+ * Around before。。。。。
  * before 。。。。。
  * add ......
+ * afterReturning 。。。。。
  * after 。。。。。
+ * Around after。。。。。
  */
 ```
 
+#### 4.2.7 相同的切入点抽取
+```Java
+// 相同的切入点抽取
+@Pointcut(value = "execution(* com.cwj.genesis.aop.aspectj_anno.UserDao.add())")
+public void point(){
+
+}
+
+// "相同的切入点抽取" 的使用
+@Before(value = "point()")
+public void before(){
+    System.out.println("before 。。。。。");
+}
+```
+
+#### 4.2.8 一个方法有多个增强类时，设置增强类的优先级
+
+**注解代理类上添加@Order，数字越小，优先级越高**
