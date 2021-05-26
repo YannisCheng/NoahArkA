@@ -20,7 +20,7 @@
 
  `IoC思想`基于`IoC容器`，IoC容器 **底层** 就是 `工厂模式`
 
-![](/images/spring_ioc.png)
+ ![](/images/spring_ioc.png)
 
 
 - **Spring中IoC容器实现的2种方式(接口)：**
@@ -162,8 +162,8 @@ Bean管理有2个操作：
   ```
 
   文件路径结构：
-
-  ![](/images/file_route.png)
+  
+ ![](/images/file_route.png)
 
 
 #### 3.2.3 属性注入 — 集合注入
