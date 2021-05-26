@@ -1,4 +1,4 @@
-# 关于Spring的概念理解 — Bean管理
+# 关于Spring Framework的概念理解 — Bean管理
 
 ## 1. 基本概念
 
