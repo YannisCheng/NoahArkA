@@ -1,4 +1,4 @@
-# 关于Spring的概念理解
+# 关于Spring的概念理解 — Bean管理
 
 ## 1. 基本概念
 
@@ -498,7 +498,18 @@ AfterInitialization
 
 ## 4. 实现方式2：基于注解的Bean管理
 
-用到的注解：
+
+
+### 4.1 非纯注解-创建对象
+
+**注解管理需要一个配置属性：`component-scan` 设置扫描范围。**
+
+```xml
+
+<context:component-scan base-package="com.cwj.genesis.bean_manager.annotation"/>
+```
+
+#### 4.1.1. 创建用到的注解：
 
 - `@Component`：普通注解
 - `@Service`：Service层
@@ -507,33 +518,33 @@ AfterInitialization
 
 以上4个注解功能是一样的：都是用用于：`创建Bean实例`。
 
-### 4.1 创建对象
+#### 4.1.2 使用步骤
 
 1. **添加依赖**：spring-aop.jar
 2. **开启组件扫描**：
 
-	```xml
-	<beans xmlns="http://www.springframework.org/schema/beans"
-	       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	       xmlns:context="http://www.springframework.org/schema/context"
-	       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-	                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
-	
-	    <!--开启组件扫描-->
-	    <context:component-scan base-package="com.cwj.genesis.annotation"/>
-	    <!--多个路径扫描：方式1：-->
-	    <!--<context:component-scan base-package="com.cwj.genesis.annotation,com.cwj.genesis.xml"/>-->
-	    <!--多个路径扫描：方式2：-->
-	    <!--<context:component-scan base-package="com.cwj.genesis"/>-->
-	
-	</beans>
-	```
+   ```xml
+   <beans xmlns="http://www.springframework.org/schema/beans"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:context="http://www.springframework.org/schema/context"
+          xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                               http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+   
+       <!--开启组件扫描-->
+       <context:component-scan base-package="com.cwj.genesis.bean_manager.annotation"/>
+       <!--多个路径扫描：方式1：-->
+       <!--<context:component-scan base-package="com.cwj.genesis.annotation,com.cwj.genesis.bean_manager.xml"/>-->
+       <!--多个路径扫描：方式2：-->
+       <!--<context:component-scan base-package="com.cwj.genesis"/>-->
+   
+   </beans>
+   ```
 	
 	获取扫描规则：
 	
 	```Java
 	ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Annotation1.xml");
-	com.cwj.genesis.annotation.UserAnno bean = context.getBean("userAnno", UserAnno.class);
+	com.cwj.genesis.bean_manager.annotation.UserAnno bean = context.getBean("userAnno", UserAnno.class);
 	bean.showLog();
 	```
 	
@@ -568,14 +579,99 @@ AfterInitialization
 	</context:component-scan>
 	```
 
-### 4.2 注入属性
+### 4.2 非纯注解-注入属性
 
-用到的注解：
+#### 4.2.1 注入属性用到的注解：
+
+- `@AutoWired`
+- `@Qualifier`
+- `@Resource`
+- `@Value`
+
+#### 4.2.2 各个注入对象类型使用步骤
 
 - `@AutoWired`：根据 `属性类型(byType)` 自动注入
+
+ 注入步骤：
+
+ - 添加创建对象的注解：
+ - 添加注入注解：
+
 - `@Qualifier`：根据 `属性名称(byName)` 注入
+
+ 与 `@AutoWired` 和 `4个创建注解(value="")` 一起使用。
+ 
+ 
+	```Java
+	@Repository(value = "userDaoImpl1")
+	public class UserDaoImpl implements UserDao {
+	    @Override
+	    public void update() {
+	        System.out.println("user dao ......");
+	    }
+	}
+	
+	@Component
+	public class UserAnno {
+	
+	    @Autowired
+	    // 指定类型的某个名称
+	    @Qualifier(value = "userDaoImpl1")
+	    private UserDaoImpl userDao;
+	
+	    public void showLog() {
+	        System.out.println("user .........");
+	        userDao.update();
+	    }
+	}
+	```
+ 
+ 
 - `@Resource`：根据 `属性类型(byType)` 或 `属性名称(byName)` 注入
+ 
+  是Java包中的注解，非Spring。
+
+
+	```Java
+	@Resource
+	private UserDaoImpl userDao;
+	// huo
+	@Resource(name = "userDaoImpl1")
+	private UserDaoImpl userDao;
+	```
+
+#### 4.2.3 注入普通类型属性
+
+- `@Value`
+
+	```Java
+	@Value(value = "abc")
+	private String name;
+	```
+	
+### 4.3 纯注解开发
 
 
 
+
+#### 4.3.1 创建配置类-spring boot
+
+
+
+```Java
+@Configuration
+@ComponentScan(basePackages = {"com.cwj.genesis.bean_manager.annotation"})
+public class SpringConfig {
+}
+```
+
+#### 4.3.2 使用配置类
+
+
+```Java
+// 加载配置类
+AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+com.cwj.genesis.bean_manager.annotation.UserAnno bean = context.getBean("userAnno", UserAnno.class);
+bean.showLog();
+```
 

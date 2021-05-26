@@ -1,7 +1,7 @@
-package com.cwj.genesis.xml.lifecycle;
+package com.cwj.genesis.bean_manager.xml.lifecycle;
 
 /**
- * com.cwj.genesis.xml.lifecycle
+ * com.cwj.genesis.bean_manager.xml.lifecycle
  *
  * @author ChengWenjia  cwj1714@163.com
  * @date 2021-05-25 20:20

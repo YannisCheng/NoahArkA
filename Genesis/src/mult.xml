@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="stu" class="com.cwj.genesis.xml.bean.Stu">
+    <bean id="stu" class="com.cwj.genesis.bean_manager.xml.bean.Stu">
         <property name="courses" >
             <array>
                 <value>Java</value>

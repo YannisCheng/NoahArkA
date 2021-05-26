@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--Service 和 Dao对象创建-->
-    <bean name="userService" class="com.cwj.genesis.xml.service.UserService">
+    <bean name="userService" class="com.cwj.genesis.bean_manager.xml.service.UserService">
         <!--注意此处的name值为：类声明中的属性名称-->
         <!--注意此处的 userDaoImpl要和：<bean name="userDaoImpl"中的name值 对应-->
         <!--这条属性配置语句实际表达的是：
@@ -13,5 +13,5 @@
         '<property name="userDao"' 的属性中。-->
         <property name="userDao" ref="userDaoImpl"/>
     </bean>
-    <bean name="userDaoImpl" class="com.cwj.genesis.xml.dao.UserDaoImpl"/>
+    <bean name="userDaoImpl" class="com.cwj.genesis.bean_manager.xml.dao.UserDaoImpl"/>
 </beans>

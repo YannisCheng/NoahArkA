@@ -1,4 +1,4 @@
-package com.cwj.genesis.xml.declare;
+package com.cwj.genesis.bean_manager.xml.declare;
 
 /**
  * com.cwj.genesis

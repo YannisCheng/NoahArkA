@@ -14,7 +14,7 @@
     </util:list>
 
     <!--3. 设置属性-->
-    <bean id="bookstu" class="com.cwj.genesis.xml.bean.BookStu">
+    <bean id="bookstu" class="com.cwj.genesis.bean_manager.xml.bean.BookStu">
         <property name="list" ref="bookStu"/>
     </bean>
 </beans>

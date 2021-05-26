@@ -3,15 +3,15 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--配置User对象的创建-->
-    <bean id="user" class="com.cwj.genesis.xml.declare.User"/>
+    <bean id="user" class="com.cwj.genesis.bean_manager.xml.declare.User"/>
 
     <!--配置Book对象的创建，并注入属性-->
-    <!--<bean id="book" class="com.cwj.genesis.xml.declare.Book">
+    <!--<bean id="book" class="com.cwj.genesis.bean_manager.xml.declare.Book">
         <property name="name" value="shengjing"/>
         <property name="price" value="333"/>
     </bean>-->
 
-    <bean id="book" class="com.cwj.genesis.xml.declare.Book">
+    <bean id="book" class="com.cwj.genesis.bean_manager.xml.declare.Book">
         <!--有参构造注入-->
         <constructor-arg name="address" value="jinan"/>
         <!--属性注入-->

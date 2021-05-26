@@ -1,4 +1,4 @@
-package com.cwj.genesis.xml.bean;
+package com.cwj.genesis.bean_manager.xml.bean;
 
 import java.util.Arrays;
 import java.util.List;

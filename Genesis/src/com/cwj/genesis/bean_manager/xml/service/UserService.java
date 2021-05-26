@@ -1,9 +1,9 @@
-package com.cwj.genesis.xml.service;
+package com.cwj.genesis.bean_manager.xml.service;
 
-import com.cwj.genesis.xml.dao.UserDao;
+import com.cwj.genesis.bean_manager.xml.dao.UserDao;
 
 /**
- * com.cwj.genesis.xml.service
+ * com.cwj.genesis.bean_manager.xml.service
  *
  * @author ChengWenjia  cwj1714@163.com
  * @date 2021-05-25 17:06

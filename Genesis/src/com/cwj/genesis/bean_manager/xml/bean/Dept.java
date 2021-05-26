@@ -1,12 +1,12 @@
-package com.cwj.genesis.xml.bean;
+package com.cwj.genesis.bean_manager.xml.bean;
 
 /**
- * com.cwj.genesis.xml.bean
+ * com.cwj.genesis.bean_manager.xml.bean
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-05-25 18:54
+ * @date 2021-05-25 18:21
  */
-public class Course {
+public class Dept {
     private String name;
 
     public void setName(String name) {
@@ -15,7 +15,7 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course{" +
+        return "Dept{" +
                 "name='" + name + '\'' +
                 '}';
     }

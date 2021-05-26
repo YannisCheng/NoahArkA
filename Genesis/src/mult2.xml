@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="stu" class="com.cwj.genesis.xml.bean.Stu">
+    <bean id="stu" class="com.cwj.genesis.bean_manager.xml.bean.Stu">
         <property name="courses" >
             <array>
                 <value>Java</value>
@@ -38,10 +38,10 @@
     </bean>
 
     <!--在外部声明 list集合 中使用到的各个对象-->
-    <bean id="course1" class="com.cwj.genesis.xml.bean.Course">
+    <bean id="course1" class="com.cwj.genesis.bean_manager.xml.bean.Course">
         <property name="name" value="spring"/>
     </bean>
-    <bean id="course2" class="com.cwj.genesis.xml.bean.Course">
+    <bean id="course2" class="com.cwj.genesis.bean_manager.xml.bean.Course">
         <property name="name" value="Java"/>
     </bean>
 </beans>

@@ -1,14 +1,16 @@
-package com.cwj.genesis;
+package com.cwj.genesis.bean_manager;
 
-import com.cwj.genesis.annotation.UserAnno;
-import com.cwj.genesis.xml.bean.BookStu;
-import com.cwj.genesis.xml.bean.Emp;
-import com.cwj.genesis.xml.bean.Stu;
-import com.cwj.genesis.xml.declare.Book;
-import com.cwj.genesis.xml.declare.User;
-import com.cwj.genesis.xml.lifecycle.LifeCycleBean5;
-import com.cwj.genesis.xml.lifecycle.LifeCycleBean7;
-import com.cwj.genesis.xml.service.UserService;
+import com.cwj.genesis.bean_manager.annotation.UserAnno;
+import com.cwj.genesis.bean_manager.annotation.config.SpringConfig;
+import com.cwj.genesis.bean_manager.xml.bean.BookStu;
+import com.cwj.genesis.bean_manager.xml.bean.Emp;
+import com.cwj.genesis.bean_manager.xml.bean.Stu;
+import com.cwj.genesis.bean_manager.xml.declare.Book;
+import com.cwj.genesis.bean_manager.xml.declare.User;
+import com.cwj.genesis.bean_manager.xml.lifecycle.LifeCycleBean5;
+import com.cwj.genesis.bean_manager.xml.lifecycle.LifeCycleBean7;
+import com.cwj.genesis.bean_manager.xml.service.UserService;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -20,7 +22,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainTestSpring {
 
     public static void main(String[] args) {
-        extractedAnno1();
+        // 纯注解开发
+        extractedOnlyAnno();
+
+        // 非纯注解开发
+        //extractedAnno1();
         //extractedBeanLifeCycle5();
         //extractedFactoryBean();
         //extractedMult3();
@@ -32,9 +38,19 @@ public class MainTestSpring {
         //extractedBook();
     }
 
+    /**
+     * 纯注解开发使用
+     */
+    private static void extractedOnlyAnno() {
+        // 加载配置类
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        com.cwj.genesis.bean_manager.annotation.UserAnno bean = context.getBean("userAnno", UserAnno.class);
+        bean.showLog();
+    }
+
     private static void extractedAnno1() {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Annotation1.xml");
-        com.cwj.genesis.annotation.UserAnno bean = context.getBean("userAnno", UserAnno.class);
+        com.cwj.genesis.bean_manager.annotation.UserAnno bean = context.getBean("userAnno", UserAnno.class);
         bean.showLog();
     }
 

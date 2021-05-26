@@ -1,10 +1,10 @@
-package com.cwj.genesis.xml.factory_bean;
+package com.cwj.genesis.bean_manager.xml.factory_bean;
 
-import com.cwj.genesis.xml.declare.Book;
+import com.cwj.genesis.bean_manager.xml.declare.Book;
 import org.springframework.beans.factory.FactoryBean;
 
 /**
- * com.cwj.genesis.xml.factory_bean
+ * com.cwj.genesis.bean_manager.xml.factory_bean
  *
  * @author ChengWenjia  cwj1714@163.com
  * @date 2021-05-25 19:35
