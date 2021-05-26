@@ -34,7 +34,7 @@
 
 此时：应当保留最下端的`Project` 对应 `Task` 名称，其之上的所有 `Task`名称均删除即可。
 
-[](/images/gradle-task配置.png)
+![](/images/gradle-task配置.png)
 
 ### 2.2 Plugin
 
