@@ -2,7 +2,24 @@
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
-      <configuration />
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/mult3.xml</file>
+          <file>file://$MODULE_DIR$/src/lifecycle5.xml</file>
+          <file>file://$MODULE_DIR$/src/mybean.xml</file>
+          <file>file://$MODULE_DIR$/src/properties.xml</file>
+          <file>file://$MODULE_DIR$/src/Annotation1.xml</file>
+          <file>file://$MODULE_DIR$/src/aspecct_anno.xml</file>
+          <file>file://$MODULE_DIR$/src/mult2.xml</file>
+          <file>file://$MODULE_DIR$/src/mult.xml</file>
+          <file>file://$MODULE_DIR$/src/bean_demo.xml</file>
+          <file>file://$MODULE_DIR$/src/lifecycle7.xml</file>
+          <file>file://$MODULE_DIR$/src/dept_emp.xml</file>
+          <file>file://$MODULE_DIR$/src/com/cwj/genesis/aop/aspectj_anno/SpringScan.java</file>
+          <file>file://$MODULE_DIR$/src/com/cwj/genesis/bean_manager/annotation/config/SpringConfig.java</file>
+          <file>file://$MODULE_DIR$/src/mult3.xml</file>
+        </fileset>
+      </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
