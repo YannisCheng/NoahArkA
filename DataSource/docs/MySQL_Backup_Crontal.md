@@ -1,8 +1,16 @@
 # MySQL数据备份工具-mysqldump
 
 - [MYSQL配置文件、备份与恢复](https://www.cnblogs.com/lynk/p/10413075.html)
+- [Centos下mysql数据库备份与恢复的方法](https://www.cnblogs.com/running-mydream/p/4682182.html)
+- [linux定时备份mysql数据库，及解决crontab执行时生成数据库文件为空的问题](https://blog.csdn.net/sanyuesan0000/article/details/52690492)
 
 ## MySQl
+
+### mysqldump工具
+/usr/local/bin/mysqldump
+/usr/local/Cellar/mysql/8.0.21/bin/mysqldump
+/System/Volumes/Data/usr/local/bin/mysqldump
+/System/Volumes/Data/usr/local/Cellar/mysql/8.0.21/bin/mysqldump
 
 查看MySQL配置项
 
@@ -43,7 +51,7 @@ program：要运行的命令
 例子：
 
 ```
- */1 * * * *  /Users/yannischeng/YC_USR/mysql_dump_bash.sh >> /Users/yannischeng/YC_USR/mysql_log.txt
+*/1 * * * *  /Users/yannischeng/YC_USR/mysql_dump_bash.sh >> /Users/yannischeng/YC_USR/mysql_log.txt
 ```
 
 更多描述：
@@ -52,36 +60,37 @@ program：要运行的命令
 
 ## 示例脚本
 
+macOS下本地备份可用脚本。
 
 ```
 #!/bin/bash
 
-#保存备份个数，备份3天数据
-number=31
-#备份保存路径
-backup_dir=/Users/yannischeng/YC_USR/MysqlDump
-#日期
-dd=`date +%Y-%m-%d-%H-%M-%S`
-#备份工具
-tool=mysqldump
+# - - - - - - - - - - - - - - - - 本地备份 变量设置 - - - - - - - - - - - - - - - -
 #用户名
 username=root
 #密码
 password=Admin_1126
 #将要备份的数据库
 database_name=49_class_database
-
+#执行目录下的保存备份个数
+number=3
+#备份保存路径
+backup_dir=/Users/yannischeng/YC_USR/MysqlDump
+#日期
+dd=`date +%Y-%m-%d-%H-%M-%S`
 #如果文件夹不存在则创建
 if [ ! -d $backup_dir ];
 then
     mkdir -p $backup_dir;
 fi
 
+# - - - - - - - - - - - - - - - - 本地备份 命令执行 - - - - - - - - - - - - - - - -
 #简单写法  mysqldump -u root -p123456 users > /root/mysqlbackup/users-$filename.sql
-$tool -u $username -p$password $database_name > $backup_dir/$database_name-$dd.sql
+# 一定要注意mysqldump使用全绝对路径，否则定时任务执行后得到的文件大小为0
+/usr/local/bin/mysqldump -u $username -p$password $database_name > $backup_dir/$database_name-$dd.sql
 
 #写创建备份日志
-echo "create $backup_dir/$database_name-$dd.dupm" >> $backup_dir/log.txt
+echo "create $backup_dir/$database_name-$dd.dupm" >> $backup_dir/local_log.txt
 
 #找出需要删除的备份
 delfile=`ls -l -crt  $backup_dir/*.sql | awk '{print $9 }' | head -1`
@@ -97,6 +106,10 @@ then
   echo "delete $delfile" >> $backup_dir/log.txt
 fi
 
-# 将本地的备份文件远程传递到另一台服务器的指定路径下
-scp $backup_dir/$database_name-$dd.sql adminc@192.168.10.112:/home/adminc/文档/
+# - - - - - - - - - - - - - - - - 远程传输 命令执行 - - - - - - - - - - - - - - - -
+# 远程文件传输
+#scp $backup_dir/$database_name-$dd.sql adminc@192.168.10.112:/home/adminc/文档/
+
 ```
+
+
