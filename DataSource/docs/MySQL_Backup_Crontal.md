@@ -87,29 +87,30 @@ fi
 # - - - - - - - - - - - - - - - - 本地备份 命令执行 - - - - - - - - - - - - - - - -
 #简单写法  mysqldump -u root -p123456 users > /root/mysqlbackup/users-$filename.sql
 # 一定要注意mysqldump使用全绝对路径，否则定时任务执行后得到的文件大小为0
-/usr/local/bin/mysqldump -u $username -p$password $database_name > $backup_dir/$database_name-$dd.sql
+# /usr/local/bin/mysqldump -u $username -p$password $database_name：备份$database_name数据库
+# | gzip：对备份后的文件进行压缩
+/usr/local/bin/mysqldump -u $username -p$password $database_name | gzip > $backup_dir/$database_name-$dd.sql.gz
 
 #写创建备份日志
-echo "create $backup_dir/$database_name-$dd.dupm" >> $backup_dir/local_log.txt
+echo "create $backup_dir/$database_name-$dd.dupm" >> $backup_dir/create_log.txt
 
 #找出需要删除的备份
-delfile=`ls -l -crt  $backup_dir/*.sql | awk '{print $9 }' | head -1`
+delfile=`ls -l -crt  $backup_dir/*.sql.gz | awk '{print $9 }' | head -1`
 
 #判断现在的备份数量是否大于$number
-count=`ls -l -crt  $backup_dir/*.sql | awk '{print $9 }' | wc -l`
+count=`ls -l -crt  $backup_dir/*.sql.gz | awk '{print $9 }' | wc -l`
 
 if [ $count -gt $number ]
 then
   #删除最早生成的备份，只保留number数量的备份
   rm $delfile
   #写删除文件日志
-  echo "delete $delfile" >> $backup_dir/log.txt
+  echo "delete $delfile" >> $backup_dir/delete_log.txt
 fi
 
 # - - - - - - - - - - - - - - - - 远程传输 命令执行 - - - - - - - - - - - - - - - -
 # 远程文件传输
 #scp $backup_dir/$database_name-$dd.sql adminc@192.168.10.112:/home/adminc/文档/
-
 ```
 
 
