@@ -63,6 +63,13 @@
 
 - [Download Kibana](https://www.elastic.co/cn/downloads/kibana)
 	
+### elasticdump
+
+- [GitHub elasticsearch-dump](https://github.com/taskrabbit/elasticsearch-dump)
+- [elasticDump的安装使用（包含Node、npm安装）](https://www.cnblogs.com/larry-luo/p/11133276.html)
+- [Elasticsearchdump 数据导入/导出](https://www.cnblogs.com/mojita/p/12011800.html)
+- [ElasticSearch索引数据迁移ElasticSearch-Dump方式](https://blog.csdn.net/qq_39680564/article/details/83177266)
+
 
 ## 配置
 
@@ -103,4 +110,27 @@
 
 	```shell
 	alias kbshow='open -a "Google Chrome" http://localhost:5601'	```
+
+### elasticdump
+
+- **备份：mapping和数据**
+
+
+	```shell
+	elasticdump --input http://had-nn:9200/book_song --output /home/adminc/文档/syncFile/bos_mapping.json -- type=mapping
+	```
+	
+- **备份：分词**
+
+
+	```shell
+	lasticdump --input http://192.168.8.182:9200/book_song --output /home/adminc/文档/syncFile/bos_analyzer.json -- type=analyzer
+	```
+	
+- **备份：数据**
+
+
+	```shell
+	elasticdump --input http://192.168.8.182:9200/book_song --output /home/adminc/文档/syncFile/bos_data.json -- type=data
+	```
 
