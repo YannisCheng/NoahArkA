@@ -1,4 +1,4 @@
-# ElasticSearch
+# ElasticSearch — 配置
 
 - [官网](https://www.elastic.co/cn/)
 - [Elasticsearch Guide](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
@@ -97,6 +97,36 @@
 	```shell
 	alias estart='/home/adminc/下载/elasticsearch-7.12.1/bin/elasticsearch -d'
 	```
+	
+- **验证ElasticSearch是否启动成功及其信息**
+
+ 
+	```shell
+	curl -XGET localhost:9200
+	```
+	
+ 返回结果：
+	
+	
+	```
+	{
+	  "name" : "node-1",
+	  "cluster_name" : "elasticsearch",
+	  "cluster_uuid" : "AGzH42zWTFifDpyr1aCA8Q",
+	  "version" : {
+	    "number" : "7.12.1",
+	    "build_flavor" : "default",
+	    "build_type" : "tar",
+	    "build_hash" : "3186837139b9c6b6d23c3200870651f10d3343b7",
+	    "build_date" : "2021-04-20T20:56:39.040728659Z",
+	    "build_snapshot" : false,
+	    "lucene_version" : "8.8.0",
+	    "minimum_wire_compatibility_version" : "6.8.0",
+	    "minimum_index_compatibility_version" : "6.0.0-beta1"
+	  },
+	  "tagline" : "You Know, for Search"
+	}
+	```
 
 ### Kibana
 
@@ -133,4 +163,8 @@
 	```shell
 	elasticdump --input http://192.168.8.182:9200/book_song --output /home/adminc/文档/syncFile/bos_data.json -- type=data
 	```
+	
+	
+
+
 

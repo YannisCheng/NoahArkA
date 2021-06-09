@@ -1,5 +1,8 @@
 # Nginx代理配置
 
+- [京东nginx反向代理时保持长连接](https://mp.weixin.qq.com/s/Q_sI-NGybro9lwoZtyQkpw)
+- [深入浅出负载均衡](https://mp.weixin.qq.com/s/69AGivVfwjEzCNvwJ1_2tQ)
+
 ## 功能要求
 
 ![](/images/nginx-conf.png)
