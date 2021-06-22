@@ -264,3 +264,190 @@ Elasticsearch 不会允许定义这个映射。当配置这个映射时，将会
 
 [根对象](https://www.elastic.co/guide/cn/elasticsearch/guide/current/root-object.html)
 
+
+`映射`的`最高一层`被称为 `根对象` ，它可能包含下面几项：
+
+- 1个 `properties` 节点，列出了文档中可能包含的`每个字段`的`映射`
+- 各种`元数据`字段，它们都以一个下划线开头，例如 _type 、 _id 和 _source
+- `设置项` 控制如何动态处理新的字段，例如 analyzer 、 dynamic_date_formats 和 dynamic_templates
+- `其他设置` 可以同时应用在根对象和其他 object 类型的字段上，例如 enabled 、 dynamic 和 include_in_all
+
+### 元数据: _source 字段
+
+默认地，`Elasticsearch` 在 `_source` 字段存储代表 `文档体` 的 `JSON字符串` 。
+和所有被存储的字段一样， **_source 字段在被 `写入磁盘` 之前先会`被压缩`** 。
+
+这个字段的存储几乎总是我们想要的，因为它意味着下面的这些：
+
+- `搜索结果`包括了`整个可用的文档`——不需要额外的从另一个的数据仓库来取文档。
+- 如果没有 _source 字段，部分 `update` 请求不会生效。
+- 当你的 `映射改变`时，你需要 `重新索引` 你的数据，有了_source字段你可以直接从Elasticsearch这样做，而不必从另一个（通常是速度更慢的）数据仓库取回你的所有文档。
+- 当你不需要看到整个文档时，`单个字段` 可以从 _source 字段 `提取` 和通过 get 或者 search 请求返回。
+- 调试查询语句更加简单，因为你可以直接看到每个文档包括什么，而不是从一列id猜测它们的内容。
+
+
+
+
+**映射禁用 `_source` 字段**：
+
+```
+PUT /my_index
+{
+    "mappings": {
+        "my_type": {
+            "_source": {
+                "enabled":  false
+            }
+        }
+    }
+}
+```
+
+
+在一个搜索请求里，你可以通过在请求体中 **指定 _source 参数**，来达到只获取特定的字段的效果：
+
+
+```
+GET book_san_guo_zhi/_search
+{
+  "query": {"match_all": {}}, 
+  "_source": ["book_item_name_title"]
+}
+```
+
+
+### 元数据: _all 字段
+
+在 `轻量` 搜索 中，我们介绍了 `_all` 字段：**一个把 `其它字段的值` 当作一个 `大字符串` 来索引的 `特殊字段`**。 `query_string` 查询子句(搜索 ?q=john )在没有指定字段时默认使用 `_all` 字段。
+
+_all 字段在新应用的探索阶段，当你还不清楚文档的最终结构时是比较有用的。
+你可以使用这个字段来做任何查询，并且有很大可能找到需要的文档：
+
+
+```
+GET /_search
+{
+    "match": {
+        "_all": "john smith marketing"
+    }
+}
+```
+
+通过 `include_in_all` 设置来`逐个控制`字段是否要包含在 `_all` 字段中，默认值是 true。
+在一个对象(或根对象)上设置 `include_in_all` 可以`修改`这个对象中的所有字段的默认行为。
+
+
+## 动态映射
+
+当 Elasticsearch 遇到文档中以前 `未遇到的字段`，它用 **动态映射** 来确定字段的`数据类型`并 自动把新的字段添加到类型映射。
+
+可以用 `dynamic` 配置来控制这种行为 ，可接受的选项如下：
+
+- `true`：动态添加新的字段—​缺省
+- `false`：忽略新的字段
+- `strict`：如果遇到新字段抛出异常
+
+配置参数 dynamic 可以用在 `根object` 或 `任何object类型` 的字段上。
+你可以将 dynamic 的默认值设置为 strict , 而只在指定的内部对象中开启它, 例如：
+
+
+```
+PUT /my_index
+{
+    "mappings": {
+        "my_type": {
+            "dynamic":      "strict", 
+            "properties": {
+                "title":  { "type": "string"},
+                "stash":  {
+                    "type":     "object",
+                    "dynamic":  true 
+                }
+            }
+        }
+    }
+}
+```
+
+- 如果遇到新字段，对象 my_type 就会抛出异常。
+- 而内部对象 stash 遇到新字段就会动态创建新字段。
+
+
+把 dynamic 设置为 false 一点儿也不会改变 `_source` 的`字段内容`。 
+`_source` 仍然`包含被索引`的`整个JSON文档`。
+只是新的字段`不会`被加到`映射中`也`不可搜索`。
+
+## 自定义动态映射
+
+### 日期检测
+
+当 Elasticsearch 遇到一个新的字符串字段时，它会检测这个字段是否包含一个可识别的日期，比如 2014-01-01 。
+如果它像日期，这个字段就会被作为 date 类型添加。
+否则，它会被作为 string 类型添加。
+
+日期检测可以通过在根对象上设置 date_detection 为 false 来关闭：
+
+
+```
+PUT /my_index
+{
+    "mappings": {
+        "my_type": {
+            "date_detection": false
+        }
+    }
+}
+```
+
+使用这个映射，字符串将始终作为 string 类型。如果你需要一个 date 字段，你必须手动添加。
+
+### 动态模板
+
+使用 `dynamic_templates` ，你可以完全控制`新检测生成字段`的`映射`。你甚至可以通过字段名称或数据类型来应用不同的映射。
+
+每个模板都有：
+
+1. 一个`名称`，你可以用来描述这个`模板的用途`；
+2. 一个 `mapping` 来`指定映射`应该`怎样使用`；
+3. 至少一个`参数 (如 match) `来定义`该模板`适用于`哪个字段`。
+
+模板按照顺序来检测；第一个匹配的模板会被启用。例如，我们给 string 类型字段定义两个模板：
+
+es ：以 _es 结尾的字段名需要使用 spanish 分词器。
+en ：所有其他字段使用 english 分词器。
+我们将 es 模板放在第一位，因为它比匹配所有字符串字段的 en 模板更特殊：
+
+
+
+```
+PUT /my_index
+{
+    "mappings": {
+        "my_type": {
+            "dynamic_templates": [
+                { "es": {
+                       // 匹配字段名以 _es 结尾的字段。
+                      "match":              "*_es", 
+                      "match_mapping_type": "string",
+                      "mapping": {
+                          "type":           "string",
+                          "analyzer":       "spanish"
+                      }
+                }},
+                { "en": {
+                      // 匹配其他所有字符串类型字段。
+                      "match":              "*", 
+                      "match_mapping_type": "string",
+                      "mapping": {
+                          "type":           "string",
+                          "analyzer":       "english"
+                      }
+                }}
+            ]
+}}}
+```
+
+`match_mapping_type` 允许你应用模板到`特定类型`的`字段`上，就像有`标准动态映射规则检测`的一样， (例如 string 或 long)。
+`match` 参数只匹配字段名称。
+
+
