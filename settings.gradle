@@ -19,4 +19,5 @@ include 'Configuration'
 include 'ScriptLib'
 include 'DataSource'
 include 'AppRun'
+include 'HadoopProj'
 

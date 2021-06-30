@@ -35,10 +35,17 @@ subprojects {
         mavenCentral()
     }
 
+    configurations {
+        compile.exclude group:'ch.qos.logback'
+    }
+
+
     //所有子项目公用的依赖。每个项目单独的依赖请在子项目的 build.gradle 中配置
     dependencies {
         // 起步依赖
-        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation ('org.springframework.boot:spring-boot-starter-web'){
+            exclude module: 'org.springframework.boot:spring-boot-starter-logging'
+        }
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         implementation 'org.projectlombok:lombok'
