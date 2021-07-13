@@ -4,28 +4,28 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/mult3.xml</file>
-          <file>file://$MODULE_DIR$/src/lifecycle5.xml</file>
-          <file>file://$MODULE_DIR$/src/mybean.xml</file>
-          <file>file://$MODULE_DIR$/src/properties.xml</file>
-          <file>file://$MODULE_DIR$/src/Annotation1.xml</file>
-          <file>file://$MODULE_DIR$/src/aspecct_anno.xml</file>
-          <file>file://$MODULE_DIR$/src/mult2.xml</file>
-          <file>file://$MODULE_DIR$/src/mult.xml</file>
-          <file>file://$MODULE_DIR$/src/bean_demo.xml</file>
-          <file>file://$MODULE_DIR$/src/lifecycle7.xml</file>
-          <file>file://$MODULE_DIR$/src/dept_emp.xml</file>
-          <file>file://$MODULE_DIR$/src/com/cwj/genesis/aop/aspectj_anno/SpringScan.java</file>
-          <file>file://$MODULE_DIR$/src/com/cwj/genesis/bean_manager/annotation/config/SpringConfig.java</file>
-          <file>file://$MODULE_DIR$/src/mult3.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/mult3.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/lifecycle5.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/mybean.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/properties.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/Annotation1.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/aspecct_anno.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/mult2.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/mult.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/bean_demo.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/lifecycle7.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/dept_emp.xml</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/com/cwj/genesis/aop/aspectj_anno/SpringScan.java</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/com/cwj/genesis/bean_manager/annotation/config/SpringConfig.java</file>
+          <file>file://$MODULE_DIR$/../Genesis/src/mult3.xml</file>
         </fileset>
       </configuration>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../SampleLibSpring">
+      <sourceFolder url="file://$MODULE_DIR$/../SampleLibSpring/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

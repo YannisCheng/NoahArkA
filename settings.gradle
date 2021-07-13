@@ -14,10 +14,9 @@
 rootProject.name = 'NoahArkA'
 // 注意顺序，被依赖的Module应该被声明在最前面。
 include 'Common'
-include 'AsmLib'
-include 'Configuration'
-include 'ScriptLib'
-include 'DataSource'
+include 'SampleLibAsm'
+include 'SampleLibWeb'
+include 'ModuleDataSource'
 include 'AppRun'
-include 'HadoopProj'
+include 'ModuleHadoop'
 

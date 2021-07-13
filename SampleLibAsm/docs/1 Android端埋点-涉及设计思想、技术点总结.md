@@ -168,7 +168,7 @@ javap -verbose ByteCodeDemo
 
 ```
 警告: 二进制文件ByteCodeDemo包含com.cwj.asm.utils.ByteCodeDemo
-Classfile /Users/yannischeng/JetBrain_Projects/Projects_IDEA_Java/AsmProject/src/main/java/com/cwj/asm/utils/ByteCodeDemo.class
+Classfile /Users/yannischeng/JetBrain_Projects/Projects_IDEA_Java/NoahArkA/SampleLibAsm/src/main/java/com/cwj/asm/utils/ByteCodeDemo.class
   Last modified 2021-2-18; size 445 bytes
   MD5 checksum ad3a0aaeadbbe94029b6a34747ac75ef
   Compiled from "ByteCodeDemo.java"

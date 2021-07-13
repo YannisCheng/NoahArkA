@@ -10,6 +10,5 @@
 
 dependencies {
     implementation project(':Common')
-    implementation project(':Configuration')
-    implementation project(':DataSource')
+    implementation project(':ModuleDataSource')
 }
