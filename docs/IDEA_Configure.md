@@ -1,17 +1,28 @@
 # IDEA 配置
 
-## 1. IDEA配置
 
-### 1.1 扩展MarkDown文件编辑
+## 1. 创建工作Flow
 
-#### 实现目标：
+已经实现的本地app的flow配置：
+
+- MWeb（Markdown编辑工具）：文件后缀 `.md`
+- XMind（思维导图工具）：文件后缀 `.xmind`
+
+ 注意：仅能打开已经存在的xmind文件，如果在IDEA中创建该文件，将无法打开。
+ 
+- OmniGraffle（绘图工具）：文件后缀 `.graffle`
+
+  注意：仅能打开已经存在的graffle文件，如果在IDEA中创建该文件，将无法打开。
+
+
+### 实现目标：
 在`IDEA`中创建 `.md` 文件，当`打开`md文件时，使用在`macOS`上自己安装的 `app` 打开并编辑该`md`文件。
 
-#### 配置
+### 配置
 
 - [Idea中添加Typora第三方软件编辑md文件](https://www.cnblogs.com/cndarren/p/14415213.html)
 
-### 1.2 为Spring配置JRebel
+## 2. 为Spring配置JRebel
 
 - 参考：https://www.cnblogs.com/c2g5201314/p/13063668.html
 - [IDEA with JRebel to Spring Boot](https://www.imooc.com/article/303635)
@@ -19,9 +30,9 @@
 
 
 
-## 2. Gradle构建
+## 3. Gradle构建
 
-### 2.1 多Module构建
+### 3.1 多Module构建
 
 - [IntelliJ IDEA通过gradle搭建spring boot多模块项目](https://www.cnblogs.com/davidhhuan/p/12232908.html)
 - [IDEA 2020.2 +Gradle 6.6.1 + Spring Boot 2.3.4 创建多模块项目](https://blog.csdn.net/zh452647457/article/details/108844078?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242)
@@ -36,7 +47,7 @@
 
 ![](/images/gradle-task配置.png)
 
-### 2.2 Plugin
+### 3.2 Plugin
 
 [Using Gradle Plugins](https://docs.gradle.org/current/userguide/plugins.html)
 
@@ -54,19 +65,19 @@
 
 
 
-### 2.3 JVM Plugin
+### 3.3 JVM Plugin
 
 - [Java Application Plugin](https://docs.gradle.org/current/userguide/application_plugin.html#application_plugin)
 - Java Library Plugin
  - 参考：https://docs.gradle.org/current/userguide/java_library_plugin.html
  - 参考：https://docs.gradle.org/current/userguide/java_plugin.html#java_plugin
 
-### 2.4. Grade的 gradle.properties
+### 3.4. Grade的 gradle.properties
 
 - [gradle.properties](https://docs.gradle.org/current/userguide/build_environment.html)
 
 
-## 3. IDEA+Gradle编译Spring源码
+## 4. IDEA+Gradle编译Spring源码
 
 - [IDEA+Gradle构建Spring5源码阅读环境教程(优化构建速度)](https://zhuanlan.zhihu.com/p/149641082)
 - [IDEA导入Spring源码调试必看](https://blog.csdn.net/u013469325/article/details/106586497)
