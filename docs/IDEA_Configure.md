@@ -2,6 +2,9 @@
 
 - [idea集成JRebel](file:////Users/yannischeng/Documents/All_Collection/Other/Server端概念相关.graffle)
 
+## 内存大小修改
+ 路径：`/Users/yannischeng/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/211.7142.45/IntelliJ IDEA.app.vmoptions`
+
 ## 1. 创建工作Flow
 
 已经实现的本地app的flow配置：

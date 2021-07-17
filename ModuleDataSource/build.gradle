@@ -1,5 +1,15 @@
+repositories {
+    // Add the Elasticsearch Maven Repository
+    maven {
+        name "elastic"
+        url "https://artifacts.elastic.co/maven"
+    }
+}
 
 dependencies {
+    // Java调用ElasticSearch7.12.1
+    compile "org.elasticsearch.client:x-pack-transport:7.12.1"
+
     implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
