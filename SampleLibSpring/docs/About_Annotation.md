@@ -29,6 +29,10 @@
 标注业务层组件。
 
 #### @RestController - 声明Bean
+
+Which marks the class as a controller where every method returns a domain object instead of a view. 
+It is shorthand for including both @Controller and @ResponseBody.
+
 标注控制层组件。包含：
 
 - **@Controller**：

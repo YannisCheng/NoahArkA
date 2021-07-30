@@ -1,2 +1,0 @@
-com/cwj/scriptlib/ScriptLibApplication.java
- com.cwj.scriptlib.ScriptLibApplication

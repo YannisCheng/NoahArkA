@@ -10,5 +10,5 @@
 
 dependencies {
     implementation project(':Common')
-    implementation project(':ModuleDataSource')
+    implementation project(':ModuleSpringData')
 }

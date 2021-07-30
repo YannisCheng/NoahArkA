@@ -3,9 +3,9 @@
 // Spring Boot Gradle插件 使用参考：https://docs.spring.io/spring-boot/docs/2.5.3/gradle-plugin/reference/htmlsingle/
 // 新式插件使用方式:plugins DSL（https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block）
 // 区别于：buildscript block（https://docs.gradle.org/current/userguide/plugins.html#sec:applying_plugins_buildscript）
-plugins{
+plugins {
     id "org.springframework.boot" version "2.5.0"
-
+    id 'java'
     // （Isolation）隔离依赖，不将com.example.hello插件应用到所有的子Module中
     //id 'com.example.hello' version '1.0.0' apply false
 }
@@ -30,8 +30,16 @@ subprojects {
     // java编译的时候缺省状态下会因为中文字符而失败
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
 
+    // 将会创建一个可执行的jar，需要一个main()
     bootJar {
-        enabled = false  // 默认不需要打可执行jar包
+        // true：开启；false：禁用
+        enabled = false
+    }
+
+    // 创建一个普通的jar
+    jar {
+        // true：开启；false：禁用
+        enabled = true
     }
 
     repositories {
@@ -39,7 +47,7 @@ subprojects {
     }
 
     configurations {
-        compile.exclude group:'ch.qos.logback'
+        compile.exclude group: 'ch.qos.logback'
     }
 
 
@@ -49,12 +57,16 @@ subprojects {
     // 这提供了与 Maven 用户所享受的类似的依赖管理体验。
     dependencies {
         // 起步依赖
-        implementation ('org.springframework.boot:spring-boot-starter-web'){
+        implementation('org.springframework.boot:spring-boot-starter-web') {
             exclude module: 'org.springframework.boot:spring-boot-starter-logging'
         }
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         implementation 'org.projectlombok:lombok'
+    }
+
+    test {
+        useJUnitPlatform()
     }
     // 创建Docker镜像
     //bootBuildImage
