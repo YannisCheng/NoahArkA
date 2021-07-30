@@ -1,10 +1,12 @@
 // 根build.gradle配置
 
+// Spring Boot Gradle插件 使用参考：https://docs.spring.io/spring-boot/docs/2.5.3/gradle-plugin/reference/htmlsingle/
 // 新式插件使用方式:plugins DSL（https://docs.gradle.org/current/userguide/plugins.html#sec:plugins_block）
 // 区别于：buildscript block（https://docs.gradle.org/current/userguide/plugins.html#sec:applying_plugins_buildscript）
 plugins{
     id "org.springframework.boot" version "2.5.0"
-    // 不将com.example.hello插件应用到所有的子Module中
+
+    // （Isolation）隔离依赖，不将com.example.hello插件应用到所有的子Module中
     //id 'com.example.hello' version '1.0.0' apply false
 }
 
@@ -16,6 +18,7 @@ subprojects {
     apply plugin: 'idea'
     // Spring 必加的2个依赖
     apply plugin: 'org.springframework.boot'
+    // 使用 io.spring.dependency-management（依赖管理） 插件或 Gradle 的原生 bom，支持管理 Spring Boot 应用程序中的依赖项
     apply plugin: 'io.spring.dependency-management'
 
     sourceCompatibility = '1.8'
@@ -40,7 +43,10 @@ subprojects {
     }
 
 
-    //所有子项目公用的依赖。每个项目单独的依赖请在子项目的 build.gradle 中配置
+    // 所有子项目公用的依赖。每个项目单独的依赖请在子项目的 build.gradle 中配置
+    //
+    // 当应用 io.spring.dependency-management 插件时，Spring Boot 的插件会自动从使用的 Spring Boot 版本中导入 spring-boot-dependencies bom。
+    // 这提供了与 Maven 用户所享受的类似的依赖管理体验。
     dependencies {
         // 起步依赖
         implementation ('org.springframework.boot:spring-boot-starter-web'){
