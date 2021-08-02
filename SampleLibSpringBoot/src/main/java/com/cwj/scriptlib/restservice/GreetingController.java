@@ -1,11 +1,13 @@
 package com.cwj.scriptlib.restservice;
 
+import com.cwj.scriptlib.autowired_mutil_test.UseServiceDemo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
@@ -23,6 +25,9 @@ public class GreetingController {
     private static final String TEMPLATE = "Hello, %s!";
     private final AtomicLong counter = new AtomicLong();
 
+    @Resource
+    private UseServiceDemo useServiceDemo;
+
     @ApiOperation(value = "欢迎测试", notes = "欢迎测试的notes信息")
     //@ApiImplicitParams({
     //        @ApiImplicitParam(
@@ -33,6 +38,8 @@ public class GreetingController {
     //})
     @GetMapping("/greeting")
     public Greeting greeting(@RequestParam(value = "name",defaultValue = "World") String name){
+        // 测试 @Autowired注解的使用
+        useServiceDemo.serviceDemo.sayHello();
         return new Greeting(counter.incrementAndGet(),String.format(TEMPLATE,name));
     }
 

@@ -15,6 +15,26 @@
 * [ ] 马士兵课程：/Users/yannischeng/Movies/课程/马士兵-IO与存储技术串讲
 * [ ] JVM：/Users/yannischeng/BigData/尚硅谷课程/JVM/
 
+## 门闩
+
+### 知识点
+
+- **2021-08-02 18:31:28 周一**
+
+* [ ] @resource与@autowired区别/Spring自动装配bean：byType与byName区别
+
+- [Spring 中的byName与 byType](https://blog.csdn.net/youlingqishi11/article/details/6458821)
+- [Spring源码学习--@Autowired注解和启动自动扫描的三种方式](https://blog.csdn.net/u013412772/article/details/73741710/)
+- [Spring的byType、byName的自动装配逻辑以及@Autowired和@Resource的使用示例](https://blog.csdn.net/Alexshi5/article/details/84000678)
+- [Spring MVC 解读——@Autowired](https://my.oschina.net/HeliosFly/blog/203902)
+- [@Resource注解用法作用](https://blog.csdn.net/panting30/article/details/95333766)
+- [Spring中@Resource和@Autowire的区别](https://blog.csdn.net/kevinxxw/article/details/105145397)
+  
+### IDE
+
+* [ ] Lombok注解不起作用
+
+
 ## 进度
 
 - **2021-05-23 周日**
@@ -54,4 +74,6 @@
 * [ ] 掌握、总结SpringBoot中Postgresql的基本使用
 * [ ] 掌握、总结SpringBoot中Redis的基本使用
 * [ ] 掌握、总结SpringBoot中ElasticSearch的基本使用
+
+- **2021-08-02 18:31:28 周一**
 
