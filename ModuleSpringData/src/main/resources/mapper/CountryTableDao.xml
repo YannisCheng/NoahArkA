@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cwj.datasource.mysql.dao.CountryTableDao">
+    <!--@Table country_table-->
+    <resultMap id="CountryMap" type="com.cwj.datasource.mysql.entity.CountryTable">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="countryName" column="county_name" jdbcType="VARCHAR"/>
+        <result property="countryCode" column="county_code" jdbcType="VARCHAR"/>
+        <result property="cityCode" column="city_code" jdbcType="VARCHAR"/>
+        <result property="provinceCode" column="province_code" jdbcType="VARCHAR"/>
+        <result property="grade" column="grade" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--110108-->
+    <select id="queryById" resultMap="CountryMap">
+        select *
+        from area_database.county_table
+        where county_code = #{countryCode}
+    </select>
+
+    <select id="queryAllByLimit" resultMap="CountryMap">
+
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="countryCode">
+
+    </insert>
+
+    <update id="update">
+
+    </update>
+
+    <delete id="deleteById">
+
+    </delete>
+</mapper>

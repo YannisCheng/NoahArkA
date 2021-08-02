@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.cwj.datasource.mysql.mapper")
+@MapperScan(basePackages = "com.cwj.datasource.mysql.dao")
 public class DataSourceApplication {
 
     public static void main(String[] args) {

@@ -1,3 +1,7 @@
+# 服务配置
+server:
+  port: 8088
+
 spring:
   datasource:
     # MySQL数据源配置
@@ -15,9 +19,7 @@ spring:
     rest:
       uris: http://had-dn1:9200
 
-
-# 服务配置
-server:
-  port: 8088
-
 # MyBatis配置
+mybatis-plus:
+  # 扫描路径
+  mapper-locations: classpath:/mapper/*Dao.xml

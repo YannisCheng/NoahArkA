@@ -75,6 +75,7 @@ JRebel
 ## 引入Swagger组件
 
  - [Spring Boot整合swagger使用教程](https://www.cnblogs.com/progor/p/13297904.html)
+ - [swagger2 @ApiImplicitParams](https://www.jianshu.com/p/3299877c5179?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
 
 ## Maven库在线搜索
 

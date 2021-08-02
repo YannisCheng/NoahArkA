@@ -1,8 +1,0 @@
-com/cwj/scriptlib/configuration/Swagger2Config.java
- com.cwj.scriptlib.configuration.Swagger2Config
-com/cwj/scriptlib/restservice/GreetingController.java
- com.cwj.scriptlib.restservice.GreetingController
-com/cwj/scriptlib/ScriptLibApplication.java
- com.cwj.scriptlib.ScriptLibApplication
-com/cwj/scriptlib/restservice/Greeting.java
- com.cwj.scriptlib.restservice.Greeting

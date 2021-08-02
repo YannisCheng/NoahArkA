@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cwj.datasource.mysql.dao.CityTableDao">
+
+    <!--当对象和数据库table之间不是简单的一对一对应的时候，我们可能需要指定对象的property和表的column之间的对应关系.
+    如下所示，当column和property的name不同时，我们可以通过定义resultMap的形式来定义他们之间的对应关系。-->
+    <resultMap id="BaseResultMap" type="com.cwj.datasource.mysql.entity.CityTable">
+        <!--@Table city_table-->
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="cityName" column="city_name" jdbcType="VARCHAR"/>
+        <result property="cityCode" column="city_code" jdbcType="VARCHAR"/>
+        <result property="provinceCode" column="province_code" jdbcType="VARCHAR"/>
+        <result property="grade" column="grade" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="BaseResultMap">
+        select
+          id, city_name, city_code, province_code, grade
+        from area_database.city_table
+        where city_code = #{cityCode}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="BaseResultMap">
+        select
+          id, city_name, city_code, province_code, grade
+        from area_database.city_tabl
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+          id, city_name, city_code, province_code, grade
+        from area_database.city_table
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="cityName != null and cityName != ''">
+                and city_name = #{cityName}
+            </if>
+            <if test="cityCode != null and cityCode != ''">
+                and city_code = #{cityCode}
+            </if>
+            <if test="provinceCode != null and provinceCode != ''">
+                and province_code = #{provinceCode}
+            </if>
+            <if test="grade != null and grade != ''">
+                and grade = #{grade}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="cityCode" useGeneratedKeys="true">
+        insert into area_database.city_table(id, city_name, province_code, grade)
+        values (#{id}, #{cityName}, #{provinceCode}, #{grade})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update area_database.city_table
+        <set>
+            <if test="id != null">
+                id = #{id},
+            </if>
+            <if test="cityName != null and cityName != ''">
+                city_name = #{cityName},
+            </if>
+            <if test="provinceCode != null and provinceCode != ''">
+                province_code = #{provinceCode},
+            </if>
+            <if test="grade != null and grade != ''">
+                grade = #{grade},
+            </if>
+        </set>
+        where city_code = #{cityCode}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from area_database.city_table where city_code = #{cityCode}
+    </delete>
+
+</mapper>
