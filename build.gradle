@@ -63,6 +63,17 @@ subprojects {
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
         implementation 'org.projectlombok:lombok'
+
+        //-------- Swagger 组件依赖 ----------
+        // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
+        implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
+        // Swagger默认UI：https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+        // 使用方式：http://localhost:8082/swagger-ui.html
+        implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
+        // Swagger第三方UI：https://mvnrepository.com/artifact/com.github.xiaoymin/swagger-bootstrap-ui
+        // 使用方式：http://localhost:8082/doc.html
+        implementation group: 'com.github.xiaoymin', name: 'swagger-bootstrap-ui', version: '1.9.6'
+
     }
 
     test {

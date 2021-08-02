@@ -1,6 +1,23 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/area_database
+    # MySQL数据源配置
+    # MySQL8之后需要指定时区和安全连接方式
+    url: jdbc:mysql://localhost:3306/area_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
     password: Admin_1126
     username: root
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ElasticSearch 数据源配置
+  # spring.data.elasticsearch.cluster-name=my-cluster
+  # spring.data.elasticsearch.cluster-nodes=127.0.0.1:9300
+  # 以上2个配置项已经过时
+  elasticsearch:
+    rest:
+      uris: http://had-dn1:9200
+
+
+# 服务配置
+server:
+  port: 8088
+
+# MyBatis配置

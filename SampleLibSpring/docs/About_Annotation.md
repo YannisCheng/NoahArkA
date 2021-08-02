@@ -152,3 +152,4 @@ public String testRequestParam(@RequestParam("id") int id) {
 
 ## 4 Spring SpringWeb Flux
 
+## 5. Swagger

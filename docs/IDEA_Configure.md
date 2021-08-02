@@ -36,6 +36,11 @@
 
 ## 3. Gradle构建
 
+### 依赖源
+
+ - [maven库地址](https://mvnrepository.com/)
+
+
 ### 3.1 多Module构建
 
 - [IntelliJ IDEA通过gradle搭建spring boot多模块项目](https://www.cnblogs.com/davidhhuan/p/12232908.html)

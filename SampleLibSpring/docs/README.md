@@ -54,7 +54,7 @@ Spring Boot+ SpringWeb Flux + Spring Cloud
 Spring Boot不推荐使用jsp，强行使用jsp脱离了Spring Boot易配置、快速开发的初衷。 
 Spring推荐 前后分离 的开发方式，不推荐使用任何服务器端模板引擎。
   
-#### Spring、Spring Framework与Spring Boot的关系
+## Spring、Spring Framework与Spring Boot的关系
 **Spring**
 是一个生态的统称。
 
@@ -69,6 +69,13 @@ Spring推荐 前后分离 的开发方式，不推荐使用任何服务器端模
 - 一句话总结：Spring Boot是Spring的配置封装。
 
 
-## 热插拔
+## 热插拔插件
 JRebel
 
+## 引入Swagger组件
+
+ - [Spring Boot整合swagger使用教程](https://www.cnblogs.com/progor/p/13297904.html)
+
+## Maven库在线搜索
+
+[Maven库地址](https://mvnrepository.com/)
