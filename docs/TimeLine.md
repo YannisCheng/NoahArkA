@@ -21,33 +21,36 @@
 
 - **2021-08-02 18:31:28 周一**
 
-* [ ] @resource与@autowired区别/Spring自动装配bean：byType与byName区别
+* [x] @resource与@autowired区别/Spring自动装配bean：byType与byName区别
 
-- [Spring 中的byName与 byType](https://blog.csdn.net/youlingqishi11/article/details/6458821)
-- [Spring源码学习--@Autowired注解和启动自动扫描的三种方式](https://blog.csdn.net/u013412772/article/details/73741710/)
-- [Spring的byType、byName的自动装配逻辑以及@Autowired和@Resource的使用示例](https://blog.csdn.net/Alexshi5/article/details/84000678)
-- [Spring MVC 解读——@Autowired](https://my.oschina.net/HeliosFly/blog/203902)
-- [@Resource注解用法作用](https://blog.csdn.net/panting30/article/details/95333766)
-- [Spring中@Resource和@Autowire的区别](https://blog.csdn.net/kevinxxw/article/details/105145397)
+	- [Spring 中的byName与 byType](https://blog.csdn.net/youlingqishi11/article/details/6458821)
+	- [Spring源码学习--@Autowired注解和启动自动扫描的三种方式](https://blog.csdn.net/u013412772/article/details/73741710/)
+	- [Spring的byType、byName的自动装配逻辑以及@Autowired和@Resource的使用示例](https://blog.csdn.net/Alexshi5/article/details/84000678)
+	- [Spring MVC 解读——@Autowired](https://my.oschina.net/HeliosFly/blog/203902)
+	- [@Resource注解用法作用](https://blog.csdn.net/panting30/article/details/95333766)
+	- [Spring中@Resource和@Autowire的区别](https://blog.csdn.net/kevinxxw/article/details/105145397)
   
 ### IDE
 
-* [x] Lombok注解不起作用 
+* [x] **IDEA + Gradle + Lombok注解不起作用** 
 IDEA2021.1旗舰版默认已经安装了Lombok Plugin插件，但是在项目的build.gradle文件中添加依赖时，需要添加2个依赖，否则报错。
-解决方式：[projectlombok-gradle处理方式](https://projectlombok.org/setup/gradle)
-```gradle
+
+ 解决方式：
+ [IDEA + Gradle + Lombok 错误：找不到符号](https://my.oschina.net/u/3251146/blog/4938478)
+ [projectlombok-gradle处理方式](https://projectlombok.org/setup/gradle)
+
+ ```gradle
 repositories {
-	mavenCentral()
+		mavenCentral()
 }
-
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
-
-	testCompileOnly 'org.projectlombok:lombok:1.18.20'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+		compileOnly 'org.projectlombok:lombok:1.18.20'
+		annotationProcessor 'org.projectlombok:lombok:1.18.20'
+		
+		testCompileOnly 'org.projectlombok:lombok:1.18.20'
+		testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 }  
-```
+ ```
 
 
 ## 进度

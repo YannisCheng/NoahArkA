@@ -67,21 +67,21 @@ public class CityTableController {
         return cityTableService.deleteById(cityCode);
     }
 
-    @GetMapping("/updateByBody")
+    @PostMapping("/updateByBody")
     @ApiOperation(value = "更新一条记录",notes = "请求体")
     /*@ApiImplicitParams(
             @ApiImplicitParam(name = "cityTable", value = "一条json字符串记录", required = true, dataType = "String",defaultValue = "",paramType = "body")
     )*/
-    public CityTable updateByBody(CityTable cityTable){
+    public CityTable updateByBody(@RequestBody CityTable cityTable){
         return cityTableService.update(cityTable);
     }
 
-    @GetMapping("/insertByBody")
+    @PostMapping("/insertByBody")
     @ApiOperation(value = "插入一条数据",notes = "请求体")
     /*@ApiImplicitParams(
             @ApiImplicitParam(name = "cityTable", value = "一条json字符串记录", required = true, dataType = "String",defaultValue = "",paramType = "body")
     )*/
-    public CityTable insertByBody(CityTable cityTable){
+    public CityTable insertByBody(@RequestBody CityTable cityTable){
         return cityTableService.insert(cityTable);
     }
 

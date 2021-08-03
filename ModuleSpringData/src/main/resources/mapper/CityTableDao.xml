@@ -44,7 +44,7 @@ mapper文件的作用：专注于sql语句的编写。
     <select id="queryAllByLimit" resultMap="BaseResultMap">
         select
           id, city_name, city_code, province_code, grade
-        from area_database.city_tabl
+        from area_database.city_table
         limit #{offset}, #{limit}
     </select>
 

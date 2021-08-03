@@ -12,6 +12,8 @@
 
 ## 2 Spring boot
 
+- [Spring Boot的相关注解@RestController和@Controller、@RequestMapping、@RequestParam和@RequestBody等](https://blog.csdn.net/u010986518/article/details/82187793)
+
 #### @SpringBootApplication
 
 ![SpringBootApplication注解功能图解](/images/191601240_9_20200529102144347.jpg)
