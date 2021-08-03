@@ -2,6 +2,7 @@ package com.cwj.datasource.mysql.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -11,6 +12,7 @@ import java.io.Serializable;
  * @author makejava
  * @since 2021-08-02 20:55:17
  */
+@Data
 @ApiModel
 public class TownTable implements Serializable {
     private static final long serialVersionUID = -60955001638906866L;
@@ -35,62 +37,5 @@ public class TownTable implements Serializable {
 
     @ApiModelProperty(value = "行政区划等级")
     private String grade;
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getTownName() {
-        return townName;
-    }
-
-    public void setTownName(String townName) {
-        this.townName = townName;
-    }
-
-    public String getTownCode() {
-        return townCode;
-    }
-
-    public void setTownCode(String townCode) {
-        this.townCode = townCode;
-    }
-
-    public String getCountyCode() {
-        return countyCode;
-    }
-
-    public void setCountyCode(String countyCode) {
-        this.countyCode = countyCode;
-    }
-
-    public String getCityCode() {
-        return cityCode;
-    }
-
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
-    }
-
-    public String getProvinceCode() {
-        return provinceCode;
-    }
-
-    public void setProvinceCode(String provinceCode) {
-        this.provinceCode = provinceCode;
-    }
-
-    public String getGrade() {
-        return grade;
-    }
-
-    public void setGrade(String grade) {
-        this.grade = grade;
-    }
 
 }

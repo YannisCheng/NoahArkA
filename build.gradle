@@ -62,7 +62,14 @@ subprojects {
         }
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
-        implementation 'org.projectlombok:lombok'
+
+        // Lombok 依赖处理
+        //implementation 'org.projectlombok:lombok'
+        // https://mvnrepository.com/artifact/org.projectlombok/lombok
+        compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        // 一定要添加 annotationProcessor 依赖，否则@Data一直提示：找不到符号
+        // 解决方法：https://projectlombok.org/setup/gradle
+        annotationProcessor  group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
 
         //-------- Swagger 组件依赖 ----------
         // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2

@@ -32,7 +32,22 @@
   
 ### IDE
 
-* [ ] Lombok注解不起作用
+* [x] Lombok注解不起作用 
+IDEA2021.1旗舰版默认已经安装了Lombok Plugin插件，但是在项目的build.gradle文件中添加依赖时，需要添加2个依赖，否则报错。
+解决方式：[projectlombok-gradle处理方式](https://projectlombok.org/setup/gradle)
+```gradle
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+}  
+```
 
 
 ## 进度
