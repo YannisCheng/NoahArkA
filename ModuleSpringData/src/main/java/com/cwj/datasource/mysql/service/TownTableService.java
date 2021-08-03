@@ -1,23 +1,23 @@
 package com.cwj.datasource.mysql.service;
 
-import com.cwj.datasource.mysql.entity.CountyTable;
+import com.cwj.datasource.mysql.entity.TownTable;
 import java.util.List;
 
 /**
- * (CountyTable)表服务接口
+ * (TownTable)表服务接口
  *
  * @author makejava
- * @since 2021-08-02 20:38:19
+ * @since 2021-08-02 20:55:27
  */
-public interface CountyTableService {
+public interface TownTableService {
 
     /**
      * 通过ID查询单条数据
      *
-     * @param countyCode 主键
+     * @param townCode 主键
      * @return 实例对象
      */
-    CountyTable queryById(String countyCode);
+    TownTable queryById(String townCode);
 
     /**
      * 查询多条数据
@@ -26,30 +26,30 @@ public interface CountyTableService {
      * @param limit 查询条数
      * @return 对象列表
      */
-    List<CountyTable> queryAllByLimit(int offset, int limit);
+    List<TownTable> queryAllByLimit(int offset, int limit);
 
     /**
      * 新增数据
      *
-     * @param countyTable 实例对象
+     * @param townTable 实例对象
      * @return 实例对象
      */
-    CountyTable insert(CountyTable countyTable);
+    TownTable insert(TownTable townTable);
 
     /**
      * 修改数据
      *
-     * @param countyTable 实例对象
+     * @param townTable 实例对象
      * @return 实例对象
      */
-    CountyTable update(CountyTable countyTable);
+    TownTable update(TownTable townTable);
 
     /**
      * 通过主键删除数据
      *
-     * @param countyCode 主键
+     * @param townCode 主键
      * @return 是否成功
      */
-    boolean deleteById(String countyCode);
+    boolean deleteById(String townCode);
 
 }

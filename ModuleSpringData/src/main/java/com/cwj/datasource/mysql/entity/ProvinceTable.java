@@ -2,35 +2,31 @@ package com.cwj.datasource.mysql.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 
 import java.io.Serializable;
 
 /**
- * (CityTable)实体类
+ * (ProvinceTable)实体类
  *
  * @author makejava
- * @since 2021-08-02 11:04:41
+ * @since 2021-08-02 20:53:07
  */
-@Data
 @ApiModel
-public class CityTable implements Serializable {
-    private static final long serialVersionUID = 290522171112443512L;
+public class ProvinceTable implements Serializable {
+    private static final long serialVersionUID = 719595846326765965L;
 
     @ApiModelProperty(value = "数据插入id值")
     private Integer id;
 
-    @ApiModelProperty(value = "城市名称")
-    private String cityName;
+    @ApiModelProperty(value = "省名称")
+    private String provinceName;
 
-    @ApiModelProperty(value = "城市编码")
-    private String cityCode;
-
-    @ApiModelProperty(value = "城市所在省级编码")
+    @ApiModelProperty(value = "省编码")
     private String provinceCode;
 
     @ApiModelProperty(value = "行政区划等级")
     private String grade;
+
 
     public Integer getId() {
         return id;
@@ -40,20 +36,12 @@ public class CityTable implements Serializable {
         this.id = id;
     }
 
-    public String getCityName() {
-        return cityName;
+    public String getProvinceName() {
+        return provinceName;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
-
-    public String getCityCode() {
-        return cityCode;
-    }
-
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
     }
 
     public String getProvinceCode() {
@@ -71,4 +59,5 @@ public class CityTable implements Serializable {
     public void setGrade(String grade) {
         this.grade = grade;
     }
+
 }

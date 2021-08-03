@@ -2,35 +2,40 @@ package com.cwj.datasource.mysql.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import lombok.Data;
 
 import java.io.Serializable;
 
 /**
- * (CityTable)实体类
+ * (TownTable)实体类
  *
  * @author makejava
- * @since 2021-08-02 11:04:41
+ * @since 2021-08-02 20:55:17
  */
-@Data
 @ApiModel
-public class CityTable implements Serializable {
-    private static final long serialVersionUID = 290522171112443512L;
+public class TownTable implements Serializable {
+    private static final long serialVersionUID = -60955001638906866L;
 
     @ApiModelProperty(value = "数据插入id值")
     private Integer id;
 
-    @ApiModelProperty(value = "城市名称")
-    private String cityName;
+    @ApiModelProperty(value = "乡、镇名称")
+    private String townName;
 
-    @ApiModelProperty(value = "城市编码")
+    @ApiModelProperty(value = "乡、镇编码")
+    private String townCode;
+
+    @ApiModelProperty(value = "乡、镇所在区、县编码")
+    private String countyCode;
+
+    @ApiModelProperty(value = "乡、镇所在市级编码")
     private String cityCode;
 
-    @ApiModelProperty(value = "城市所在省级编码")
+    @ApiModelProperty(value = "乡、镇所在省级编码")
     private String provinceCode;
 
     @ApiModelProperty(value = "行政区划等级")
     private String grade;
+
 
     public Integer getId() {
         return id;
@@ -40,12 +45,28 @@ public class CityTable implements Serializable {
         this.id = id;
     }
 
-    public String getCityName() {
-        return cityName;
+    public String getTownName() {
+        return townName;
     }
 
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
+    public void setTownName(String townName) {
+        this.townName = townName;
+    }
+
+    public String getTownCode() {
+        return townCode;
+    }
+
+    public void setTownCode(String townCode) {
+        this.townCode = townCode;
+    }
+
+    public String getCountyCode() {
+        return countyCode;
+    }
+
+    public void setCountyCode(String countyCode) {
+        this.countyCode = countyCode;
     }
 
     public String getCityCode() {
@@ -71,4 +92,5 @@ public class CityTable implements Serializable {
     public void setGrade(String grade) {
         this.grade = grade;
     }
+
 }
