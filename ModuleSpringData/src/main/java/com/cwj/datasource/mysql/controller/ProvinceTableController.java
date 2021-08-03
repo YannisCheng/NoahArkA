@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @since 2021-08-02 20:53:07
  */
 @RestController
-@RequestMapping("provinceTable")
+@RequestMapping("/provinceTable")
 @Api(tags = "省province表操作 RestApi")
 public class ProvinceTableController {
     /**
@@ -34,7 +34,7 @@ public class ProvinceTableController {
      * @param provinceCode 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
+    @GetMapping("/selectOne")
     @ApiOperation(value = "byCode查询province表", notes = "通过code值查询")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "provinceCode", value = "province表中provinceCode值", required = true, dataType = "String",defaultValue = "45", paramType = "query")

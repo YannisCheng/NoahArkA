@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @since 2021-08-02 21:08:15
  */
 @RestController
-@RequestMapping("villageTable")
+@RequestMapping("/villageTable")
 @Api(tags = "村、社区Village表操作 RestApi")
 public class VillageTableController {
     /**
@@ -34,7 +34,7 @@ public class VillageTableController {
      * @param villageCode 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
+    @GetMapping("/selectOne")
     @ApiOperation(value = "byCode查询village表", notes = "通过code值查询")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "villageCode", value = "village表中villageCode值", required = true, dataType = "String",defaultValue = "110101002009", paramType = "query")

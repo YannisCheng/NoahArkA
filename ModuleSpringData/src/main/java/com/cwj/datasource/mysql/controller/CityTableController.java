@@ -41,9 +41,7 @@ public class CityTableController {
     // 方式3：Spring+Swagger 组合
     //public CityTable selectOne(@RequestParam(value = "cityId", defaultValue = "1301") @ApiParam(value = "city表中cityId值", required = true, type = "Integer") String cityId) {
     public CityTable selectOne(String cityCode) {
-        CityTable cityTable = this.cityTableService.queryById(cityCode);
-        System.out.println(cityTable.toString());
-        return cityTable;
+        return this.cityTableService.queryById(cityCode);
     }
 
 }

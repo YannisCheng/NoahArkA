@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @since 2021-08-02 20:38:19
  */
 @RestController
-@RequestMapping("countyTable")
+@RequestMapping("/countyTable")
 @Api(tags = "区、县county表操作 RestApi")
 public class CountyTableController {
     /**
@@ -34,7 +34,7 @@ public class CountyTableController {
      * @param countyCode 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
+    @GetMapping("/selectOne")
     @ApiOperation(value = "byCode查询county表", notes = "通过code值查询")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "countyCode", value = "county表中countyCode值", required = true, dataType = "String",defaultValue = "110108", paramType = "query")

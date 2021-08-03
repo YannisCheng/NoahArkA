@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @since 2021-08-02 20:55:28
  */
 @RestController
-@RequestMapping("townTable")
+@RequestMapping("/townTable")
 @Api(tags = "乡、镇Town表操作 RestApi")
 public class TownTableController {
     /**
@@ -34,7 +34,7 @@ public class TownTableController {
      * @param townCode 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
+    @GetMapping("/selectOne")
     @ApiOperation(value = "byCode查询town表", notes = "通过code值查询")
     @ApiImplicitParams(
             @ApiImplicitParam(name = "townCode", value = "province表中townCode值", required = true, dataType = "String",defaultValue = "110102020", paramType = "query")
