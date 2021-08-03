@@ -11,13 +11,15 @@
 
 Mybatis插件
 
-- [MybatisX 快速开发插件](https://mp.baomidou.com/guide/mybatisx-idea-plugin.html#%E5%8A%9F%E8%83%BD)
 - [插件主体(必看!)(since 3.4.0)](https://mp.baomidou.com/guide/interceptor.html#mybatisplusinterceptor)
 
 
 Mybatis-Plus库
 
 - [MyBatis-Plus库 用起来真的很舒服](https://www.cnblogs.com/l-y-h/archive/2020/05/09/12859477.html)
+- [MybatisX 快速开发插件](https://mp.baomidou.com/guide/mybatisx-idea-plugin.html#%E5%8A%9F%E8%83%BD)
+  - 功能：在interface中编写查询方法后，右键执行"generate mybatis sql" 在对应的mapper文件中自动生成sql语句
+  - SQL片段
   
 
 MybatisCodeHelper插件
