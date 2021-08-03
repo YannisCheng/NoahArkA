@@ -24,7 +24,7 @@ Mybatis-Plus库
 
 MybatisCodeHelper插件
 
-- [EasyCode MybatisCodeHelper插件快速入门](https://blog.csdn.net/qq_44881772/article/details/109127566)
+- [注意：基础使用。EasyCode MybatisCodeHelper插件快速入门](https://blog.csdn.net/qq_44881772/article/details/109127566)
   
 
 Mybatis学习：
