@@ -23,10 +23,15 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 @EnableSwaggerBootstrapUI
-public class SwaggerConfigureData {
+public class SwaggerConfigureCenter {
 
+    /**
+     * SpringBoot+各类数据库组 接口API
+     * @param environment 环境
+     * @return Docket
+     */
     @Bean
-    public Docket createRestApi(Environment environment){
+    public Docket createDataRestApi(Environment environment){
         // 设置要显示Swagger的环境
         //Profiles profiles = Profiles.of("data-dev");
         //if (environment.acceptsProfiles(profiles)) {
@@ -35,9 +40,9 @@ public class SwaggerConfigureData {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 // 设置Swagger2基本信息
-                .apiInfo(apiInfo())
+                .apiInfo(dataSourceApiInfo())
                 // 设置分组
-                .groupName("Spring Data API")
+                .groupName("DataSource API")
                 // 自动配置Swagger2
                 .enable(true)
                 .select()
@@ -48,11 +53,11 @@ public class SwaggerConfigureData {
                 .build();
     }
 
-    private ApiInfo apiInfo() {
+    private ApiInfo dataSourceApiInfo() {
         Contact contact = new Contact("YannisCheng", "", "cwj1714@163.com");
         return new ApiInfoBuilder()
-                .title("NoahArk API")
-                .description("SpringBoot数据源集合")
+                .title("NoahArk-DataSource REST API")
+                .description("SpringBoot与各类数据源 API集合")
                 .version("1.0")
                 .contact(contact)
                 .termsOfServiceUrl("")
@@ -60,32 +65,48 @@ public class SwaggerConfigureData {
     }
 
     /**
-     * 开发A组的接口
-     * @return
+     * SpringBoot+Hadoop 接口API
+     * @return Docket
      */
     @Bean
-    public Docket docketA(){
-        return  new Docket(DocumentationType.SWAGGER_2)
-                .groupName("A");
+    public Docket createHadoopRestApi(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("Hadoop API")
+                .apiInfo(hadoopApiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.cwj.hadoopproj"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo hadoopApiInfo() {
+        return new ApiInfoBuilder()
+                .contact(new Contact("YannisCheng","","cwj1714@163.com"))
+                .title("NoahArk-Hadoop REST API")
+                .description("SpringBoot与Hadoop生态 API集合")
+                .termsOfServiceUrl("")
+                .version("1.0")
+                .build();
     }
 
     /**
-     * 开发B组的接口
-     * @return
+     * Actuator组件：项目健康报告API集合
+     * @return Docket
      */
     @Bean
-    public Docket docketB(){
-        return  new Docket(DocumentationType.SWAGGER_2)
-                .groupName("B");
-    }
+    public Docket createNoahArkActuatorApi(){
 
-    /**
-     * 开发C组的接口
-     * @return
-     */
-    @Bean
-    public Docket docketC(){
-        return  new Docket(DocumentationType.SWAGGER_2)
-                .groupName("C");
+        ApiInfo apiInfo = new ApiInfoBuilder()
+                .title("NoahArk-Actuator REST API")
+                .description("SpringBoot中Actuator组件：项目健康报告API集合")
+                .build();
+
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("Actuator API")
+                .apiInfo(apiInfo)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("org.springframework.boot.actuate"))
+                .paths(PathSelectors.any())
+                .build();
     }
 }
