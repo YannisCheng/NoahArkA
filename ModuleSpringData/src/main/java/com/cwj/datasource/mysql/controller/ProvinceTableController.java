@@ -20,7 +20,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/provinceTable")
-@Api(tags = "省province表操作 RestApi")
+@Api(tags = "MySQL/省province表操作 RestApi", position = 1)
 public class ProvinceTableController {
     /**
      * 服务对象

@@ -20,7 +20,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/cityTable")
-@Api(tags = "城市city表操作 RestApi")
+@Api(tags = "MySQL/市city表操作 RestApi", position = 2)
 public class CityTableController {
     /**
      * 服务对象

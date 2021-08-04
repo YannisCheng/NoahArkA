@@ -20,7 +20,7 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/townTable")
-@Api(tags = "乡、镇Town表操作 RestApi")
+@Api(tags = "MySQL/乡、镇Town表操作 RestApi", position = 4)
 public class TownTableController {
     /**
      * 服务对象

@@ -77,6 +77,7 @@ JRebel
  - [Spring Boot整合swagger使用教程](https://www.cnblogs.com/progor/p/13297904.html)
  - [swagger2 @ApiImplicitParams](https://www.jianshu.com/p/3299877c5179?utm_campaign=maleskine&utm_content=note&utm_medium=seo_notes&utm_source=recommendation)
  - [Swagger UI简介-API分组](https://blog.csdn.net/zhanshixiang/article/details/104605292)
+ - [](https://github.com/swagger-api/swagger-ui/issues/5969)
 
 ## Maven库在线搜索
 
