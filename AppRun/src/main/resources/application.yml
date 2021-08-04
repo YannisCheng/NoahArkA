@@ -1,6 +1,10 @@
 spring:
   profiles:
     # 激活
-    active: common-dev,data-dev
-    # 引入 Common Module 模块中的application-student.yml 配置文件
-    include: student,common-dev-actuator,common-dev-server
+    active:
+    include:
+    - student
+    - common-dev-actuator
+    - common-dev-server
+    - common-dev-security
+    - data-dev

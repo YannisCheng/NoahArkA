@@ -62,8 +62,12 @@ subprojects {
         }
         annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
         // 监控系统健康情况的工具
         implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+        // 安全组件
+        implementation 'org.springframework.boot:spring-boot-starter-security'
 
         // Lombok 依赖处理
         //implementation 'org.projectlombok:lombok'

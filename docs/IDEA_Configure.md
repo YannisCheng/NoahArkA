@@ -90,3 +90,8 @@
 
 - [IDEA+Gradle构建Spring5源码阅读环境教程(优化构建速度)](https://zhuanlan.zhihu.com/p/149641082)
 - [IDEA导入Spring源码调试必看](https://blog.csdn.net/u013469325/article/details/106586497)
+
+## SpringBoot2.5版本差异
+
+- [InvalidConfigDataPropertyException: Property ‘spring.profiles.active‘ imported from...SpringBoot版本所致](https://blog.csdn.net/Be_insighted/article/details/119062722)
+- [SpringBoot中使用Spring profile进行配置【谨慎使用，参见SpringBoot 2.4.0发布文档】](https://www.cnblogs.com/fanqisoft/p/14048773.html)
