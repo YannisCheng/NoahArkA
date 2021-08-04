@@ -1,10 +1,4 @@
 spring:
   profiles:
-    # 激活
-    active:
-    include:
-    - student
-    - common-dev-actuator
-    - common-dev-server
-    - common-dev-security
-    - data-dev
+    # 激活 AppRun主工程中的application-dev.yml配置文件
+    active: dev

@@ -1,0 +1,14 @@
+
+
+spring:
+  application:
+    name: NoahArk-Dev
+  config:
+    # 使用Import将多个配置文件导入到同一个文件中
+    # Import 可以被视为在声明它们的文档下方插入的其他文档。
+    import:
+      - classpath:application-student.yml
+      - classpath:application-common-dev-actuator.yml
+      - classpath:application-common-dev-server.yml
+      - classpath:application-common-dev-security.yml
+      - classpath:application-data-dev.yml

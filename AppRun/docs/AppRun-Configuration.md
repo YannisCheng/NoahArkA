@@ -10,7 +10,7 @@
 - [springboot多个配置文件的配置 多个application.properties的配置 版本 sprigboot2.1](https://blog.csdn.net/hanpenghu/article/details/84071979)
 - [SpringBoot多环境配置详解(application-dev.yml、application-test.yml、application-prod.yml)](https://blog.csdn.net/Wing_kin666/article/details/111992800)
 
-### yml文件配置集中
+### yml文件配置集中：方式1
 
 ![工程依赖结构](/images/AppRun主工程依赖2个子Module中的配置文件.png)
  
@@ -26,7 +26,40 @@ spring:
 激活 Common 项目中的 application-common-dev.yml 与 ModuleSpringData项目中的 application-data=dev.yml 文件中的内容，将这2个文件中的配置一起集中到application.yml文件中。
 由此实现了 主工程 和 多个子依赖项目 的配置统一。
 
-### Java类中功能（容器）的配置集中
+### yml文件配置集中：方式2-import
+
+![Import的使用](/images/Import的使用.png)
+
+实现方式： spring.config.import.classpath:
+
+示例：
+application-dev.yml文件配置：
+通过import将其他Module中的配置文件一起导入到该文件中，这样分散在各个文件中的配置内容就被集中到了该文件中。
+
+```yaml
+spring:
+  config:
+    # 使用Import将多个配置文件导入到同一个文件中
+    # Import 可以被视为在声明它们的文档下方插入的其他文档。
+    import:
+      - classpath:application-student.yml
+      - classpath:application-common-dev-actuator.yml
+      - classpath:application-common-dev-server.yml
+      - classpath:application-common-dev-security.yml
+      - classpath:application-data-dev.yml
+```
+
+application.yml文件配置：
+激活 application-dev.yml 文件配置。
+
+```yaml
+spring:
+  profiles:
+    active: dev
+```
+
+
+### Java类中功能（容器）的配置集中-@Import
 在 AppRun 主工程的 Application.java 文件中，添加了：
 
 ```java

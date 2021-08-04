@@ -95,3 +95,4 @@
 
 - [InvalidConfigDataPropertyException: Property ‘spring.profiles.active‘ imported from...SpringBoot版本所致](https://blog.csdn.net/Be_insighted/article/details/119062722)
 - [SpringBoot中使用Spring profile进行配置【谨慎使用，参见SpringBoot 2.4.0发布文档】](https://www.cnblogs.com/fanqisoft/p/14048773.html)
+- [抢先目睹：SpringBoot2.4配置文件加载机制大变化](https://zhuanlan.zhihu.com/p/192589458)

@@ -1,10 +1,8 @@
 package com.cwj.datasource.elasticsearch;
 
-import org.apache.http.HttpHost;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.CreateIndexRequest;
 import org.elasticsearch.client.indices.CreateIndexResponse;
@@ -18,12 +16,12 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * ElastiicJavaMain 通过ElasticSearch的Java API向ES中写入数据
+ * ElasticJavaMain 通过ElasticSearch的Java API向ES中写入数据
  *
  * @author ChengWenjia  cwj1714@163.com
  * @date 2021-07-16 16:34
  */
-public class ElastiicJavaMain {
+public class ElasticJavaMain {
     /*
      * 创建日志保存在文件工具类
      */
@@ -39,16 +37,17 @@ public class ElastiicJavaMain {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        // 创建客户端
-        RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(new HttpHost("had-dn1", 9200, "http")));
-
-        // 创建索引
-        forEachDir(client);
-
-        // 关闭客户端
-        client.close();
-    }
+    // --- 2021-08-04 16:45:08 注释掉ElasticSearch依赖 ---
+    //public static void main(String[] args) throws IOException {
+    //    // 创建客户端
+    //    RestHighLevelClient client = new RestHighLevelClient(RestClient.builder(new HttpHost("had-dn1", 9200, "http")));
+    //
+    //    // 创建索引
+    //    forEachDir(client);
+    //
+    //    // 关闭客户端
+    //    client.close();
+    //}
 
     /**
      * 遍历待处理的文件

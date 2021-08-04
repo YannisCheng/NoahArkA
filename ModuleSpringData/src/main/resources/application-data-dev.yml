@@ -11,9 +11,9 @@ spring:
   # spring.data.elasticsearch.cluster-name=my-cluster
   # spring.data.elasticsearch.cluster-nodes=127.0.0.1:9300
   # 以上2个配置项已经过时
-  elasticsearch:
-    rest:
-      uris: http://had-dn1:9200
+#  elasticsearch:
+#    rest:
+#      uris: http://had-dn1:9200
 
 # MyBatis配置
 mybatis-plus:
