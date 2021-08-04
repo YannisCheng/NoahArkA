@@ -1,0 +1,19 @@
+# 自定义 application-student.yml 配置文件，
+# 该文件需要被主工程的 application.yml 文件引入
+# 该文件需要在注解的配合之下映射为Java的Bean文件
+# -----
+# 该自定义配置文件中的数据类型格式丰富涵盖了基本数据类型、组合数据类型、引用数据类型
+student:
+  name: zg
+  isfemale: true
+  birth: 2019/04/12
+  # list数据结构
+  teachers: [zhang teacher,wang teacher]
+  # map数据结构
+  grade: {English: 87, Math: 100}
+  pets:
+    spices: Dog
+    # 对象调用
+    spices2: ${student.teachers[1]}-Dog
+    age: 1
+    age2: ${random.int}

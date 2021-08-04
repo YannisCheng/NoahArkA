@@ -1,6 +1,7 @@
 package com.cwj.common.configuration;
 
 import com.github.xiaoymin.swaggerbootstrapui.annotations.EnableSwaggerBootstrapUI;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -22,7 +23,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 @EnableSwaggerBootstrapUI
-public class SwaggerConfigure {
+public class SwaggerConfigureData {
+
+    @Bean
     public Docket createRestApi(Environment environment){
         // 设置要显示Swagger的环境
         //Profiles profiles = Profiles.of("data-dev");
@@ -54,5 +57,35 @@ public class SwaggerConfigure {
                 .contact(contact)
                 .termsOfServiceUrl("")
                 .build();
+    }
+
+    /**
+     * 开发A组的接口
+     * @return
+     */
+    @Bean
+    public Docket docketA(){
+        return  new Docket(DocumentationType.SWAGGER_2)
+                .groupName("A");
+    }
+
+    /**
+     * 开发B组的接口
+     * @return
+     */
+    @Bean
+    public Docket docketB(){
+        return  new Docket(DocumentationType.SWAGGER_2)
+                .groupName("B");
+    }
+
+    /**
+     * 开发C组的接口
+     * @return
+     */
+    @Bean
+    public Docket docketC(){
+        return  new Docket(DocumentationType.SWAGGER_2)
+                .groupName("C");
     }
 }

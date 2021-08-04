@@ -1,5 +1,6 @@
 package com.cwj.datasource.mysql.controller;
 
+import com.cwj.common.test.CommonMainTest;
 import com.cwj.datasource.mysql.entity.CityTable;
 import com.cwj.datasource.mysql.service.CityTableService;
 import io.swagger.annotations.Api;
@@ -28,6 +29,12 @@ public class CityTableController {
     private CityTableService cityTableService;
 
     /**
+     * Common Module 中的测试入口主类
+     */
+    @Resource
+    CommonMainTest commonMainTest;
+
+    /**
      * 通过主键查询单条数据
      *
      * @param cityCode 主键
@@ -46,7 +53,10 @@ public class CityTableController {
     //public CityTable selectOne(@RequestParam(value = "cityId", defaultValue = "1301") @ApiParam(value = "city表中cityId值", required = true, type = "Integer") String cityId) {
     public CityTable selectOneByCityCode(String cityCode) {
         CityTable cityTable = this.cityTableService.queryById(cityCode);
+        // 验证 @Data 注解功能
         System.out.println(cityTable.toString());
+        // 验证 Common Module中的yml配置文件映射的CommonConfiguration java文件类
+        commonMainTest.showCommonConfiguration();
         return cityTable;
     }
 

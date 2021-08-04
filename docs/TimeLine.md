@@ -95,3 +95,15 @@ dependencies {
 
 - **2021-08-02 18:31:28 周一**
 
+* [x] 添加mybatis-plus依赖，使用mybatis插件生成代码，基本完成area_databaes库的服务类生成。
+
+- **2021-08-03 22:31:28 周二**
+
+* [x] 处理完毕Lombok插件@Data注解无效问题
+* [x] yml文件配置集中
+* [x] Java类中功能（容器）的配置集中，如：@Import(value = {CommonApplication.class, DataSourceApplication.class})
+
+- **2021-08-04 11:01:21 周三**
+
+* [x] 添加：自定义.yml配置文件映射为Java的Bean类
+* [x] 实现基本的Swagger2个API分组功能
