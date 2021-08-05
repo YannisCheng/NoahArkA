@@ -1,7 +1,7 @@
 # \u670D\u52A1\u914D\u7F6E
 server:
   # \u7AEF\u53E3
-  port: 8088
+  port: 8089
   servlet:
     # basePath
     context-path: /NoahArk

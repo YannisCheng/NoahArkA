@@ -1,5 +1,7 @@
 # 关于Spring Framework的概念理解 — Bean管理
 
+- [SpringBoot中的Bean](https://www.cnblogs.com/gongchenglion/articles/11674598.html)
+
 ## 1. 基本概念
 
 

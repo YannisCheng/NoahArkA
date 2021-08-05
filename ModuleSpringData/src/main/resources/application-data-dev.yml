@@ -1,11 +1,36 @@
 spring:
+
+  # MySQL数据源配置
   datasource:
-    # MySQL数据源配置
     # MySQL8之后需要指定时区和安全连接方式
     url: jdbc:mysql://localhost:3306/area_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
     password: Admin_1126
     username: root
     driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # Redis
+  # Redis配置分为一台服务器上1个redis服务和多个redis服务之分
+  # Lettuce的配置是通用的
+  redis:
+    # springboot 1.5.x版本的默认的Redis客户端是 Jedis实现的；
+    # springboot 2.x版本中默认客户端是用 lettuce实现的，使用Netty NIO框架。
+    lettuce:
+      # 使用连接池必须添加 org.apache.commons:commons-pool2 依赖
+      pool:
+        # 连接池最大链接数默认值为8
+        max-active: 8
+        # 连接池最大阻塞时间（使用负值表示没有限制）默认为-1
+        max-wait: -1
+        # 连接池中的最大空闲连接数 默认为8
+        max-idle: 8
+        # 连接池中的最小空闲连接数 默认为0
+        min-idle: 8
+    host: had-dn1
+    port: 6379
+    # 当前使用的Redis数据库索引，默认为0
+    database: 0
+
+
 
   # ElasticSearch 数据源配置
   # spring.data.elasticsearch.cluster-name=my-cluster

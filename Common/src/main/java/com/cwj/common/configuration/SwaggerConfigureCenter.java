@@ -47,7 +47,7 @@ public class SwaggerConfigureCenter {
                 .enable(true)
                 .select()
                 // 扫描接口位置：配置Swagger2接口方式：设置要扫描的包路径
-                .apis(RequestHandlerSelectors.basePackage("com.cwj.datasource.mysql"))
+                .apis(RequestHandlerSelectors.basePackage("com.cwj.datasource"))
                 // 路径扫描：全部扫描
                 .paths(PathSelectors.any())
                 .build();

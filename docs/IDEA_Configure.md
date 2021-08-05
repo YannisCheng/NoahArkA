@@ -2,8 +2,14 @@
 
 - [idea集成JRebel](file:////Users/yannischeng/Documents/All_Collection/Other/Server端概念相关.graffle)
 
-## 内存大小修改
+## 内存
+
+### 大小修改
  路径：`/Users/yannischeng/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/211.7142.45/IntelliJ IDEA.app.vmoptions`
+
+### 内存过大、大小限制
+
+[intellij内存占用很大（16G以上），而且时不时卡顿。](https://segmentfault.com/q/1010000012306606)
 
 ## 1. 创建工作Flow
 
