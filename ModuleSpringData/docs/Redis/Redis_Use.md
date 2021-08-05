@@ -19,3 +19,16 @@ API操作：
 
 
 数据恢复：
+
+
+
+问题总结：
+
+问题1：
+2021-08-05 19:39:21.146 ERROR 13654 --- [nio-8089-exec-4] o.a.c.c.C.[.[.[.[dispatcherServlet]      : Servlet.service() for servlet [dispatcherServlet] in context with path [/NoahArk] threw exception [Request processing failed; nested exception is org.springframework.data.redis.serializer.SerializationException: Could not read JSON: Invalid UTF-8 start byte 0x9b
+at [Source: (byte[])"曹操"; line: 1, column: 3]; nested exception is com.fasterxml.jackson.core.JsonParseException: Invalid UTF-8 start byte 0x9b
+at [Source: (byte[])"曹操"; line: 1, column: 3]] with root cause
+
+
+问题2：
+No primary or single public constructor found for interface java.util.List - and no default constructor found either] with root cause
