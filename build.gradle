@@ -37,11 +37,11 @@ subprojects {
         enabled = true
     }
 
-    // 创建一个普通的jar
+    /*// 创建一个普通的jar
     jar {
         // true：开启；false：禁用
         enabled = false
-    }
+    }*/
 
     repositories {
         mavenCentral()

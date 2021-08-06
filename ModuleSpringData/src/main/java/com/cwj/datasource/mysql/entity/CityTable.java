@@ -3,8 +3,6 @@ package com.cwj.datasource.mysql.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 
@@ -25,8 +23,6 @@ public class CityTable implements Serializable {
     @ApiModelProperty(value = "城市名称")
     private String cityName;
 
-    @Getter
-    @Setter
     @ApiModelProperty(value = "城市编码")
     private String cityCode;
 

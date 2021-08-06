@@ -7,6 +7,10 @@ repositories {
 }
 
 version = '0.0.1-SNAPSHOT'
+bootJar {
+    // true：开启；false：禁用
+    enabled = true
+}
 
 dependencies {
 

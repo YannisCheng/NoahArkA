@@ -6,7 +6,10 @@
 //application {
 //    mainClassName = "com.father.Main"
 //}
-
+bootJar {
+    // true：开启；false：禁用
+    enabled = true
+}
 
 dependencies {
     // 引用 Common/ModuleSpringData 组件
