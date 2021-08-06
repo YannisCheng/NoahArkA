@@ -50,6 +50,7 @@ Spring Boot+ SpringWeb Flux + Spring Cloud
 ### 3. 延伸
 
 - [资深程序员建议放弃 JSP 吧，否则你可能“无路可走”！](https://blog.csdn.net/afreon/article/details/111399465)
+- [从Java基础、JavaWeb基础到常用的框架再到面试题都有完整的教程，几乎涵盖了Java后端必备的知识点](https://github.com/ZhongFuCheng3y/3y)
 
 Spring Boot不推荐使用jsp，强行使用jsp脱离了Spring Boot易配置、快速开发的初衷。 
 Spring推荐 前后分离 的开发方式，不推荐使用任何服务器端模板引擎。
