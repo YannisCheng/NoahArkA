@@ -14,13 +14,14 @@ import java.io.IOException;
 */
 public class AnnotaMainTest {
 
-    public static void main(String[] args) throws IOException {
-        /*TargetAnnotaClass annotaClass = new TargetAnnotaClass();
+    // 2021-08-06 10:30:45 封闭
+    /*public static void main(String[] args) throws IOException {
+        *//*TargetAnnotaClass annotaClass = new TargetAnnotaClass();
         annotaClass.printAppleColor();
         annotaClass.printOrangeColor();
-        annotaClass.printBananaColor(AnnotaFruitColor.Color.BULE);*/
+        annotaClass.printBananaColor(AnnotaFruitColor.Color.BULE);*//*
         parsingClass();
-    }
+    }*/
 
     public static void parsingClass() throws IOException {
         ClassWriter classWriter = new ClassWriter(0);

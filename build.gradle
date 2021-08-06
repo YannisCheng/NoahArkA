@@ -19,6 +19,7 @@ subprojects {
     // Spring 必加的2个依赖
     apply plugin: 'org.springframework.boot'
     // 使用 io.spring.dependency-management（依赖管理） 插件或 Gradle 的原生 bom，支持管理 Spring Boot 应用程序中的依赖项
+    // Spring Boot插件将自动从使用的Spring Boot版本导入spring-boot-dependencies，你可以省略bom中声明依赖的版本号。
     apply plugin: 'io.spring.dependency-management'
 
     sourceCompatibility = '1.8'
@@ -33,13 +34,13 @@ subprojects {
     // 将会创建一个可执行的jar，需要一个main()
     bootJar {
         // true：开启；false：禁用
-        enabled = false
+        enabled = true
     }
 
     // 创建一个普通的jar
     jar {
         // true：开启；false：禁用
-        enabled = true
+        enabled = false
     }
 
     repositories {

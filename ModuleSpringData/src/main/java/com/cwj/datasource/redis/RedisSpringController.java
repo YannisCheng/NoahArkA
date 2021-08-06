@@ -110,7 +110,7 @@ public class RedisSpringController {
             @ApiImplicitParam(name = "key", value = "key", required = true, dataType = "String", defaultValue = "三国志", paramType = "query"),
             @ApiImplicitParam(name = "values", value = "多个字符串值", required = true, dataType = "String", defaultValue = "刘备2,曹操2,孙权2,诸葛亮2,司马懿2,鲁肃2", paramType = "query")
     })
-    public long listRightAllStrSet(String key, String... values) {
+    public long listRightAllStrSet(String key, Object... values) {
         return redisTemplate.opsForList().rightPushAll(key, values);
     }
 
@@ -205,14 +205,14 @@ public class RedisSpringController {
 
     @GetMapping("/setSet")
     @ApiOperation(value = "set 增", notes = "将数据放入set缓存")
-    public long setSet(@RequestParam(defaultValue = "蜀国") String key, @RequestParam(defaultValue = "刘备,关羽,张飞,诸葛亮,姜维,马谡,魏延") String... values) {
+    public long setSet(@RequestParam(defaultValue = "蜀国") String key, @RequestParam(defaultValue = "刘备,关羽,张飞,诸葛亮,姜维,马谡,魏延") Object... values) {
         return redisTemplate.opsForSet().add(key, values);
     }
 
 
     @GetMapping("/setDelKeyWithValue")
     @ApiOperation(value = "set 删key->value", notes = "从key set 中删除给定values并返回已删除元素的数量")
-    public long setDel(@RequestParam(defaultValue = "蜀国") String key, @RequestParam(defaultValue = "刘备,关羽,张飞,诸葛亮,姜维,马谡,魏延") String... values) {
+    public long setDel(@RequestParam(defaultValue = "蜀国") String key, @RequestParam(defaultValue = "刘备,关羽,张飞,诸葛亮,姜维,马谡,魏延") Object... values) {
         return redisTemplate.opsForSet().remove(key, values);
     }
 
@@ -231,7 +231,7 @@ public class RedisSpringController {
 
     @GetMapping("/zRemove")
     @ApiOperation(value = "zSet 删", notes = "从排序集中删除values 。 返回已删除元素的数量")
-    public Long zRemove(@RequestParam(defaultValue = "魏国") String key, @RequestParam(defaultValue = "张文远") String... values) {
+    public Long zRemove(@RequestParam(defaultValue = "魏国") String key, @RequestParam(defaultValue = "张文远") Object... values) {
         return redisTemplate.opsForZSet().remove(key, values);
     }
 

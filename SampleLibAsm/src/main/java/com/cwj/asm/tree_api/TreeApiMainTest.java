@@ -16,17 +16,19 @@ import java.io.PrintWriter;
 import static org.objectweb.asm.Opcodes.ACC_PUBLIC;
 
 public class TreeApiMainTest {
-    public static void main(String[] args) throws ClassNotFoundException, IOException {
+
+    // 2021-08-06 10:29:40 封闭
+    /*public static void main(String[] args) throws ClassNotFoundException, IOException {
         // 加载ASM Tree API 生成的class文件
-        /*TreeApiClassLoader loader = new TreeApiClassLoader();
-        loader.loadClass("ComparableTreeApi");*/
+        *//*TreeApiClassLoader loader = new TreeApiClassLoader();
+        loader.loadClass("ComparableTreeApi");*//*
 
         //treeApiRemoveMethod();
         //treeApiAddField();
         //treeApiCopy();
         treeApiCopy2();
 
-    }
+    }*/
 
     /**
      * 同样是执行了一个 "class文件复制" 的工作，不同之处在于：将ClassWriter置于ClassNode#visitEnd()中
