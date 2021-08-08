@@ -2,6 +2,11 @@
 
 `Genesis` 意为 `创世纪`，是 `《圣经-旧约》`中的第一章。
 
+## 在线文档
+
+[在线文档](https://docs.qq.com/desktop/mydoc/folder/cRBZgJrvbBhZ?_t=1628428684002)
+
+
 ## 索引
 
 架构组合：
