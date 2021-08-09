@@ -16,7 +16,7 @@
 
 #### @SpringBootApplication
 
-![SpringBootApplication注解功能图解](/images/191601240_9_20200529102144347.jpg)
+![SpringBootApplication注解功能图解](/images/spring_framework/191601240_9_20200529102144347.jpg)
 
 用于主类。其包含以下3个注解(Spring Boot 核心注解)功能：
 

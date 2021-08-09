@@ -22,7 +22,7 @@
 
  `IoC思想`基于`IoC容器`，IoC容器 **底层** 就是 `工厂模式`
 
- ![](/images/spring_ioc.png)
+ ![](/images/spring_framework/spring_ioc.png)
 
 
 - **Spring中IoC容器实现的2种方式(接口)：**
@@ -165,7 +165,7 @@ Bean管理有2个操作：
 
   文件路径结构：
   
- ![](/images/file_route.png)
+ ![](/images/spring_framework/file_route.png)
 
 
 #### 3.2.3 属性注入 — 集合注入
@@ -509,7 +509,6 @@ AfterInitialization
 **注解管理需要一个配置属性：`component-scan` 设置扫描范围。**
 
 ```xml
-
 <context:component-scan base-package="com.cwj.genesis.bean_manager.annotation"/>
 ```
 

@@ -29,7 +29,7 @@ Netty参考：
 - [Netty 学习和进阶策略](https://www.infoq.cn/article/iRfKjNuxYGSVgm5CtIpr)
 
 
-![netty](/images/netty.png)
+![netty](/images/IO/netty.png)
 
 ## 概念
 
@@ -56,7 +56,7 @@ Netty参考：
 
  - （JDK）BIO线程模型
 
- ![BIO图](/images/BIO-socket.png)
+ ![BIO图](/images/IO/BIO-socket.png)
 
 要管理多个并发的客户端就需要为每个客户端Socket创建一个新的Thread。
 
@@ -68,7 +68,7 @@ Netty参考：
 
  - （JDK 1.4） - NIO线程模型
 
- ![NIO图](/images/NIO-Socket.png)
+ ![NIO图](/images/IO/NIO-Socket.png)
 
 NIO特点：
 
