@@ -2,6 +2,7 @@ package com.cwj.scriptlib.restservice;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 /**
  * com.cwj.scriptlib.restservice
@@ -10,6 +11,7 @@ import io.swagger.annotations.ApiModelProperty;
  * @date 2021-07-30 14:43
  */
 @ApiModel(value = "Greeting", description = "这是返回值bean的描述信息")
+@Data
 public class Greeting {
     @ApiModelProperty(value = "调用次数", required = true,example = "1",dataType = "long")
     private final long id;
@@ -19,13 +21,5 @@ public class Greeting {
     public Greeting(long id, String content) {
         this.id = id;
         this.content = content;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
     }
 }

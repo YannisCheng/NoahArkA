@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.reactivestreams.Processor</OriginalElement>
+  <nodes>
+    <node x="711.0" y="-30.0">reactor.core.publisher.Flux</node>
+    <node x="188.0" y="-170.0">reactor.core.CoreSubscriber</node>
+    <node x="25.0" y="-170.0">reactor.core.Disposable</node>
+    <node x="811.5" y="-280.0">org.reactivestreams.Publisher</node>
+    <node x="416.0" y="-170.0">org.reactivestreams.Subscription</node>
+    <node x="590.0" y="-170.0">org.reactivestreams.Processor</node>
+    <node x="794.0" y="-170.0">reactor.core.CorePublisher</node>
+    <node x="558.0" y="-30.0">reactor.core.publisher.Mono</node>
+    <node x="205.5" y="-280.0">org.reactivestreams.Subscriber</node>
+    <node x="187.5" y="-30.0">reactor.core.publisher.BaseSubscriber</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="reactor.core.publisher.Flux" target="reactor.core.CorePublisher" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="767.0" y="-110.0" />
+      <point x="887.0" y="-110.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="reactor.core.CoreSubscriber" target="org.reactivestreams.Subscriber" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="reactor.core.CorePublisher" target="org.reactivestreams.Publisher" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="reactor.core.publisher.BaseSubscriber" target="org.reactivestreams.Subscription" relationship="REALIZATION">
+      <point x="66.33333333333334" y="-15.0" />
+      <point x="353.33333333333337" y="-60.0" />
+      <point x="488.0" y="-60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="reactor.core.publisher.Mono" target="reactor.core.CorePublisher" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="619.5" y="-60.0" />
+      <point x="767.0" y="-60.0" />
+      <point x="767.0" y="-110.0" />
+      <point x="887.0" y="-110.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="reactor.core.publisher.BaseSubscriber" target="reactor.core.CoreSubscriber" relationship="REALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="reactor.core.publisher.BaseSubscriber" target="reactor.core.Disposable" relationship="REALIZATION">
+      <point x="-66.33333333333334" y="-15.0" />
+      <point x="220.66666666666666" y="-60.0" />
+      <point x="91.5" y="-60.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.reactivestreams.Processor" target="org.reactivestreams.Publisher" relationship="INTERFACE_GENERALIZATION">
+      <point x="43.5" y="-15.0" />
+      <point x="720.5" y="-200.0" />
+      <point x="887.0" y="-200.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.reactivestreams.Processor" target="org.reactivestreams.Subscriber" relationship="INTERFACE_GENERALIZATION">
+      <point x="-43.5" y="-15.0" />
+      <point x="633.5" y="-200.0" />
+      <point x="287.0" y="-200.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="0.9858615013709209" showDependencies="false" x="427.78490043592" y="-79.38897984964717" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

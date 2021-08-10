@@ -88,6 +88,11 @@ subprojects {
         // 使用方式：http://localhost:8082/doc.html
         implementation group: 'com.github.xiaoymin', name: 'swagger-bootstrap-ui', version: '1.9.6'
 
+
+        // Spring WebFlux 组建依赖
+        implementation 'org.springframework.boot:spring-boot-starter-webflux'
+        testImplementation 'io.projectreactor:reactor-test'
+
     }
 
     test {

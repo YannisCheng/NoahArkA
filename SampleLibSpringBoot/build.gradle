@@ -1,4 +1,6 @@
 
 dependencies {
-
+    // 添加 Reactor-Core 组件
+    implementation platform('io.projectreactor:reactor-bom:2020.0.9')
+    implementation 'io.projectreactor:reactor-core'
 }
