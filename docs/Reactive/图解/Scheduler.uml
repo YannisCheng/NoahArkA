@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>reactor.core.scheduler.Scheduler</OriginalElement>
+  <nodes>
+    <node x="929.7241379310343" y="0.0">reactor.core.Disposable</node>
+    <node x="2820.5" y="530.0">reactor.core.scheduler.DelegateServiceScheduler</node>
+    <node x="21.5" y="618.0">reactor.core.scheduler.ImmediateScheduler</node>
+    <node x="2225.5" y="530.0">reactor.core.scheduler.SingleScheduler</node>
+    <node x="274.5" y="376.0">reactor.core.scheduler.BoundedElasticScheduler</node>
+    <node x="1170.5" y="442.0">reactor.core.scheduler.ElasticScheduler</node>
+    <node x="1266.060344827586" y="1152.0">reactor.core.scheduler.Schedulers</node>
+    <node x="918.4999999999999" y="596.0">reactor.core.scheduler.ExecutorScheduler</node>
+    <node x="3377.060344827586" y="127.0">reactor.core.scheduler.Scheduler</node>
+    <node x="1613.5" y="475.0">reactor.core.scheduler.ParallelScheduler</node>
+    <node x="1447.560344827586" y="2934.0">reactor.core.scheduler.SingleWorkerScheduler</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="reactor.core.scheduler.Scheduler" target="reactor.core.Disposable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-93.5" />
+      <point x="3588.560344827586" y="97.0" />
+      <point x="1072.2241379310344" y="97.0" />
+      <point x="57.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ExecutorScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="-58.0" y="-116.0" />
+      <point x="976.4999999999999" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.BoundedElasticScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="156.0" y="-336.0" />
+      <point x="742.5" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.BoundedElasticScheduler" relationship="DEPENDENCY">
+      <point x="-229.25" y="-864.0" />
+      <point x="1429.810344827586" y="1110.0" />
+      <point x="430.5" y="1110.0" />
+      <point x="-156.0" y="336.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.BoundedElasticScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="156.0" y="336.0" />
+      <point x="742.5" y="1070.0" />
+      <point x="1363.685344827586" y="1070.0" />
+      <point x="1363.685344827586" y="1130.0" />
+      <point x="1560.810344827586" y="1130.0" />
+      <point x="-98.25" y="-864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.DelegateServiceScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="-156.75" y="-182.0" />
+      <point x="2977.25" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.ExecutorScheduler" relationship="CREATE">
+      <point x="-163.75" y="-864.0" />
+      <point x="1495.310344827586" y="1100.0" />
+      <point x="976.4999999999999" y="1100.0" />
+      <point x="-58.0" y="116.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.ParallelScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="148.0" y="-237.0" />
+      <point x="2057.5" y="345.0" />
+      <point x="1962.7255747126435" y="345.0" />
+      <point x="1962.7255747126435" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.DelegateServiceScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="-156.75" y="182.0" />
+      <point x="2977.25" y="1070.0" />
+      <point x="1363.685344827586" y="1070.0" />
+      <point x="1363.685344827586" y="1130.0" />
+      <point x="1560.810344827586" y="1130.0" />
+      <point x="-98.25" y="-864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.SingleWorkerScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="52.875" y="-127.0" />
+      <point x="1711.935344827586" y="2902.0" />
+      <point x="1855.560344827586" y="2902.0" />
+      <point x="196.5" y="864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.SingleWorkerScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="158.625" y="-127.0" />
+      <point x="1817.685344827586" y="2912.0" />
+      <point x="3494.25" y="2912.0" />
+      <point x="3494.25" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ParallelScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="-148.0" y="-237.0" />
+      <point x="1761.5" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ExecutorScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="58.0" y="116.0" />
+      <point x="1092.5" y="1070.0" />
+      <point x="1363.685344827586" y="1070.0" />
+      <point x="1363.685344827586" y="1130.0" />
+      <point x="1560.810344827586" y="1130.0" />
+      <point x="-98.25" y="-864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.BoundedElasticScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="-156.0" y="-336.0" />
+      <point x="430.5" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.SingleScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="-143.75" y="-182.0" />
+      <point x="2369.25" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ElasticScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="-105.75" y="-270.0" />
+      <point x="1276.25" y="345.0" />
+      <point x="1376.75" y="345.0" />
+      <point x="1376.75" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.SingleScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="143.75" y="-182.0" />
+      <point x="2656.75" y="345.0" />
+      <point x="2847.4755747126437" y="345.0" />
+      <point x="2847.4755747126437" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.ImmediateScheduler" relationship="DEPENDENCY">
+      <point x="-294.75" y="-864.0" />
+      <point x="1364.310344827586" y="1120.0" />
+      <point x="79.75" y="1120.0" />
+      <point x="-58.25" y="94.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.ImmediateScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="58.25" y="94.0" />
+      <point x="196.25" y="1070.0" />
+      <point x="1363.685344827586" y="1070.0" />
+      <point x="1363.685344827586" y="1130.0" />
+      <point x="1560.810344827586" y="1130.0" />
+      <point x="-98.25" y="-864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.ElasticScheduler" relationship="DEPENDENCY">
+      <point x="-32.75" y="-864.0" />
+      <point x="1626.310344827586" y="1090.0" />
+      <point x="1487.75" y="1090.0" />
+      <point x="105.75" y="270.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.ElasticScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="-105.75" y="270.0" />
+      <point x="1276.25" y="1070.0" />
+      <point x="1363.685344827586" y="1070.0" />
+      <point x="1363.685344827586" y="1130.0" />
+      <point x="1560.810344827586" y="1130.0" />
+      <point x="-98.25" y="-864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.ImmediateScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="0.0" y="-94.0" />
+      <point x="138.0" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.Scheduler" relationship="DEPENDENCY">
+      <point x="229.25" y="-864.0" />
+      <point x="1888.310344827586" y="1110.0" />
+      <point x="3648.060344827586" y="1110.0" />
+      <point x="3648.060344827586" y="355.0" />
+      <point x="3588.560344827586" y="355.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.Scheduler" relationship="TO_ONE">
+      <point x="360.25" y="-864.0" />
+      <point x="2019.310344827586" y="1130.0" />
+      <point x="3670.060344827586" y="1130.0" />
+      <point x="3670.060344827586" y="355.0" />
+      <point x="3664.560344827586" y="355.0" />
+      <point x="3664.560344827586" y="345.0" />
+      <point x="3729.560344827586" y="345.0" />
+      <point x="141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="-360.25" y="-864.0" />
+      <point x="1298.810344827586" y="1130.0" />
+      <point x="11.0" y="1130.0" />
+      <point x="11.0" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ElasticScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="105.75" y="-270.0" />
+      <point x="1487.75" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.Scheduler" relationship="TO_MANY">
+      <point x="294.75" y="-864.0" />
+      <point x="1953.810344827586" y="1120.0" />
+      <point x="3659.060344827586" y="1120.0" />
+      <point x="3659.060344827586" y="355.0" />
+      <point x="3664.560344827586" y="355.0" />
+      <point x="3664.560344827586" y="345.0" />
+      <point x="3729.560344827586" y="345.0" />
+      <point x="141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ExecutorScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="58.0" y="-116.0" />
+      <point x="1092.5" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ImmediateScheduler" target="reactor.core.scheduler.Scheduler" relationship="REALIZATION">
+      <point x="77.66666666666652" y="-94.0" />
+      <point x="215.66666666666652" y="355.0" />
+      <point x="1952.2255747126435" y="355.0" />
+      <point x="1952.2255747126435" y="335.0" />
+      <point x="3447.560344827586" y="335.0" />
+      <point x="-141.0" y="93.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.DelegateServiceScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="156.75" y="-182.0" />
+      <point x="3290.75" y="345.0" />
+      <point x="3366.560344827586" y="345.0" />
+      <point x="3366.560344827586" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ImmediateScheduler" target="reactor.core.Disposable" relationship="TO_ONE">
+      <point x="-77.66666666666652" y="-94.0" />
+      <point x="60.333333333333485" y="355.0" />
+      <point x="0.0" y="355.0" />
+      <point x="0.0" y="97.0" />
+      <point x="958.2241379310343" y="97.0" />
+      <point x="-57.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.ParallelScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="-148.0" y="237.0" />
+      <point x="1761.5" y="1070.0" />
+      <point x="1363.685344827586" y="1070.0" />
+      <point x="1363.685344827586" y="1130.0" />
+      <point x="1560.810344827586" y="1130.0" />
+      <point x="-98.25" y="-864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.ParallelScheduler" relationship="DEPENDENCY">
+      <point x="32.75" y="-864.0" />
+      <point x="1691.810344827586" y="1080.0" />
+      <point x="2057.5" y="1080.0" />
+      <point x="148.0" y="237.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.SingleWorkerScheduler" target="reactor.core.Disposable" relationship="DEPENDENCY">
+      <point x="-158.625" y="-127.0" />
+      <point x="1500.435344827586" y="2912.0" />
+      <point x="11.0" y="2912.0" />
+      <point x="11.0" y="107.0" />
+      <point x="1015.2241379310343" y="107.0" />
+      <point x="0.0" y="38.5" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.SingleWorkerScheduler" relationship="CREATE">
+      <point x="-196.5" y="864.0" />
+      <point x="1462.560344827586" y="2902.0" />
+      <point x="1606.185344827586" y="2902.0" />
+      <point x="-52.875" y="-127.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.DelegateServiceScheduler" relationship="CREATE">
+      <point x="163.75" y="-864.0" />
+      <point x="1822.810344827586" y="1100.0" />
+      <point x="3290.75" y="1100.0" />
+      <point x="156.75" y="182.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.SingleScheduler" target="reactor.core.scheduler.Schedulers" relationship="DEPENDENCY">
+      <point x="-143.75" y="182.0" />
+      <point x="2369.25" y="1070.0" />
+      <point x="1363.685344827586" y="1070.0" />
+      <point x="1363.685344827586" y="1130.0" />
+      <point x="1560.810344827586" y="1130.0" />
+      <point x="-98.25" y="-864.0" />
+    </edge>
+    <edge source="reactor.core.scheduler.Schedulers" target="reactor.core.scheduler.SingleScheduler" relationship="DEPENDENCY">
+      <point x="98.25" y="-864.0" />
+      <point x="1757.310344827586" y="1090.0" />
+      <point x="2656.75" y="1090.0" />
+      <point x="143.75" y="182.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0160215053763442" showDependencies="true" x="1590.146999682506" y="1582.6240872049952" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

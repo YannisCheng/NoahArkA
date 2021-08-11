@@ -19,4 +19,5 @@ include 'SampleLibSpringBoot'
 include 'ModuleSpringData'
 include 'AppRun'
 include 'ModuleHadoop'
+include 'ModuleGenerator'
 

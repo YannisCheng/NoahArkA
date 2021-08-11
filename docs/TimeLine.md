@@ -115,3 +115,14 @@ dependencies {
 - **2021-08-06 11:28:18 周五**
 
 * [x] 测试多module配置下打jar包，本地测试、上传至服务器、在服务器上运行jar包，在本地测试接口。
+
+- **2021-08-11 22:24:21 周二**
+
+* [x] Reactor引入，并写基本测试示例
+
+- **2021-08-11 22:25:30 周三**
+
+* [x] Reactor主要组件分析：Publisher、Processor、BaseSubscriber{Subscription、Subscriber、Disposable}、Scheduler 部分1
+* [ ] Reactor主要组件分析：Publisher、Processor、BaseSubscriber{Subscription、Subscriber、Disposable}、Scheduler 部分2
+* [ ] 添加"ModuleGenerator" Module，该Module主要功能为使用"Velocity"库，实现代码自动生成。
+* [ ] 具体概念的实际试验[IntelliJ Idea中的 Facets 与 Artifacts](https://www.cnblogs.com/bityinjd/p/9284378.html)
