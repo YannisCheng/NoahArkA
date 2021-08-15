@@ -1,0 +1,6 @@
+.el_divider_class {
+    margin: 0;
+    height: 1px;
+    width: 100%;
+    background: lightgrey;
+}
