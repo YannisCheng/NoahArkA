@@ -20,4 +20,6 @@ include 'ModuleSpringData'
 include 'AppRun'
 include 'ModuleHadoop'
 include 'ModuleGenerator'
+// 安全框架
+include 'ModuleShiro'
 

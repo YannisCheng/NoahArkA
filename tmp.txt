@@ -1,0 +1,13 @@
+app_ui
+├── config ：各个环境的配置文件
+├── local_img
+├── node_modules ： install的第三方库
+├── public：
+└── src
+    ├── assets
+    ├── components
+    ├── net
+    ├── router
+    ├── store
+    ├── styles
+    └── views

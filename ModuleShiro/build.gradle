@@ -1,0 +1,18 @@
+
+
+group = 'com.cwj'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+
+    // 安全组件
+    // https://mvnrepository.com/artifact/org.apache.shiro/shiro-core
+    implementation group: 'org.apache.shiro', name: 'shiro-core', version: '1.7.1'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
