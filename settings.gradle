@@ -13,10 +13,10 @@
 
 rootProject.name = 'NoahArkA'
 // 注意顺序，被依赖的Module应该被声明在最前面。
-include 'Common'
+include 'ModuleCommon'
 include 'SampleLibAsm'
 include 'SampleLibSpringBoot'
-include 'ModuleSpringData'
+include 'ModuleDataSource'
 include 'AppRun'
 include 'ModuleHadoop'
 include 'ModuleGenerator'

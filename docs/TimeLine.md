@@ -122,7 +122,13 @@ dependencies {
 
 - **2021-08-11 22:25:30 周三**
 
-* [x] Reactor主要组件分析：Publisher、Processor、BaseSubscriber{Subscription、Subscriber、Disposable}、Scheduler 部分1
 * [ ] Reactor主要组件分析：Publisher、Processor、BaseSubscriber{Subscription、Subscriber、Disposable}、Scheduler 部分2
 * [ ] 添加"ModuleGenerator" Module，该Module主要功能为使用"Velocity"库，实现代码自动生成。
 * [ ] 具体概念的实际试验[IntelliJ Idea中的 Facets 与 Artifacts](https://www.cnblogs.com/bityinjd/p/9284378.html)
+
+- **2021-08-31 16:59:19 周二**
+
+* [ ] 安全组件选择。
+* [ ] 多数据源测试。
+ -  [x] MySQL配置完成（3个数据源）；
+ -  [x] Redis配置完成（2个数据源）；

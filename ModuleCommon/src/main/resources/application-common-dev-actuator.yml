@@ -1,0 +1,20 @@
+# SpringBoot Actuator 配置
+# ----------------------
+
+management:
+  endpoints:
+    # 通过HTTP暴露 Actuator endpoints
+    web:
+      exposure:
+        include: "*"
+        exclude:
+
+    # 通过JMX暴露 Actuator endpoints
+    jmx:
+      exposure:
+        include: "*"
+        exclude:
+  endpoint:
+    health:
+      # 显示健康详情
+      show-details: always

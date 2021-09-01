@@ -1,0 +1,7 @@
+# 服务配置
+server:
+  # 端口
+  port: 8090
+  servlet:
+    # basePath
+    context-path: /NoahArk

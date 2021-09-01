@@ -1,5 +1,5 @@
 spring:
   profiles:
     # 激活 AppRun主工程中的application-dev.yml配置文件
-    #active: dev
-    active: prod
+    active: dev
+    #active: pro

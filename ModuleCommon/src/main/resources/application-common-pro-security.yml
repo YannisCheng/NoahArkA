@@ -1,0 +1,7 @@
+# 安全机制配置
+spring:
+  security:
+    user:
+      name: yannis
+      password: adminc
+      roles: ADMIN
