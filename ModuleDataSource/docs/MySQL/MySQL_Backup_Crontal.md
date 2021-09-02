@@ -114,3 +114,11 @@ fi
 ```
 
 
+## 表数据导入 source
+
+参考：[Failed to open file ''****.sql'', error: 2的解决方案](https://blog.csdn.net/u010268820/article/details/85989433)
+
+1. 进入mysql命令行
+2. 通过 `use database` 选定数据库
+3. 执行 `source 全路径SQL文件` 导入sql中的数据
+

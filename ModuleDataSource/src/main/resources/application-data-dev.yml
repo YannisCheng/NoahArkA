@@ -49,7 +49,7 @@ spring:
   # 配置Redis1数据库
   redis1:
     host: had-dn1
-    port: 6378
+    port: 6380
     database: 1
 
 
