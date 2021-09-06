@@ -15,6 +15,10 @@ repositories {
 dependencies {
     // https://mvnrepository.com/artifact/org.apache.velocity/velocity
     implementation group: 'org.apache.velocity', name: 'velocity', version: '1.7'
+
+    // MyBatis-Plus 从 3.0.3 之后移除了代码生成器与模板引擎的默认依赖，需要手动添加相关依赖：
+    // https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-generator
+    implementation group: 'com.baomidou', name: 'mybatis-plus-generator', version: '3.4.1'
 }
 
 /*test {

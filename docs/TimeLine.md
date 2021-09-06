@@ -132,3 +132,9 @@ dependencies {
 * [ ] 多数据源测试。
  -  [x] MySQL配置完成（3个数据源）；
  -  [x] Redis配置完成（2个数据源）；
+
+- **2021-09-06 17:07:13 周一**
+
+* [x] ModuleGenerator 中 `resource` 目录下添加 `java`、`js`、`sql`、`vue`、`xml` 配置模板；
+* [ ] Vue前端搭建；
+* [ ] 前端与端接口通信；
