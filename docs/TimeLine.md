@@ -138,3 +138,7 @@ dependencies {
 * [x] ModuleGenerator 中 `resource` 目录下添加 `java`、`js`、`sql`、`vue`、`xml` 配置模板；
 * [ ] Vue前端搭建；
 * [ ] 前端与端接口通信；
+
+
+- **2021-09-07 22:09:41 周二**
+* [x] 熟悉、修改 app-ui框架layout中的3部分，了解main.js在Vue中的作用和调用顺序

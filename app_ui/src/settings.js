@@ -1,16 +1,17 @@
+// 标题、logo展示
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: 'ESS&古诗文',
 
   /**
    * @type {boolean} true | false
    * @description Whether fix the header
    */
-  fixedHeader: false,
+  fixedHeader: true,
 
   /**
    * @type {boolean} true | false
    * @description Whether show the logo in sidebar
    */
-  sidebarLogo: false
+  sidebarLogo: true
 }
