@@ -1,117 +1,90 @@
-## my_vue
+# vue-admin-template
 
-- Project setup
-```
+English | [简体中文](./README-zh.md)
+
+> A minimal vue admin template with Element UI & axios & iconfont & permission control & lint
+
+**Live demo:** http://panjiachen.github.io/vue-admin-template
+
+
+**The current version is `v4.0+` build on `vue-cli`. If you want to use the old version , you can switch branch to [tag/3.11.0](https://github.com/PanJiaChen/vue-admin-template/tree/tag/3.11.0), it does not rely on `vue-cli`**
+
+## Build Setup
+
+```bash
+# clone the project
+git clone https://github.com/PanJiaChen/vue-admin-template.git
+
+# enter the project directory
+cd vue-admin-template
+
+# install dependency
 npm install
+
+# develop
+npm run dev
 ```
 
-- Compiles and hot-reloads for development
-```
-npm run serve
+This will automatically open http://localhost:9528
+
+## Build
+
+```bash
+# build for test environment
+npm run build:stage
+
+# build for production environment
+npm run build:prod
 ```
 
-- Compiles and minifies for production
-```
-npm run build
-```
+## Advanced
 
-- Lints and fixes files
-```
+```bash
+# preview the release environment effect
+npm run preview
+
+# preview the release environment effect + static resource analysis
+npm run preview -- --report
+
+# code format check
 npm run lint
+
+# code format check and auto fix
+npm run lint -- --fix
 ```
 
-- Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Refer to [Documentation](https://panjiachen.github.io/vue-element-admin-site/guide/essentials/deploy.html) for more information
 
-## scss配置使用
-> https://blog.csdn.net/zxb89757/article/details/103256614
+## Demo
 
-依赖需要："node-sass": "^4.14.1","sass-loader": "^8.0.2","sass-resources-loader": "^2.0.3",
+![demo](https://github.com/PanJiaChen/PanJiaChen.github.io/blob/master/images/demo.gif)
 
-## package.json文件依赖更新
+## Extra
 
-```
-npm i -g npm-check-updates
-```
+If you want router permission && generate menu by user roles , you can use this branch [permission-control](https://github.com/PanJiaChen/vue-admin-template/tree/permission-control)
 
-```
-ncu -u
-```
+For `typescript` version, you can use [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template) (Credits: [@Armour](https://github.com/Armour))
 
-```
-npm install
-```
+## Related Project
 
-## WebStorm 代码格式化符合eslint风格 设置修改
-> https://blog.zuiyu1818.cn/posts/vue_webstorm.html
+- [vue-element-admin](https://github.com/PanJiaChen/vue-element-admin)
 
-## WebStorm+Vue+Chrome debug断点调试
- [配置参考](https://www.jianshu.com/p/f0e69b537f9b)
- 
- [启动方式参考](https://www.cnblogs.com/dafei4/p/13027340.html)
- 
-## （build）打包后打开index.html文件时，浏览器里一片空白问题
-[参考](https://blog.csdn.net/Oralinge/article/details/100072765?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase)
+- [electron-vue-admin](https://github.com/PanJiaChen/electron-vue-admin)
 
-## 打包时productionSourceMap设置的不同效果
+- [vue-typescript-admin-template](https://github.com/Armour/vue-typescript-admin-template)
 
- ![](https://github.com/YannisCheng/my_vue/blob/master/local_img/productionSourceMap%E8%AE%BE%E7%BD%AE%E7%9A%84%E4%B8%8D%E5%90%8C%E6%95%88%E6%9E%9C.png)
- 
-## vue-devtool 浏览器调试工具
+- [awesome-project](https://github.com/PanJiaChen/vue-element-admin/issues/2312)
 
-## 全局安装cordova：
-   
-```
-npm install -g cordova
-```
+## Browsers support
 
-## Vue项目打包Android Apk
+Modern browsers and Internet Explorer 10+.
 
-[参考链接、亲测有效](https://blog.csdn.net/Two_Too/article/details/83095177)
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari |
+| --------- | --------- | --------- | --------- |
+| IE10, IE11, Edge| last 2 versions| last 2 versions| last 2 versions
 
-### 1.Vue项目打包
+## License
 
-### 2.安装插件
+[MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 
-```
- npm install -g cordova 
-```
-
-### 3.通过 cordova 创建项目：项目名、包名
-
-```
-cordova create android-app com.yannis.vuedemo
-```
-
-### 4.将`Vue`打包后的`dist文件`中的`内容`，粘贴至新建项目中`www文件`下
-
-### 5.进入新创建的`Android项目`根目录，执行一下命令打包Android项目：
-
-```
-cordova platforms add android --save
-```
-
-### 6.检查Android构建环境
-
-```
-cordova requirements 
-```
-
-### 7.生成秘钥（`mytest.keystore`文件前不写指定目录就认为值当前项目根目录）
-
-```
-keytool -genkey -v -keystore mytest.keystore -alias mytest -keyalg RSA -validity 20000
-```
-
-### 8.生成带有签名的Apk
-
-```
-keytool -genkey -v -keystore D:\mytest.keystore -alias mytest -keyalg RSA -validity 20000
-```
-
-### 未签名Apk
-
-```
-cordova build android --release 
-```
-   
+Copyright (c) 2017-present PanJiaChen
