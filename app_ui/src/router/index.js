@@ -76,16 +76,48 @@ export const constantRoutes = [
       }
     ]
   },
-
   {
-    path: '/form',
+    path: '/seal',
     component: Layout,
+    redirect: '/leakage',
+    name: 'leakage',
+    meta: { title: '密封点', icon: 'el-icon-s-help' },
     children: [
       {
-        path: 'index',
-        name: 'Form',
-        component: () => import('@/views/form/index'),
-        meta: { title: 'Form', icon: 'form' }
+        path: 'device',
+        name: 'Device',
+        component: () => import('@/views/sealing_point/device'),
+        meta: { title: '装置信息', icon: 'table' }
+      },
+      {
+        path: 'grid',
+        name: 'Grid',
+        component: () => import('@/views/sealing_point/grid'),
+        meta: { title: '网格信息', icon: 'tree' }
+      },
+      {
+        path: 'components',
+        name: 'Components',
+        component: () => import('@/views/sealing_point/components'),
+        meta: { title: '组件信息', icon: 'tree' }
+      },
+      {
+        path: 'information',
+        name: 'Information',
+        component: () => import('@/views/sealing_point/information'),
+        meta: { title: '密封点信息', icon: 'tree' }
+      },
+      {
+        path: 'maintain',
+        name: 'Maintain',
+        component: () => import('@/views/sealing_point/maintain'),
+        meta: { title: '基础参数信息维护', icon: 'tree' }
+      },
+      {
+        path: 'ledger',
+        name: 'Ledger',
+        component: () => import('@/views/sealing_point/ledger'),
+        meta: { title: '台账', icon: 'tree' }
       }
     ]
   },
