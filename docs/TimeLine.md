@@ -142,3 +142,18 @@ dependencies {
 
 - **2021-09-07 22:09:41 周二**
 * [x] 熟悉、修改 app-ui框架layout中的3部分，了解main.js在Vue中的作用和调用顺序
+
+- **2021-11-12 10:43:34 周五**
+* [x] 经过在一段时间的间隔后，再次编辑该项目时做总结：总结服务快速启动方式、总结项目各个进度层级。
+      **1级**：[正在开发的综合项目] 该综合项目是目前一直整合开发的，目的是行程一个可行的实际项目，对知识点进行验证和实践。
+            AppRun
+            ModuleCommon
+            ModuleDataSource
+      **2级**：[后期跟进子项目，将会加入到综合项目] 
+            ModuleGenerator
+            ModuleHadoop
+            ModuleShiro
+      **3级**：[单独项目] 该项目不会加入[综合项目]中，始终以单项目的方式进行开发，该种类型的项目的目的是以学习知识点为目的存在的。
+            SampleLibAsm
+            SampleLibSpring
+            SampleLibSpringBoot

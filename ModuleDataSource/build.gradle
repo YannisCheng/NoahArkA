@@ -15,7 +15,7 @@ bootJar {
 dependencies {
 
     implementation project(':ModuleCommon')
-    implementation project(':ModuleGenerator')
+    //implementation project(':ModuleGenerator')
 
     // ElasticSearch
     // Java调用ElasticSearch7.12.1

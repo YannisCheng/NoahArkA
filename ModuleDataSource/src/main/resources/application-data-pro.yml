@@ -5,19 +5,19 @@ spring:
     49class:
       # MySQL8之后需要指定时区和安全连接方式
       # MySQL数据库-1：基础人员
-      url: jdbc:mysql://had-dn1:3306/49_class_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+      url: jdbc:mysql://had-dn1:3306/49_class_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
     # MySQL数据库-2：基础行政区划
     area:
-      url: jdbc:mysql://had-dn1:3306/area_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+      url: jdbc:mysql://had-dn1:3306/area_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
     # MySQL数据库-3：后期生成的中间数据
     middle:
-      url: jdbc:mysql://had-dn1:3306/middle_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+      url: jdbc:mysql://had-dn1:3306/middle_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver

@@ -1,4 +1,4 @@
-# 说明
+# 入口说明文档
 
 ## 关于工程名称 NoahArk（诺亚方舟）
 
@@ -8,6 +8,8 @@
 
 本项目取名为`诺亚方舟` 诣在将 `服务端` 的`各个方面`的`知识点`进行总结，并在各个子项目之间建立`层级依赖关系`，使其共同构成一个`功能完善`的`统一整体`。
 
+该工程涉及的方面较为广泛，文档分布众多，需要留意各个子工程下的 `docs` 文件夹。
+
 ## 工程构建方式
 
 本工程使用 `Gradle` 方式进行构建。
@@ -15,70 +17,25 @@
 使用`Gradle` 是一方面是由于熟悉，另一方面是因为其 `表达清晰、简洁` 的特点。
 
 
-## 工程结构描述
+## 子工程描述
 
- - `AppRun` — **工程的主App**
- - `AsmLib` — **ASM库使用demo示例**
- - `Common` — **公共基础依赖**
- - `Configuration` — **NoahArk工程配置**
- - `DataSource` — **数据库相关**
- - `Script` — **Java与其他语言间的互相调用**
+ - **`AppRun`** — **综合项目的入口工程**
+ - **`ModuleCommon`** — **公共基础配置**
+ - **`ModuleDataSource`** — **数据库操作相关**
+ - **`ModuleGenerator`** — **代码生成相关**
+ - **`ModuleHadoop`** — **Hadoop相关**
+ - **`ModuleShiro`** — **安全框架相关**
+ - **`SampleLibAsm`** — **ASM库使用demo样例**
+ - **`SampleLibSpring`** — **SpringFramework使用demo样例**
+ - **`SampleLibSpringBoot`** — **SpringBoot使用demo样例**
 
-每一个 `Module` 下都有一个 `docs` 目录，用以存储该类型的相关文档。
-
-## 工程及子Module的主要文件目录
-
-
-```
-NoahArkA 
-├── AppRun
-│   ├── docs
-│   └── src
-├── AsmLib
-│   ├── docs
-│   └── src
-├── Common
-│   ├── docs
-│   └── src
-├── Configuration
-│   ├── docs
-│   └── src
-├── DataSource
-│   ├── docs
-│   └── src
-├── Genesis（project）
-│   ├── docs
-│   ├── images
-│   ├── lib
-│   └── src
-├── ScriptLib
-│   ├── docs
-│   ├── out
-│   └── src
-├── docs
-└── images
-
-```
-
-## 特殊 - Genesis（创世纪）工程
-
-
-该工程单独于`NoahArk`工程，原因是：
-
-该工程是以编写 `Spring Framework` 中的 `各个模块` 的demo示例为主要目的。
-在编写某个 `模块` 时导入相应的jar包，以达到 `掌握` Spring框架底层模块间`构成`及`关联关系`的目的。
-
-因此本人希望编写组成Spring框架的各个模块的示例demo，构建起对Spring框架最坚实的基础，这个过程就像`《圣经-旧约》创世纪`中上帝创造万物一样。
-
-
-## 工程涉及：
- 
- - Git
- - Nexus
- - Jenkins
+每个 `Module` 下的 `docs` 目录，用以存储涉及该工程的同类文档。
 
 ## Time：Plans & Complete
 
 [展示项目的实时进度](/docs/TimeLine.md)
+该工程任何最新的进度、规划都将在该文档中进行说明，该文件将作为该工程后续开发的指导性文件。
 
+## 综合项目运行基本说明
+[AppRun-README.md](/AppRun/docs/AppRun-README.md)
 
