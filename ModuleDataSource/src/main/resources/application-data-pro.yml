@@ -5,19 +5,19 @@ spring:
     49class:
       # MySQL8之后需要指定时区和安全连接方式
       # MySQL数据库-1：基础人员
-      url: jdbc:mysql://had-dn1:3306/49_class_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://cn6.frp.cool:19481/49_class_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
     # MySQL数据库-2：基础行政区划
     area:
-      url: jdbc:mysql://had-dn1:3306/area_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://cn6.frp.cool:19481/area_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
     # MySQL数据库-3：后期生成的中间数据
     middle:
-      url: jdbc:mysql://had-dn1:3306/middle_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://cn6.frp.cool:19481/middle_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -42,15 +42,15 @@ spring:
         min-idle: 8
   # 配置Redis0数据库
   redis0:
-    host: had-dn1
-    port: 6379
+    host: cn-zj2.frp.cool
+    port: 18417
     # 当前使用的Redis数据库索引，默认为0
     database: 0
   # 配置Redis1数据库
-  redis1:
-    host: had-dn1
-    port: 6378
-    database: 1
+#  redis1:
+#    host: had-dn1
+#    port: 6378
+#    database: 1
 
 
   # -------- ElasticSearch 配置 --------
@@ -60,7 +60,7 @@ spring:
   # 以上2个配置项已经过时
   elasticsearch:
     rest:
-      uris: http://had-dn1:9200
+      uris: http://es.yannises.cn
 
 
 # -------- MyBatis配置 --------

@@ -66,17 +66,18 @@ public class RedisConfiguration extends CachingConfigurerSupport {
     }
 
     /**
+     * 2021-12-14 10:47:57 注释，暂不使用
      * 配置第二个Redis服务
      * @param poolConfig GenericObjectPoolConfig
      * @return LettuceConnectionFactory
      */
-    @Bean("secondDataFactory")
-    public LettuceConnectionFactory secondDataFactory(GenericObjectPoolConfig poolConfig){
-        RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration(redisIndex1DsConfigBean.getHost(), redisIndex1DsConfigBean.getPort());
-        configuration.setDatabase(redisIndex1DsConfigBean.getDatabase());
-        LettucePoolingClientConfiguration build = LettucePoolingClientConfiguration.builder().poolConfig(poolConfig).build();
-        return new LettuceConnectionFactory(configuration,build);
-    }
+    //@Bean("secondDataFactory")
+    //public LettuceConnectionFactory secondDataFactory(GenericObjectPoolConfig poolConfig){
+    //    RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration(redisIndex1DsConfigBean.getHost(), redisIndex1DsConfigBean.getPort());
+    //    configuration.setDatabase(redisIndex1DsConfigBean.getDatabase());
+    //    LettucePoolingClientConfiguration build = LettucePoolingClientConfiguration.builder().poolConfig(poolConfig).build();
+    //    return new LettuceConnectionFactory(configuration,build);
+    //}
 
     /**
      * 设置 Redis0 对应的数据序列化方式
@@ -90,14 +91,15 @@ public class RedisConfiguration extends CachingConfigurerSupport {
     }
 
     /**
+     *  2021-12-14 10:47:57 注释，暂不使用
      * 设置 Redis1 对应的数据序列化方式
      * @param lettuceConnectionFactory redis1的连接池
      * @return RedisTemplate
      */
-    @Bean("secondRedisDataTemplate")
-    public RedisTemplate<String, Object> secondRedisDataTemplate(@Qualifier("secondDataFactory") LettuceConnectionFactory lettuceConnectionFactory){
-        return redisTemplate(lettuceConnectionFactory);
-    }
+    //@Bean("secondRedisDataTemplate")
+    //public RedisTemplate<String, Object> secondRedisDataTemplate(@Qualifier("secondDataFactory") LettuceConnectionFactory lettuceConnectionFactory){
+    //    return redisTemplate(lettuceConnectionFactory);
+    //}
 
     /**
      * RedisTemplate的具体配置

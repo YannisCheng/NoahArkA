@@ -13,7 +13,7 @@ import javax.annotation.Resource;
  * @since 2021-09-02 21:28:00
  */
 @RestController
-@RequestMapping("table8")
+@RequestMapping("/table8")
 public class Table8Controller {
     /**
      * 服务对象
@@ -27,7 +27,7 @@ public class Table8Controller {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
+    @GetMapping("/selectOne")
     public Table8 selectOne(String id) {
         return this.table8Service.queryById(id);
     }
