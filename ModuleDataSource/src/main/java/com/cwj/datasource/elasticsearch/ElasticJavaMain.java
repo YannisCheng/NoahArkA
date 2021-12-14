@@ -16,7 +16,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * ElasticJavaMain 通过ElasticSearch的Java API向ES中写入数据
+ * ElasticJavaMain 通过ElasticSearch的Java API向ES中写入数据 Java工具类
  *
  * @author ChengWenjia  cwj1714@163.com
  * @date 2021-07-16 16:34
@@ -37,6 +37,7 @@ public class ElasticJavaMain {
         }
     }
 
+    // >>>>= "将本地的备份文件内容向ES服务中写入" 功能，main函数入口 =<<<<
     // --- 2021-08-04 16:45:08 注释掉ElasticSearch依赖 ---
     //public static void main(String[] args) throws IOException {
     //    // 创建客户端
