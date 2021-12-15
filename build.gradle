@@ -98,8 +98,8 @@ subprojects {
 
 
         // Spring WebFlux 组建依赖
-        implementation 'org.springframework.boot:spring-boot-starter-webflux'
-        testImplementation 'io.projectreactor:reactor-test'
+        //implementation 'org.springframework.boot:spring-boot-starter-webflux'
+        //testImplementation 'io.projectreactor:reactor-test'
 
         //compile group: 'org.springframework.boot', name: 'spring-boot-starter-log4j2', version: '2.4.0'
         // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core

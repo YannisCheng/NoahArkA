@@ -5,19 +5,19 @@ spring:
     49class:
       # MySQL8之后需要指定时区和安全连接方式
       # MySQL数据库-1：基础人员
-      url: jdbc:mysql://cn6.frp.cool:19481/49_class_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://cn-hz1.frp.cool:19516/49_class_database?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
     # MySQL数据库-2：基础行政区划
     area:
-      url: jdbc:mysql://cn6.frp.cool:19481/area_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://cn-hz1.frp.cool:19516/area_database?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
     # MySQL数据库-3：后期生成的中间数据
     middle:
-      url: jdbc:mysql://cn6.frp.cool:19481/middle_database?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
+      url: jdbc:mysql://cn-hz1.frp.cool:19516/middle_database?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false&allowPublicKeyRetrieval=true
       password: Admin_1126
       username: adminc
       driver-class-name: com.mysql.cj.jdbc.Driver
@@ -43,7 +43,7 @@ spring:
   # 配置Redis0数据库
   redis0:
     host: cn-zj2.frp.cool
-    port: 18417
+    port: 12220
     # 当前使用的Redis数据库索引，默认为0
     database: 0
   # 配置Redis1数据库

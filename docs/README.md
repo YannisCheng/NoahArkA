@@ -2,9 +2,10 @@
 
 `Genesis` 意为 `创世纪`，是 `《圣经-旧约》`中的第一章。
 
-## 在线文档
+## 项目文档位置说明
 
-[后端服务各项配置：在线文档](https://docs.qq.com/desktop/mydoc/folder/cRBZgJrvbBhZ?_t=1628428684002)
+- **本项目中的 `/docs` 文件夹**：具体代码、项目实体 说明，偏向代码实现层面。
+- **在线文档**：[后端服务各项配置：在线文档](https://docs.qq.com/desktop/mydoc/folder/cRBZgJrvbBhZ?_t=1628428684002)，为本项目服务端所需的各个服务器的搭建文档，偏向后端运维、部署层面。
 
 
 ## 索引
