@@ -1,4 +1,4 @@
-package com.cwj.datasource.elasticsearch;
+package com.cwj.datasource.elasticsearch.util;
 
 import java.io.File;
 import java.io.IOException;

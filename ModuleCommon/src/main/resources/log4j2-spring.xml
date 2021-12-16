@@ -86,6 +86,8 @@
         <!--过滤掉spring和mybatis的一些无用的DEBUG信息-->
         <Logger name="org.springframework" level="INFO"/>
         <Logger name="org.mybatis" level="INFO"/>
+        <!--RestHighLevelClient 要查看实际发送到服务器和从服务器接收的内容Request/Response传输级别的日志记录需要打开-->
+        <logger name="org.springframework.data.elasticsearch.client.WIRE" level="trace"/>
 
         <!-- LOG everything at INFO level -->
         <Root level="ALL">

@@ -1,4 +1,4 @@
-package com.cwj.datasource.elasticsearch;
+package com.cwj.datasource.elasticsearch.local;
 
 import java.io.*;
 import java.util.ArrayList;

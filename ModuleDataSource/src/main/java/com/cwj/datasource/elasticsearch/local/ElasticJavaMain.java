@@ -1,5 +1,6 @@
-package com.cwj.datasource.elasticsearch;
+package com.cwj.datasource.elasticsearch.local;
 
+import com.cwj.datasource.elasticsearch.util.LogFileUtil;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.RequestOptions;

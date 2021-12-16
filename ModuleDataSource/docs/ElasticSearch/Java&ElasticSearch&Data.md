@@ -5,7 +5,11 @@
 官方：
 
  - **Elastic**：[ElasticSearch的Java API](https://www.elastic.co/guide/en/elasticsearch/reference/current/api-java.html)
- - **SpringBoot**：[Spring Data Elasticsearch - 参考文档](https://docs.spring.io/spring-data/elasticsearch/docs/4.0.6.RELEASE/reference/html/#preface)
+ - **SpringBoot**：
+   
+    - [Spring Data Elasticsearch - 参考文档](https://docs.spring.io/spring-data/elasticsearch/docs/4.0.6.RELEASE/reference/html/#preface)
+    - [Spring Data Repositories - 重点基础知识](https://docs.spring.io/spring-data/elasticsearch/docs/4.0.6.RELEASE/reference/html/#repositories)
+    - [Spring Data JPA 在方法名中支持的关键字](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 
 参考实例：
 
@@ -14,9 +18,11 @@
  - [ElasticSearch7.6.2 JavaAPI创建索引并设置IK分词](https://blog.csdn.net/GhostGuest/article/details/109760660)
  - [Elastic Stack系列】第一章：概述与目录](https://twocups.cn/index.php/2021/02/20/24/)
 
-博客参考（ *评论区的内容值得借鉴* ）：
- - [完整教程：spring-boot-starter-data-elasticsearch整合elasticsearch 6.x](https://blog.csdn.net/chengyuqiang/article/details/86135795)
- - [完整教程：Springboot 2.2整合elasticsearch 7.x (spring-boot-starter-data-elasticsearch)](https://blog.csdn.net/chengyuqiang/article/details/102938266)
+博客参考：
+
+ - *评论区的内容值得借鉴* [完整教程：spring-boot-starter-data-elasticsearch整合elasticsearch 6.x](https://blog.csdn.net/chengyuqiang/article/details/86135795)
+ - *评论区的内容值得借鉴* [完整教程：Springboot 2.2整合elasticsearch 7.x (spring-boot-starter-data-elasticsearch)](https://blog.csdn.net/chengyuqiang/article/details/102938266)
+ - [Elasticsearch搜索引擎一些参数含义和用法](https://blog.csdn.net/qq_44695727/article/details/107164037)
 
 ## SpringBoot结合ELasticSearch启动成功log
 

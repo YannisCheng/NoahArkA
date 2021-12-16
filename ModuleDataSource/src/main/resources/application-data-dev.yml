@@ -65,6 +65,7 @@ spring:
       # Elasticsearch health check failed org.springframework.data.elasticsearch.client.NoReachableHostException:
       # Host 'localhost:9200' not reachable. Cluster state is offline.
       uris: ["http://es.yannises.cn"]
+    host-name: es.yannises.cn
 
 # MyBatis配置
 mybatis-plus:
