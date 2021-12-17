@@ -23,6 +23,9 @@
  - *评论区的内容值得借鉴* [完整教程：spring-boot-starter-data-elasticsearch整合elasticsearch 6.x](https://blog.csdn.net/chengyuqiang/article/details/86135795)
  - *评论区的内容值得借鉴* [完整教程：Springboot 2.2整合elasticsearch 7.x (spring-boot-starter-data-elasticsearch)](https://blog.csdn.net/chengyuqiang/article/details/102938266)
  - [Elasticsearch搜索引擎一些参数含义和用法](https://blog.csdn.net/qq_44695727/article/details/107164037)
+ - [Elasticsearch实战篇——Spring Boot整合ElasticSearch](https://segmentfault.com/a/1190000018625101)
+ - [RestHighLevelClient使用](https://www.cnblogs.com/cicada-smile/p/14322789.html)
+ - [RestHighLevelClient操作7.4.2（一）之java中的增删改查](https://blog.csdn.net/m0_37635053/article/details/108438105)
 
 ## SpringBoot结合ELasticSearch启动成功log
 
@@ -66,4 +69,14 @@
 # {"cluster_name":"ES-Cluster","status":"green","timed_out":false,"number_of_nodes":2,"number_of_data_nodes":2,"active_primary_shards":217,"active_shards":434,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
 ```
 
+## ElasticSearch 连接异常
+
+- 本地网络异常
+- 本地Spring连接配置异常（端口自动追加）
+- 远程服务器异常
+- 转发公网异常
+
+## ElasticSearch Repository 与 RestHighLevelClient 的关系
+
+![RestHighLevelClientt](/images/RestHighLevelClientt.png)
 

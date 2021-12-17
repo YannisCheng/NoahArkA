@@ -65,6 +65,31 @@ public class SwaggerConfigureCenter {
     }
 
     /**
+     * SpringBoot+ElasticSearch 接口API
+     * @return Docket
+     */
+    @Bean
+    public Docket createElasticSearchRestApi(){
+        return new Docket(DocumentationType.SWAGGER_2)
+                .groupName("ElasticSearch API")
+                .apiInfo(elasticSearchApiInfo())
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.cwj.datasource.elasticsearch"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo elasticSearchApiInfo() {
+        return new ApiInfoBuilder()
+                .contact(new Contact("YannisCheng","","cwj1714@163.com"))
+                .title("NoahArk-ElasticSearch REST API")
+                .description("SpringBoot与ElasticSearch API集合")
+                .termsOfServiceUrl("")
+                .version("1.0")
+                .build();
+    }
+
+    /**
      * SpringBoot+Hadoop 接口API
      * @return Docket
      */
