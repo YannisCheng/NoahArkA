@@ -78,5 +78,45 @@
 
 ## ElasticSearch Repository 与 RestHighLevelClient 的关系
 
-![RestHighLevelClientt](/images/RestHighLevelClientt.png)
+![RestHighLevelClientt](/images/ElasticSearch/RestHighLevelClientt.png)
+
+## 操作类
+
+- `IndexOperations`：定义索引级别的操作，例如创建或删除索引
+- `DocumentOperations`：定义基于 id 存储、更新和检索实体的操作。结果只会返回找到的实体。
+- `SearchOperations`：定义使用查询搜索多个实体的操作。每个实体都可以获得附加信息。
+- `ElasticsearchOperations`：结合了DocumentOperations和SearchOperations接口。
+
+![操作类](/images/ElasticSearch/ElasticsearchOperations.png)
+
+## 构造查询条件
+
+![构造查询条件1](/images/ElasticSearch/QueryBuilder.png)
+
+![构造查询条件2](/images/ElasticSearch/ElasticSearch-Query.png)
+
+## 查询结果类型
+
+![查询结果类型](/images/ElasticSearch/Search-Result.png)
+
+每个`实体`都被包装在一个包含此实体特定附加信息的`SearchHit`对象中。这些`SearchHit对象`本身在一个`SearchHits对象`中返回，该对象还包含有关整个搜索的信息，如maxScore或请求的聚合。
+
+- `SearchHit<T>`：包含以下信息：
+
+  ID
+  分数
+  排序值
+  突出显示字段
+  检索到的 <T> 类型的实体
+- `SearchHits<T>`：包含以下信息：
+
+  总命中数
+  总点击数关系
+  最高分
+  SearchHit<T>对象列表
+  返回的聚合
+
+- `SearchPage<T>`：定义一个包含 SearchHits<T> 元素的 Spring Data Page，可用于使用存储库方法进行分页访问。
+- `SearchScrollHits<T>`：由 ElasticsearchRestTemplate 中的低级scroll API 函数返回，它用 Elasticsearch 的 scroll ID 丰富了 SearchHits<T>。
+- `SearchHitsIterator<T>`：SearchOperations 接口的streaming函数返回的迭代器。
 
