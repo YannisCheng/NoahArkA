@@ -83,5 +83,27 @@
 
 ASM字节码操作框架
 
+## 服务器硬件配置
+
+宿主机器：**`Windows10 内存32G`**
+虚拟机软件：`VMWare`
+虚拟机： **3台 `Ubuntu Server 20.04TLS`**无界面终端服务器
+
+
+| 编号 | 虚拟机(服务器)名称 | 核数 | 内存(G) | 硬盘(G) |
+| --- | --- | --- | --- | --- |
+| 1 | had-nn | 2 | 8 | 30 |
+| 2 | had-dn1 | 2 | 8 | 30 |
+| 3 | had-dn2 | 2 | 8 | 30 |
+
+注：
+`had-nn`全称：hadoop name node
+`had-dn1`全称：hadoop date node1
+`had-dn2`全称：hadoop date node2
+
+
+
+
+
 
 
