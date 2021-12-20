@@ -15,6 +15,8 @@ public class AppRunApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(AppRunApplication.class, args);
+        System.out.println("Swagger2 API Url(Default): http://localhost:8089/NoahArk_Dev/doc.html");
+        System.out.println("Swagger2 API Url: http://localhost:8089/NoahArk_Dev/swagger-ui.html");
         System.out.println("\n" +
                 "██████╗ ██╗   ██╗███╗   ██╗     ██████╗██╗    ██╗     ██╗\n" +
                 "██╔══██╗██║   ██║████╗  ██║    ██╔════╝██║    ██║     ██║\n" +
