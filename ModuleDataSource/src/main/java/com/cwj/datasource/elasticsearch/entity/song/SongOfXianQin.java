@@ -11,16 +11,16 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.io.Serializable;
 
 /**
- * com.cwj.datasource.elasticsearch.entity.song 诗歌-隋
+ * com.cwj.datasource.elasticsearch.entity.song 诗歌-先秦
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-17 10:34
+ * @date 2021-12-17 10:36
  */
 @Data
 @NoArgsConstructor
-@Document(indexName = "song_sui")
-@TypeAlias(value = "SongOfSUi")
-public class SongOfSui implements Serializable {
+@Document(indexName = "song_xian_qin")
+@TypeAlias(value = "SongOfXianQin")
+public class SongOfXianQin implements Serializable {
 
     @Id
     private int id;
