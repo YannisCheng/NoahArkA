@@ -85,6 +85,8 @@ ASM字节码操作框架
 
 ## 服务器硬件配置
 
+服务器配置文档：[【腾讯文档】配置明细说明](https://docs.qq.com/sheet/DY2hQV2hsekNrVWRw)
+
 宿主机器：**`Windows10 内存32G`**
 虚拟机软件：`VMWare`
 虚拟机： **3台 `Ubuntu Server 20.04TLS`**无界面终端服务器
