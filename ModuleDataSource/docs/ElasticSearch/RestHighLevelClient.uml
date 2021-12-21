@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.elasticsearch.client.RestHighLevelClient</OriginalElement>
+  <nodes>
+    <node x="1566.6866784037547" y="776.5">org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.SearchDocumentResponseCallback</node>
+    <node x="1599.9120892018777" y="973.0">org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate</node>
+    <node x="1430.1866784037547" y="121.0">org.springframework.data.elasticsearch.core.SearchOperations</node>
+    <node x="0.0" y="2848.0">org.elasticsearch.client.RestHighLevelClient</node>
+    <node x="2099.1866784037547" y="0.0">org.springframework.data.elasticsearch.core.DocumentOperations</node>
+    <node x="647.5" y="1788.5">java.lang.AutoCloseable</node>
+    <node x="570.6886150234732" y="6084.0">org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate.ClientCallback</node>
+    <node x="1287.3116784037547" y="6257.0">org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate</node>
+    <node x="2253.9366784037547" y="6050.0">org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback</node>
+    <node x="3203.4366784037547" y="6050.0">org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchScrollDocumentResponseCallback</node>
+    <node x="666.0" y="2731.0">java.io.Closeable</node>
+    <node x="2280.9366784037547" y="699.0">org.springframework.data.elasticsearch.core.ElasticsearchOperations</node>
+    <node x="3021.251936619718" y="2731.0">org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.DocumentCallback</node>
+    <node x="2522.4366784037547" y="4344.5">org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadDocumentCallback</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate.ClientCallback" target="org.elasticsearch.client.RestHighLevelClient" relationship="DEPENDENCY">
+      <point x="0.0" y="-27.5" />
+      <point x="712.6886150234732" y="6028.0" />
+      <point x="788.9386150234732" y="6028.0" />
+      <point x="788.9386150234732" y="6018.0" />
+      <point x="1096.5" y="6018.0" />
+      <point x="365.5" y="1569.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchScrollDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.SearchDocumentResponseCallback" relationship="REALIZATION">
+      <point x="217.20000000000005" y="-61.5" />
+      <point x="3692.1366784037546" y="6018.0" />
+      <point x="3496.9366784037547" y="6018.0" />
+      <point x="3496.9366784037547" y="951.0" />
+      <point x="3018.5" y="951.0" />
+      <point x="3018.5" y="931.0" />
+      <point x="1871.6866784037547" y="931.0" />
+      <point x="122.0" y="27.5" />
+    </edge>
+    <edge source="java.io.Closeable" target="java.lang.AutoCloseable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-27.5" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.SearchDocumentResponseCallback" relationship="REALIZATION">
+      <point x="-126.25" y="-61.5" />
+      <point x="2380.1866784037547" y="6018.0" />
+      <point x="2489.9366784037547" y="6018.0" />
+      <point x="2489.9366784037547" y="951.0" />
+      <point x="3018.5" y="951.0" />
+      <point x="3018.5" y="931.0" />
+      <point x="1871.6866784037547" y="931.0" />
+      <point x="122.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.SearchDocumentResponseCallback" relationship="DEPENDENCY">
+      <point x="-31.399999999999977" y="-337.0" />
+      <point x="1569.9116784037546" y="6195.0" />
+      <point x="1472.5000000000002" y="6195.0" />
+      <point x="1472.5000000000002" y="951.0" />
+      <point x="1673.9120892018777" y="951.0" />
+      <point x="1673.9120892018777" y="931.0" />
+      <point x="1627.6866784037547" y="931.0" />
+      <point x="-122.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" target="org.springframework.data.elasticsearch.core.ElasticsearchOperations" relationship="REALIZATION">
+      <point x="260.0" y="-843.0" />
+      <point x="2184.9120892018777" y="951.0" />
+      <point x="2478.9366784037547" y="951.0" />
+      <point x="0.0" y="105.0" />
+    </edge>
+    <edge source="org.elasticsearch.client.RestHighLevelClient" target="java.io.Closeable" relationship="REALIZATION">
+      <point x="0.0" y="-1569.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" target="org.springframework.data.elasticsearch.core.SearchOperations" relationship="DEPENDENCY">
+      <point x="-260.0" y="-843.0" />
+      <point x="1664.9120892018777" y="941.0" />
+      <point x="1556.1866784037547" y="941.0" />
+      <point x="1556.1866784037547" y="679.0" />
+      <point x="1592.4366784037547" y="679.0" />
+      <point x="-162.25" y="203.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.elasticsearch.client.RestHighLevelClient" relationship="DEPENDENCY">
+      <point x="-94.19999999999993" y="-337.0" />
+      <point x="1507.111678403755" y="6205.0" />
+      <point x="865.1886150234732" y="6205.0" />
+      <point x="865.1886150234732" y="6028.0" />
+      <point x="788.9386150234732" y="6028.0" />
+      <point x="788.9386150234732" y="6018.0" />
+      <point x="1096.5" y="6018.0" />
+      <point x="365.5" y="1569.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.DocumentCallback" relationship="TO_ONE">
+      <point x="126.25" y="-61.5" />
+      <point x="2632.6866784037547" y="6018.0" />
+      <point x="3170.9366784037547" y="6018.0" />
+      <point x="3170.9366784037547" y="2827.0" />
+      <point x="3202.4120892018777" y="2827.0" />
+      <point x="3202.4120892018777" y="2807.0" />
+      <point x="3137.251936619718" y="2807.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchScrollDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="INNER_CLASS">
+      <point x="108.59999999999991" y="-61.5" />
+      <point x="3583.5366784037546" y="6028.0" />
+      <point x="3485.9366784037547" y="6028.0" />
+      <point x="3485.9366784037547" y="2700.0" />
+      <point x="2871.668603286385" y="2700.0" />
+      <point x="2871.668603286385" y="2680.0" />
+      <point x="2168.6620892018777" y="2680.0" />
+      <point x="243.75" y="843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadDocumentCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.DocumentCallback" relationship="REALIZATION">
+      <point x="212.66666666666663" y="-72.5" />
+      <point x="3054.1033450704213" y="2827.0" />
+      <point x="3059.9186032863845" y="2827.0" />
+      <point x="-77.33333333333333" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback" relationship="CREATE">
+      <point x="94.20000000000005" y="-337.0" />
+      <point x="1695.5116784037548" y="6205.0" />
+      <point x="2506.4366784037547" y="6205.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchScrollDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="DEPENDENCY">
+      <point x="0.0" y="-61.5" />
+      <point x="3474.9366784037547" y="2710.0" />
+      <point x="2797.0019366197184" y="2710.0" />
+      <point x="2797.0019366197184" y="2690.0" />
+      <point x="2006.1620892018777" y="2690.0" />
+      <point x="81.25" y="843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback" relationship="CREATE">
+      <point x="-81.25" y="843.0" />
+      <point x="1843.6620892018777" y="2710.0" />
+      <point x="1767.9120892018777" y="2710.0" />
+      <point x="1767.9120892018777" y="6028.0" />
+      <point x="2296.0200117370878" y="6028.0" />
+      <point x="-210.41666666666669" y="-61.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="GENERALIZATION">
+      <point x="31.40000000000009" y="-337.0" />
+      <point x="1632.7116784037548" y="6235.0" />
+      <point x="1647.1866784037547" y="6235.0" />
+      <point x="1647.1866784037547" y="2710.0" />
+      <point x="1681.1620892018777" y="2710.0" />
+      <point x="-243.75" y="843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.SearchDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="INNER_CLASS">
+      <point x="0.0" y="27.5" />
+      <point x="1749.6866784037547" y="941.0" />
+      <point x="1924.9120892018777" y="941.0" />
+      <point x="0.0" y="-843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchOperations" target="org.springframework.data.elasticsearch.core.SearchOperations" relationship="INTERFACE_GENERALIZATION">
+      <point x="-98.99999999999977" y="-105.0" />
+      <point x="2379.9366784037547" y="669.0" />
+      <point x="1916.936678403755" y="669.0" />
+      <point x="162.25000000000023" y="203.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchScrollDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadDocumentCallback" relationship="CREATE">
+      <point x="-217.20000000000005" y="-61.5" />
+      <point x="3257.736678403755" y="6028.0" />
+      <point x="3181.9366784037547" y="6028.0" />
+      <point x="3181.9366784037547" y="6008.0" />
+      <point x="2841.4366784037547" y="6008.0" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate.ClientCallback" relationship="DEPENDENCY">
+      <point x="-156.9999999999999" y="-337.0" />
+      <point x="1444.3116784037547" y="6215.0" />
+      <point x="783.6886150234732" y="6215.0" />
+      <point x="71.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.elasticsearch.client.RestHighLevelClient" relationship="TO_ONE">
+      <point x="-282.5999999999998" y="-337.0" />
+      <point x="1318.7116784037548" y="6235.0" />
+      <point x="560.1886150234732" y="6235.0" />
+      <point x="560.1886150234732" y="6028.0" />
+      <point x="365.5" y="6028.0" />
+      <point x="-365.5" y="1569.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.SearchDocumentResponseCallback" relationship="DEPENDENCY">
+      <point x="-130.0" y="-843.0" />
+      <point x="1794.9120892018777" y="951.0" />
+      <point x="1673.9120892018777" y="951.0" />
+      <point x="1673.9120892018777" y="931.0" />
+      <point x="1627.6866784037547" y="931.0" />
+      <point x="-122.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchScrollDocumentResponseCallback" relationship="CREATE">
+      <point x="282.5999999999999" y="-337.0" />
+      <point x="1883.9116784037546" y="6235.0" />
+      <point x="3474.9366784037547" y="6235.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" target="org.springframework.data.elasticsearch.core.DocumentOperations" relationship="DEPENDENCY">
+      <point x="130.0" y="-843.0" />
+      <point x="2054.9120892018777" y="951.0" />
+      <point x="2084.3116784037547" y="951.0" />
+      <point x="2084.3116784037547" y="679.0" />
+      <point x="2261.6866784037547" y="679.0" />
+      <point x="-162.5" y="324.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate.ClientCallback" target="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" relationship="INNER_CLASS">
+      <point x="-71.0" y="27.5" />
+      <point x="641.6886150234732" y="6225.0" />
+      <point x="1381.511678403755" y="6225.0" />
+      <point x="-219.79999999999984" y="-337.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadDocumentCallback" relationship="CREATE">
+      <point x="210.41666666666674" y="-61.5" />
+      <point x="2716.8533450704213" y="6028.0" />
+      <point x="3181.9366784037547" y="6028.0" />
+      <point x="3181.9366784037547" y="6008.0" />
+      <point x="2841.4366784037547" y="6008.0" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadDocumentCallback" relationship="CREATE">
+      <point x="157.0" y="-337.0" />
+      <point x="1758.3116784037547" y="6215.0" />
+      <point x="3181.9366784037547" y="6215.0" />
+      <point x="3181.9366784037547" y="6008.0" />
+      <point x="2841.4366784037547" y="6008.0" />
+      <point x="0.0" y="72.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="DEPENDENCY">
+      <point x="-42.08333333333326" y="-61.5" />
+      <point x="2464.3533450704213" y="6028.0" />
+      <point x="2500.9366784037547" y="6028.0" />
+      <point x="2500.9366784037547" y="2710.0" />
+      <point x="2797.0019366197184" y="2710.0" />
+      <point x="2797.0019366197184" y="2690.0" />
+      <point x="2006.1620892018777" y="2690.0" />
+      <point x="81.25" y="843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchScrollDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.DocumentCallback" relationship="TO_ONE">
+      <point x="-108.59999999999991" y="-61.5" />
+      <point x="3366.336678403755" y="6028.0" />
+      <point x="3416.116666666667" y="6028.0" />
+      <point x="3416.116666666667" y="2827.0" />
+      <point x="3202.4120892018777" y="2827.0" />
+      <point x="3202.4120892018777" y="2807.0" />
+      <point x="3137.251936619718" y="2807.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadSearchDocumentResponseCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="INNER_CLASS">
+      <point x="42.08333333333337" y="-61.5" />
+      <point x="2548.5200117370878" y="6028.0" />
+      <point x="2511.9366784037547" y="6028.0" />
+      <point x="2511.9366784037547" y="2700.0" />
+      <point x="2871.668603286385" y="2700.0" />
+      <point x="2871.668603286385" y="2680.0" />
+      <point x="2168.6620892018777" y="2680.0" />
+      <point x="243.75" y="843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchOperations" target="org.springframework.data.elasticsearch.core.DocumentOperations" relationship="INTERFACE_GENERALIZATION">
+      <point x="99.00000000000023" y="-105.0" />
+      <point x="2577.9366784037547" y="679.0" />
+      <point x="2586.6866784037547" y="679.0" />
+      <point x="162.5" y="324.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.DocumentCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="INNER_CLASS">
+      <point x="0.0" y="-27.5" />
+      <point x="3137.251936619718" y="2700.0" />
+      <point x="2871.668603286385" y="2700.0" />
+      <point x="2871.668603286385" y="2680.0" />
+      <point x="2168.6620892018777" y="2680.0" />
+      <point x="243.75" y="843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadDocumentCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="INNER_CLASS">
+      <point x="0.0" y="-72.5" />
+      <point x="2841.4366784037547" y="2700.0" />
+      <point x="2871.668603286385" y="2700.0" />
+      <point x="2871.668603286385" y="2680.0" />
+      <point x="2168.6620892018777" y="2680.0" />
+      <point x="243.75" y="843.0" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.ElasticsearchRestTemplate" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.DocumentCallback" relationship="DEPENDENCY">
+      <point x="219.79999999999995" y="-337.0" />
+      <point x="1821.1116784037547" y="6225.0" />
+      <point x="3192.9366784037547" y="6225.0" />
+      <point x="3192.9366784037547" y="2817.0" />
+      <point x="3214.5852699530515" y="2817.0" />
+      <point x="77.33333333333331" y="27.5" />
+    </edge>
+    <edge source="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate.ReadDocumentCallback" target="org.springframework.data.elasticsearch.core.AbstractElasticsearchTemplate" relationship="DEPENDENCY">
+      <point x="-212.66666666666663" y="-72.5" />
+      <point x="2628.7700117370878" y="2827.0" />
+      <point x="2754.6666666666665" y="2827.0" />
+      <point x="2754.6666666666665" y="2710.0" />
+      <point x="2797.0019366197184" y="2710.0" />
+      <point x="2797.0019366197184" y="2690.0" />
+      <point x="2006.1620892018777" y="2690.0" />
+      <point x="81.25" y="843.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.2130405156840656" showDependencies="true" x="1869.6791770039868" y="972.4386007658915" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

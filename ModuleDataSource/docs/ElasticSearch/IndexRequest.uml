@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.elasticsearch.action.index.IndexRequest</OriginalElement>
+  <nodes>
+    <node x="1232.9166666666667" y="80.0">org.elasticsearch.transport.TransportMessage</node>
+    <node x="1142.4166666666667" y="244.0">org.elasticsearch.action.ActionRequest</node>
+    <node x="1227.7029320987654" y="408.0">org.elasticsearch.action.get.GetRequest</node>
+    <node x="1129.9166666666667" y="162.0">org.elasticsearch.transport.TransportRequest</node>
+    <node x="1019.9166666666667" y="80.0">org.elasticsearch.tasks.TaskAwareRequest</node>
+    <node x="462.1666666666668" y="244.0">org.elasticsearch.action.IndicesRequest</node>
+    <node x="588.6666666666667" y="408.0">org.elasticsearch.action.support.replication.ReplicatedWriteRequest</node>
+    <node x="642.2029320987655" y="520.0">org.elasticsearch.action.update.UpdateRequest</node>
+    <node x="263.0" y="408.0">org.elasticsearch.action.DocWriteRequest</node>
+    <node x="516.9166666666667" y="326.0">org.elasticsearch.action.support.replication.ReplicationRequest</node>
+    <node x="78.33333333333326" y="520.0">org.elasticsearch.action.delete.DeleteRequest</node>
+    <node x="809.9166666666667" y="326.0">org.elasticsearch.action.support.WriteRequest</node>
+    <node x="258.33333333333326" y="520.0">org.elasticsearch.action.index.IndexRequest</node>
+    <node x="1311.9166666666667" y="326.0">org.elasticsearch.action.RealtimeRequest</node>
+    <node x="1011.9166666666667" y="326.0">org.elasticsearch.action.support.single.shard.SingleShardRequest</node>
+    <node x="349.25" y="326.0">org.apache.lucene.util.Accountable</node>
+    <node x="987.0416666666667" y="0.0">org.elasticsearch.common.io.stream.Writeable</node>
+    <node x="0.0" y="408.0">org.elasticsearch.action.CompositeIndicesRequest</node>
+    <node x="1262.9166666666667" y="0.0">org.elasticsearch.common.util.concurrent.RefCounted</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.elasticsearch.action.support.replication.ReplicatedWriteRequest" target="org.elasticsearch.action.support.WriteRequest" relationship="REALIZATION">
+      <point x="64.75" y="-15.0" />
+      <point x="782.9166666666667" y="382.0" />
+      <point x="900.9166666666667" y="382.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.get.GetRequest" target="org.elasticsearch.action.RealtimeRequest" relationship="REALIZATION">
+      <point x="34.75" y="-15.0" />
+      <point x="1331.9529320987654" y="382.0" />
+      <point x="1399.4166666666667" y="382.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.delete.DeleteRequest" target="org.elasticsearch.action.CompositeIndicesRequest" relationship="REALIZATION">
+      <point x="-53.33333333333334" y="-15.0" />
+      <point x="104.99999999999991" y="474.0" />
+      <point x="121.5" y="474.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.DocWriteRequest" target="org.apache.lucene.util.Accountable" relationship="INTERFACE_GENERALIZATION">
+      <point x="52.75" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.support.WriteRequest" target="org.elasticsearch.common.io.stream.Writeable" relationship="INTERFACE_GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="900.9166666666667" y="55.0" />
+      <point x="1017.5416666666667" y="55.0" />
+      <point x="-30.5" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.ActionRequest" target="org.elasticsearch.transport.TransportRequest" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.support.single.shard.SingleShardRequest" target="org.elasticsearch.action.IndicesRequest" relationship="REALIZATION">
+      <point x="-70.0" y="-15.0" />
+      <point x="1081.9166666666667" y="305.0" />
+      <point x="585.1666666666667" y="305.0" />
+      <point x="41.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.update.UpdateRequest" target="org.elasticsearch.action.DocWriteRequest" relationship="REALIZATION">
+      <point x="-62.25" y="-15.0" />
+      <point x="662.9529320987655" y="499.0" />
+      <point x="368.5" y="499.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.support.single.shard.SingleShardRequest" target="org.elasticsearch.action.ActionRequest" relationship="GENERALIZATION">
+      <point x="70.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.support.replication.ReplicationRequest" target="org.elasticsearch.action.IndicesRequest" relationship="REALIZATION">
+      <point x="-68.25" y="-15.0" />
+      <point x="41.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.index.IndexRequest" target="org.elasticsearch.action.CompositeIndicesRequest" relationship="REALIZATION">
+      <point x="-50.666666666666686" y="-15.0" />
+      <point x="283.6666666666665" y="499.0" />
+      <point x="121.5" y="499.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.transport.TransportMessage" target="org.elasticsearch.common.util.concurrent.RefCounted" relationship="REALIZATION">
+      <point x="47.25" y="-15.0" />
+      <point x="1374.6666666666667" y="55.0" />
+      <point x="1332.4166666666667" y="55.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.update.UpdateRequest" target="org.elasticsearch.action.support.WriteRequest" relationship="REALIZATION">
+      <point x="20.75" y="-15.0" />
+      <point x="745.9529320987655" y="489.0" />
+      <point x="900.9166666666667" y="489.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.delete.DeleteRequest" target="org.elasticsearch.action.support.replication.ReplicatedWriteRequest" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="158.33333333333326" y="459.0" />
+      <point x="718.1666666666667" y="459.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.support.replication.ReplicationRequest" target="org.elasticsearch.action.ActionRequest" relationship="GENERALIZATION">
+      <point x="68.25" y="-15.0" />
+      <point x="721.6666666666667" y="295.0" />
+      <point x="1221.9166666666667" y="295.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.DocWriteRequest" target="org.elasticsearch.action.IndicesRequest" relationship="INTERFACE_GENERALIZATION">
+      <point x="-52.75" y="-15.0" />
+      <point x="315.75" y="305.0" />
+      <point x="503.16666666666674" y="305.0" />
+      <point x="-41.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.support.replication.ReplicatedWriteRequest" target="org.elasticsearch.action.support.replication.ReplicationRequest" relationship="GENERALIZATION">
+      <point x="-64.75" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.transport.TransportRequest" target="org.elasticsearch.tasks.TaskAwareRequest" relationship="REALIZATION">
+      <point x="-46.0" y="-15.0" />
+      <point x="1175.9166666666667" y="136.0" />
+      <point x="1116.4166666666667" y="136.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.index.IndexRequest" target="org.elasticsearch.action.support.replication.ReplicatedWriteRequest" relationship="GENERALIZATION">
+      <point x="0.0" y="-15.0" />
+      <point x="334.33333333333326" y="489.0" />
+      <point x="718.1666666666667" y="489.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.transport.TransportRequest" target="org.elasticsearch.transport.TransportMessage" relationship="GENERALIZATION">
+      <point x="46.0" y="-15.0" />
+      <point x="1267.9166666666667" y="136.0" />
+      <point x="1327.4166666666667" y="136.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.index.IndexRequest" target="org.elasticsearch.action.DocWriteRequest" relationship="REALIZATION">
+      <point x="50.666666666666686" y="-15.0" />
+      <point x="384.99999999999994" y="528.0" />
+      <point x="368.5" y="528.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.update.UpdateRequest" target="org.elasticsearch.action.ActionRequest" relationship="GENERALIZATION">
+      <point x="62.25" y="-15.0" />
+      <point x="787.4529320987655" y="499.0" />
+      <point x="1497.4166666666667" y="499.0" />
+      <point x="1497.4166666666667" y="310.0" />
+      <point x="1221.9166666666667" y="310.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.update.UpdateRequest" target="org.elasticsearch.action.IndicesRequest" relationship="REALIZATION">
+      <point x="-20.75" y="-15.0" />
+      <point x="704.4529320987655" y="469.0" />
+      <point x="506.4166666666667" y="469.0" />
+      <point x="506.4166666666667" y="315.0" />
+      <point x="585.1666666666667" y="315.0" />
+      <point x="41.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.delete.DeleteRequest" target="org.elasticsearch.action.DocWriteRequest" relationship="REALIZATION">
+      <point x="53.33333333333334" y="-15.0" />
+      <point x="211.6666666666666" y="469.0" />
+      <point x="368.5" y="469.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.action.get.GetRequest" target="org.elasticsearch.action.support.single.shard.SingleShardRequest" relationship="GENERALIZATION">
+      <point x="-34.75" y="-15.0" />
+      <point x="1262.4529320987654" y="382.0" />
+      <point x="1151.9166666666667" y="382.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="org.elasticsearch.transport.TransportMessage" target="org.elasticsearch.common.io.stream.Writeable" relationship="REALIZATION">
+      <point x="-47.25" y="-15.0" />
+      <point x="1280.1666666666667" y="55.0" />
+      <point x="1078.5416666666667" y="55.0" />
+      <point x="30.5" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="false" x="794.5" y="258.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -4,28 +4,34 @@
 
 官方：
 
- - **Elastic**：[ElasticSearch的Java API](https://www.elastic.co/guide/en/elasticsearch/reference/current/api-java.html)
- - **SpringBoot**：
-   
+- **Elastic**：[ElasticSearch的Java API](https://www.elastic.co/guide/en/elasticsearch/reference/current/api-java.html)
+- **SpringBoot**：
+
     - [Spring Data Elasticsearch - 参考文档](https://docs.spring.io/spring-data/elasticsearch/docs/4.0.6.RELEASE/reference/html/#preface)
     - [Spring Data Repositories - 重点基础知识](https://docs.spring.io/spring-data/elasticsearch/docs/4.0.6.RELEASE/reference/html/#repositories)
     - [Spring Data JPA 在方法名中支持的关键字](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 
 参考实例：
 
- - [开发学院-ElasticSearch 7 教程](https://www.kaifaxueyuan.com/server/elasticsearch7/elasticsearch-index.html)
- - [高途课堂-elasticsearch系列](https://blog.csdn.net/m0_37135421/article/details/104119720)
- - [ElasticSearch7.6.2 JavaAPI创建索引并设置IK分词](https://blog.csdn.net/GhostGuest/article/details/109760660)
- - [Elastic Stack系列】第一章：概述与目录](https://twocups.cn/index.php/2021/02/20/24/)
+- [开发学院-ElasticSearch 7 教程](https://www.kaifaxueyuan.com/server/elasticsearch7/elasticsearch-index.html)
+- [高途课堂-elasticsearch系列](https://blog.csdn.net/m0_37135421/article/details/104119720)
+- [ElasticSearch7.6.2 JavaAPI创建索引并设置IK分词](https://blog.csdn.net/GhostGuest/article/details/109760660)
+- [Elastic Stack系列】第一章：概述与目录](https://twocups.cn/index.php/2021/02/20/24/)
 
 博客参考：
 
- - *评论区的内容值得借鉴* [完整教程：spring-boot-starter-data-elasticsearch整合elasticsearch 6.x](https://blog.csdn.net/chengyuqiang/article/details/86135795)
- - *评论区的内容值得借鉴* [完整教程：Springboot 2.2整合elasticsearch 7.x (spring-boot-starter-data-elasticsearch)](https://blog.csdn.net/chengyuqiang/article/details/102938266)
- - [Elasticsearch搜索引擎一些参数含义和用法](https://blog.csdn.net/qq_44695727/article/details/107164037)
- - [Elasticsearch实战篇——Spring Boot整合ElasticSearch](https://segmentfault.com/a/1190000018625101)
- - [RestHighLevelClient使用](https://www.cnblogs.com/cicada-smile/p/14322789.html)
- - [RestHighLevelClient操作7.4.2（一）之java中的增删改查](https://blog.csdn.net/m0_37635053/article/details/108438105)
+- *
+  评论区的内容值得借鉴* [完整教程：spring-boot-starter-data-elasticsearch整合elasticsearch 6.x](https://blog.csdn.net/chengyuqiang/article/details/86135795)
+- *
+  评论区的内容值得借鉴* [完整教程：Springboot 2.2整合elasticsearch 7.x (spring-boot-starter-data-elasticsearch)](https://blog.csdn.net/chengyuqiang/article/details/102938266)
+- [Elasticsearch搜索引擎一些参数含义和用法](https://blog.csdn.net/qq_44695727/article/details/107164037)
+- [Elasticsearch实战篇——Spring Boot整合ElasticSearch](https://segmentfault.com/a/1190000018625101)
+- [RestHighLevelClient使用](https://www.cnblogs.com/cicada-smile/p/14322789.html)
+- [RestHighLevelClient操作7.4.2（一）之java中的增删改查](https://blog.csdn.net/m0_37635053/article/details/108438105)
+- [SpringBoot调用ElasticSearch的RestHighLevelClient的功能详解](https://zhuanlan.zhihu.com/p/143786937)
+- [Es学习第七课：term、terms、match等基本查询语法](https://www.cnblogs.com/kakatadage/p/9958932.html)
+- [QueryBuilder简单查询](https://blog.csdn.net/lom9357bye/article/details/52852533)
+- [ElesticsearchTemple（ElasticsearchOperations）基本查询示例](https://blog.csdn.net/qq_43676902/article/details/108601002)
 
 ## SpringBoot结合ELasticSearch启动成功log
 
@@ -80,6 +86,11 @@
 
 ![RestHighLevelClientt](/images/ElasticSearch/RestHighLevelClientt.png)
 
+## ES中的High Level Rest Client与Low Level Rest Client
+
+- `Java Low Level REST Client`: 低级别的REST客户端，通过http与集群交互，用户需自己编组请求JSON串，及解析响应JSON串。兼容所有ES版本。
+- `Java High Level REST Client`: 高级别的REST客户端，基于低级别的REST客户端，增加了编组请求JSON串、解析响应JSON串等相关api。使用的版本需要保持和ES服务端的版本一致，否则会有版本问题。
+
 ## 操作类
 
 - `IndexOperations`：定义索引级别的操作，例如创建或删除索引
@@ -103,20 +114,14 @@
 
 - `SearchHit<T>`：包含以下信息：
 
-  ID
-  分数
-  排序值
-  突出显示字段
-  检索到的 <T> 类型的实体
+  ID 分数 排序值 突出显示字段 检索到的 <T> 类型的实体
 - `SearchHits<T>`：包含以下信息：
 
-  总命中数
-  总点击数关系
-  最高分
-  SearchHit<T>对象列表
-  返回的聚合
+  总命中数 总点击数关系 最高分 SearchHit<T>对象列表 返回的聚合
 
 - `SearchPage<T>`：定义一个包含 SearchHits<T> 元素的 Spring Data Page，可用于使用存储库方法进行分页访问。
 - `SearchScrollHits<T>`：由 ElasticsearchRestTemplate 中的低级scroll API 函数返回，它用 Elasticsearch 的 scroll ID 丰富了 SearchHits<T>。
 - `SearchHitsIterator<T>`：SearchOperations 接口的streaming函数返回的迭代器。
 
+
+## RestHighLevelClient中的各种XXXRequest
