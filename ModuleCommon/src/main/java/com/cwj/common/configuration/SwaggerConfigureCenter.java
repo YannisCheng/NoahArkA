@@ -75,6 +75,8 @@ public class SwaggerConfigureCenter {
                 .groupName("ElasticSearch API")
                 .apiInfo(elasticSearchApiInfo())
                 .select()
+                // 以下写法中 ".elastic" 与 ".elasticsearch" 是等效的。
+                // .apis(RequestHandlerSelectors.basePackage("com.cwj.datasource.elastic"))
                 .apis(RequestHandlerSelectors.basePackage("com.cwj.datasource.elasticsearch"))
                 .paths(PathSelectors.any())
                 .build();

@@ -34,7 +34,7 @@ import java.io.IOException;
  */
 @RestController
 @RequestMapping(value = "/esSearchCenter")
-@Api(tags = "搜索查询管理Center")
+@Api(tags = "Search管理Center")
 public class EsSearchCenter {
 
     @Autowired

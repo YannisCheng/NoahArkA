@@ -35,7 +35,7 @@ import java.io.IOException;
  */
 @RestController
 @RequestMapping(value = "/esDocCenter")
-@Api(tags = "数据(Document)管理Center")
+@Api(tags = "Docs管理Center")
 public class EsDocCenter {
 
     private final RequestOptions options = RequestOptions.DEFAULT;

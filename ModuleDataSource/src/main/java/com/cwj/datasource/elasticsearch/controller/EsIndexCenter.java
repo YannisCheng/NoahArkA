@@ -28,7 +28,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping(value = "/esIndexCenter")
-@Api(tags = "index管理Center")
+@Api(tags = "Indices管理Center")
 public class EsIndexCenter {
 
     @Autowired
@@ -37,7 +37,7 @@ public class EsIndexCenter {
     private final RequestOptions options = RequestOptions.DEFAULT;
 
     @GetMapping(value = "/index/check")
-    @ApiOperation(value = "index：是否存在", tags = "index管理：index是否存在")
+    @ApiOperation(value = "index：是否存在", notes = "index管理：index是否存在")
     @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
     public boolean checkIndexExist(String indexName) {
         try {
@@ -49,7 +49,7 @@ public class EsIndexCenter {
     }
 
     @GetMapping(value = "/index/create")
-    @ApiOperation(value = "index：增/创建", tags = "index管理：新增/创建index")
+    @ApiOperation(value = "index：增/创建", notes = "index管理：新增/创建index")
     @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
     public boolean createIndex(String indexName, Map<String, Object> mapping) {
 
@@ -71,7 +71,7 @@ public class EsIndexCenter {
     }
 
     @GetMapping(value = "/index/delete")
-    @ApiOperation(value = "index：删除", tags = "index管理：删除index")
+    @ApiOperation(value = "index：删除", notes = "index管理：删除index")
     @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
     public boolean deleteIndex(String indexName) {
         if (checkIndexExist(indexName)) {
@@ -87,24 +87,24 @@ public class EsIndexCenter {
     }
 
 
-    @GetMapping(value = "/index/Info")
-    @ApiOperation(value = "index：查", tags = "index管理：获取index信息")
-    @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
-    public GetIndexResponse getIndexInfo(String indexName) {
-        if (checkIndexExist(indexName)) {
-            GetIndexRequest getIndexRequest = new GetIndexRequest(indexName);
-            try {
-                return client.indices().get(getIndexRequest, options);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return null;
-    }
+    //@GetMapping(value = "/index/Info")
+    //@ApiOperation(value = "index：查", notes = "index管理：获取index信息")
+    //@ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
+    //public GetIndexResponse getIndexInfo(String indexName) {
+    //    if (checkIndexExist(indexName)) {
+    //        GetIndexRequest getIndexRequest = new GetIndexRequest(indexName);
+    //        try {
+    //            return client.indices().get(getIndexRequest, options);
+    //        } catch (IOException e) {
+    //            e.printStackTrace();
+    //        }
+    //    }
+    //
+    //    return null;
+    //}
 
     //@GetMapping(value = "/indexMapping/update")
-    //@ApiOperation(value = "indexMapping：改/更新", tags = "index管理Mapping：更新indexMapping")
+    //@ApiOperation(value = "indexMapping：改/更新", notes = "index管理Mapping：更新indexMapping")
     //@ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
     //public GetMappingsResponse updateIndexMapping(String indexName) {
     //
@@ -113,7 +113,7 @@ public class EsIndexCenter {
     //}
 
     @GetMapping(value = "/indexMapping/Info")
-    @ApiOperation(value = "indexMapping：查", tags = "index管理Mapping：获取indexMapping信息")
+    @ApiOperation(value = "indexMapping：查", notes = "index管理Mapping：获取indexMapping信息")
     @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
     public GetMappingsResponse getIndexMappingInfo(String indexName) {
 
@@ -130,7 +130,7 @@ public class EsIndexCenter {
     }
 
     @GetMapping(value = "/indexSetting/Info")
-    @ApiOperation(value = "indexSetting：查", tags = "index管理Setting：获取indexSetting信息")
+    @ApiOperation(value = "indexSetting：查", notes = "index管理Setting：获取indexSetting信息")
     @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
     public GetSettingsResponse getIndexSettingInfo(String indexName) {
 
@@ -147,7 +147,7 @@ public class EsIndexCenter {
     }
 
     @GetMapping(value = "/indexMapping/field")
-    @ApiOperation(value = "indexMapping：field信息", tags = "index管理Mapping：获取indexMapping field 信息")
+    @ApiOperation(value = "indexMapping：field信息", notes = "index管理Mapping：获取indexMapping field 信息")
     @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
     public GetFieldMappingsResponse getIndexMappingfieldInfo(String indexName) {
         if (checkIndexExist(indexName)) {
