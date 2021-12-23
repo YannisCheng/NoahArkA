@@ -1,5 +1,6 @@
 package com.cwj.datasource.elasticsearch.controller;
 
+import com.cwj.datasource.elasticsearch.local.ElasticJavaMain;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
@@ -48,6 +49,10 @@ public class EsIndexCenter {
         return false;
     }
 
+    /**
+     * @see ElasticJavaMain#createIndex(RestHighLevelClient, String)
+     * 创建 索引，具体实例参考：{@link ElasticJavaMain#createIndex(RestHighLevelClient client, String index)}
+     */
     @GetMapping(value = "/index/create")
     @ApiOperation(value = "index：增/创建", notes = "index管理：新增/创建index")
     @ApiImplicitParam(name = "indexName", value = "索引名称", defaultValue = "book_temp", required = true, dataType = "String")
