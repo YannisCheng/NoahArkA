@@ -40,8 +40,9 @@ public class BaseHandlerInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("1 preHandle request : " + request.getRequestURI());
-        System.out.println("1 preHandle response : " + response.toString());
+        System.out.println(INTERCEPTOR_TAG +"1 preHandle");
+        setRequestOutput(request, "Request：postHandle");
+        setResponseOutput(response, "Response：postHandle");
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
 
