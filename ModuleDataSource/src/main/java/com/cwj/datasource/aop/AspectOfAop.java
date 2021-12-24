@@ -1,4 +1,4 @@
-package com.cwj.datasource.Interceptor;
+package com.cwj.datasource.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -16,8 +16,10 @@ import org.springframework.stereotype.Component;
 // 表示它是一个切面
 @Aspect
 @Component
-public class LogSampleAspect {
-    private final Logger logger = LoggerFactory.getLogger(LogSampleAspect.class);
+public class AspectOfAop {
+    private final Logger logger = LoggerFactory.getLogger(AspectOfAop.class);
+
+    public static final String AOP_TAG = "AOP --> ";
 
     /**
      * Pointcut是织入Advice的触发条件。
@@ -41,7 +43,7 @@ public class LogSampleAspect {
      */
     @Before("aboutElasticSearch()")
     public void doBefore(JoinPoint joinPoint) {
-        System.out.println("方法执行前预热，切点信息：" + joinPoint.toString());
+        System.out.println(AOP_TAG + "doBefore，joinPoint：" + joinPoint.toString());
     }
 
     /**
@@ -49,10 +51,11 @@ public class LogSampleAspect {
      */
     @Around("aboutElasticSearch()")
     public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println(AOP_TAG + "doAround，pjp：" + pjp.toString());
         long startTime = System.currentTimeMillis();
         Object proceed = pjp.proceed();
         long endTime = System.currentTimeMillis();
-        System.out.println("方法 "+pjp.getSignature().getName()+" 耗时：" + (endTime - startTime));
+        System.out.println(AOP_TAG + "方法名：" + pjp.getSignature().getName() + "，方法执行耗时：" + (endTime - startTime));
         return proceed;
     }
 
@@ -61,7 +64,7 @@ public class LogSampleAspect {
      */
     @After("aboutElasticSearch()")
     public void doAfter() {
-        System.out.println("方法执行结束 return，返回值：");
+        System.out.println(AOP_TAG + "doAfter");
     }
 
     /**
@@ -70,7 +73,7 @@ public class LogSampleAspect {
      */
     @AfterReturning(returning = "ret", pointcut = "aboutElasticSearch()")
     public void doAfterReturn(Object ret) throws Throwable {
-        System.out.println("方法执行结束后的return值：" + ret.toString());
+        System.out.println(AOP_TAG + "doAfterReturn：" + ret.toString() + "----> 该返回值已经被处理");
     }
 
     /**
@@ -78,7 +81,7 @@ public class LogSampleAspect {
      */
     @AfterThrowing(throwing = "throwable", pointcut = "execution(* com.cwj.datasource.elasticsearch.controller.*.*(..))")
     public void doAfterThrowing(Throwable throwable) {
-        System.out.println("目标方法发生异常的时候执行throwable：" + throwable.toString());
+        System.out.println(AOP_TAG + "doAfterThrowing：" + throwable.toString());
     }
 
 }

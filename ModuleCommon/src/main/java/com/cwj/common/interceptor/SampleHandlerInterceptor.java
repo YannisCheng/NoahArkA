@@ -16,22 +16,24 @@ import javax.servlet.http.HttpServletResponse;
 @Component
 public class SampleHandlerInterceptor implements HandlerInterceptor {
 
+    public static final String INTERCEPTOR_TAG = "拦截器 2# --> ";
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("2 preHandle request : " + request.getRequestURI());
-        System.out.println("2 preHandle response : " + response.toString());
+        System.out.println(INTERCEPTOR_TAG + "2 preHandle request : " + request.getRequestURI());
+        System.out.println(INTERCEPTOR_TAG + "2 preHandle response : " + response.toString());
         return HandlerInterceptor.super.preHandle(request, response, handler);
     }
 
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
-        System.out.println("2 postHandle request : " + request.getRequestURI());
-        System.out.println("2 postHandle response : " + response.toString());
+        System.out.println(INTERCEPTOR_TAG + "2 postHandle request : " + request.getRequestURI());
+        System.out.println(INTERCEPTOR_TAG + "2 postHandle response : " + response.toString());
     }
 
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
-        System.out.println("2 afterCompletion request : " + request.getRequestURI());
-        System.out.println("2 afterCompletion response : " + response.toString());
+        System.out.println(INTERCEPTOR_TAG + "2 afterCompletion request : " + request.getRequestURI());
+        System.out.println(INTERCEPTOR_TAG + "2 afterCompletion response : " + response.toString());
     }
 }
