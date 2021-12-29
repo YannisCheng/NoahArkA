@@ -1,0 +1,46 @@
+// 是否生成 Javadoc/Sources 文件
+//java {
+//    withJavadocJar()
+//    withSourcesJar()
+//}
+
+// [Maven发布插件配置](https://docs.gradle.org/7.0/userguide/publishing_maven.html#publishing_maven:publications)
+publishing {
+    // [出版物-配置参考](https://docs.gradle.org/7.0/userguide/publishing_maven.html#publishing_maven:publications)
+    publications {
+        mavenJava(MavenPublication) {
+            // 自定义发布标识
+            groupId = POM_GROUPID
+            artifactId = POM_NAME
+            version = POM_VERSION
+            // 如果是war包填写components.web，
+            // 如果是jar包填写components.java
+            from components.java
+
+            // [参考](https://docs.gradle.org/7.0.2/dsl/org.gradle.api.publish.maven.MavenPom.html#org.gradle.api.publish.maven.MavenPom:withXml(org.gradle.api.Action))
+            pom.withXml {
+//                asNode().appendNode('dependencies')
+//                        .appendNode('dependency')
+//                        .appendNode('groupId', 'com.squareup')
+//                        .appendNode('artifactId', 'javapoet')
+//                        .appendNode('version', '1.13.0')
+//                asNode().appendNode('properties').appendNode('my-property', 'my-value')
+            }
+        }
+    }
+    // [存储库-参考配置](https://docs.gradle.org/7.0/userguide/publishing_maven.html#publishing_maven:repositories)
+    repositories {
+        // 声明要发布到的存储库
+        maven {
+            // Gradle7.0后，再配置Maven仓库url时需要添加此选项
+            allowInsecureProtocol = true
+            // 指定要上传的maven仓库
+            url NEXUS_REPOSITORY_URL
+            // 认证
+            credentials {
+                username = NEXUS_USERNAME
+                password = NEXUS_PASSWORD
+            }
+        }
+    }
+}
