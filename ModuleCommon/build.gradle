@@ -2,5 +2,45 @@ bootJar {
     // true：开启；false：禁用
     enabled = true
 }
-dependencies {
-}
+
+//repositories {
+//    // 声明要发布到的存储库
+//    maven {
+//        // Gradle7.0后，再配置Maven仓库url时需要添加此选项
+//        allowInsecureProtocol = true
+//        // 指定要上传的maven仓库
+//        url NEXUS_REPOSITORY_URL
+//        // 认证
+//        credentials {
+//            username = NEXUS_USERNAME
+//            password = NEXUS_PASSWORD
+//        }
+//    }
+//}
+
+//dependencies {
+//    implementation 'com.cwj:anno_source:1.0.2:plain@jar'
+//    //注解处理器所在的包
+//    annotationProcessor 'com.cwj:anno_source:1.0.2:plain@jar'
+//    // 由square推出的开源java代码生成框架，提供Java Api生成.java源文件。
+//    // 可搭配 Java APT 技术一同使用。
+//    // 通过这种自动化生成代码的方式，可以让我们用更加简洁优雅的方式要替代繁琐冗杂的重复工作。
+//    // https://mvnrepository.com/artifact/com.squareup/javapoet
+//    implementation 'com.squareup:javapoet:1.13.0'
+//}
+
+//// 声明编译过程中需要用到的 AnnotationProcessing
+//compileJava.options.compilerArgs << "-processor" << "com.cwj.anno.apt.HelloProcess"
+
+// 多个AnnotationProcessing创建
+////选择生成C端使用的包
+//task selectCAnnotationProcessor << {
+//    println "select processor for C"
+//    compileJava.options.compilerArgs << "-processor" << "com.cwj.anno.apt.HelloProcess"
+//}
+//
+////选择生成B端使用的包
+//task selectBAnnotationProcessor << {
+//    println "select processor for B"
+//    compileJava.options.compilerArgs << "-processor" << "com.cwj.anno.apt.HelloProcess"
+//}

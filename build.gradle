@@ -45,10 +45,22 @@ subprojects {
 
     repositories {
         mavenCentral()
+        // 声明要发布到的私有Maven存储库
+        maven {
+            // Gradle7.0后，再配置Maven仓库url时需要添加此选项
+            allowInsecureProtocol = true
+            // 指定要上传的maven仓库
+            url NEXUS_REPOSITORY_URL
+            // 认证
+            credentials {
+                username = NEXUS_USERNAME
+                password = NEXUS_PASSWORD
+            }
+        }
     }
 
     configurations.all {
-        exclude group:'org.springframework.boot', module: 'spring-boot-starter-logging'
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
         exclude module: 'logback-classic'
         exclude module: 'logback-core'
         exclude module: 'log4j-over-slf4j'
@@ -78,13 +90,21 @@ subprojects {
         // 安全组件
         implementation 'org.springframework.boot:spring-boot-starter-security'
 
+        // AOP 面向切面
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
+        implementation 'org.springframework.boot:spring-boot-starter-aop'
+
+        // validation 校验
+        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-validation
+        implementation 'org.springframework.boot:spring-boot-starter-validation'
+
         // Lombok 依赖处理
         //implementation 'org.projectlombok:lombok'
         // https://mvnrepository.com/artifact/org.projectlombok/lombok
         compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
         // 一定要添加 annotationProcessor 依赖，否则@Data一直提示：找不到符号
         // 解决方法：https://projectlombok.org/setup/gradle
-        annotationProcessor  group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
+        annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.20'
 
         //-------- Swagger 组件依赖 ----------
         // https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
@@ -106,12 +126,21 @@ subprojects {
         implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
 
 
-        // AOP
-        // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
-        implementation group: 'org.springframework.boot', name: 'spring-boot-starter-aop', version: '2.6.1'
+        // 由square推出的开源java代码生成框架，提供Java Api生成.java源文件。
+        // 可搭配 Java APT 技术一同使用。
+        // 通过这种自动化生成代码的方式，可以让我们用更加简洁优雅的方式要替代繁琐冗杂的重复工作。
+        // https://mvnrepository.com/artifact/com.squareup/javapoet
+        implementation 'com.squareup:javapoet:1.13.0'
 
+        // 使用自定义的AnnotationProcessing
+        implementation 'com.cwj:anno_source:1.0.3:plain@jar'
+        //注解处理器所在的包
+        annotationProcessor 'com.cwj:anno_source:1.0.3:plain@jar'
 
     }
+
+    // 声明编译过程中需要用到 自定义的AnnotationProcessing
+    compileJava.options.compilerArgs << "-processor" << "com.cwj.anno.apt.HelloProcess"
 
     test {
         useJUnitPlatform()
