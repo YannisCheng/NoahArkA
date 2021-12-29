@@ -39,6 +39,7 @@
 - **`SampleLibAsm`** — **ASM库使用demo样例**
 - **`SampleLibSpring`** — **SpringFramework使用demo样例**
 - **`SampleLibSpringBoot`** — **SpringBoot使用demo样例**
+- **`SampleAnnoSource`** - **Annotation中的SOURCE类型的使用**
 
 每个 `Module` 下的 `docs` 目录，用以存储涉及该工程的同类文档。
 
@@ -85,6 +86,8 @@ ASM字节码操作框架
 
 ## 服务器硬件配置
 
+### 1. VM虚拟机
+
 服务器配置文档：[【腾讯文档】配置明细说明](https://docs.qq.com/sheet/DY2hQV2hsekNrVWRw)
 
 宿主机器：**`Windows10 内存32G`**
@@ -104,8 +107,20 @@ ASM字节码操作框架
 `had-dn2`全称：hadoop date node2
 
 
+### 2. macOS主机
 
+#### 私有 Nexus Repository 
 
+配置描述：
 
+|title|desc|
+|---|---|
+|服务版本|OSS 3.17.0-01|
+|装机位置|macOS|
+|服务地址|http://localhost:8082/|
+|用户名|admin|
+|密码|admin123|
+|启动命令|stanex|
+|停止命令|stonex|
 
 

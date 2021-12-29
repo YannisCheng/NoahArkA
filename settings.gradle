@@ -31,4 +31,5 @@ include 'AppRun'
 // 单独子工程，不参与综合项目。
 include 'SampleLibAsm'
 include 'SampleLibSpringBoot'
+include 'SampleAnnoSource'
 

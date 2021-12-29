@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 
 /**
- * com.cwj.common.test
+ * com.cwj.common.AnnoMain
  *
  * 功能验证测试类
  *
