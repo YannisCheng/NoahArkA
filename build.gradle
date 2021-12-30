@@ -132,15 +132,16 @@ subprojects {
         // https://mvnrepository.com/artifact/com.squareup/javapoet
         implementation 'com.squareup:javapoet:1.13.0'
 
+        // 2021-12-30 14:48:14 注释：影响AppRun启动
         // 使用自定义的AnnotationProcessing
-        implementation 'com.cwj:anno_source:1.0.3:plain@jar'
-        //注解处理器所在的包
-        annotationProcessor 'com.cwj:anno_source:1.0.3:plain@jar'
+//        implementation 'com.cwj:anno_source:1.0.6:plain@jar'
+//        //注解处理器所在的包
+//        annotationProcessor 'com.cwj:anno_source:1.0.6:plain@jar'
 
     }
 
     // 声明编译过程中需要用到 自定义的AnnotationProcessing
-    compileJava.options.compilerArgs << "-processor" << "com.cwj.anno.apt.HelloProcess"
+    //compileJava.options.compilerArgs << "-processor" << "com.cwj.anno.apt.HelloProcess"
 
     test {
         useJUnitPlatform()
