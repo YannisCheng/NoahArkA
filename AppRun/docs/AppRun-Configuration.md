@@ -155,3 +155,12 @@ public class AppRunApplication {
 	}
 	```
 
+### Gradle中api与implementation的区别
+
+- [区别参考](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_recognizing_dependencies)
+- [gradle中api、implementation和compile的区别](https://www.jianshu.com/p/c1e9f30c88a0)
+
+- api：传递的是compile依赖，就是app module中可以使用api 依赖中的接口。
+- implementation：传递的是runtime依赖，就是app module中不能使用implementation依赖中的接口，但是app module运行时能加载implementation中的代码。
+
+
