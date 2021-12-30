@@ -39,6 +39,7 @@
 
 **APT注册**：
 
+- [聊聊AbstractProcessor和Java编译流程](https://cloud.tencent.com/developer/article/1717461)
 - [Java中怎么实现一个 @Retention 为 SOURCE（只在源码阶段保留） 的注解？](https://www.zhihu.com/question/275833833)
 - [Annotation Processor 在 Maven Gradle里的配置](https://www.jianshu.com/p/38a1c3917745)
 - [IDEA+Gradle使用Annotation Processor](https://blog.csdn.net/qq_40985294/article/details/90041296)
@@ -171,6 +172,12 @@ maven/gradle 等构建工具都有对 Annotation Processor 的配置和支持，
 
 在未向javac注册 `APT` 的情况下，手动调用APT：
 
+运行目录：
+
+```shell
+/Users/yannischeng/JetBrain_Projects/Projects_IDEA_Java/NoahArkA/SampleAnnoSource/src/main/java
+```
+
 ```shell
 javac com/cwj/anno/apt/HelloProcess.java 
 javac -processor com.cwj.anno.apt.HelloProcess com/cwj/anno/HelloMain.java
@@ -213,6 +220,20 @@ publishing {
         }
     }
 }
+```
+
+pom手动编辑：
+
+```text
+FAILURE: Build failed with an exception.
+
+* Where:
+Script '/Users/yannischeng/JetBrain_Projects/Projects_IDEA_Java/NoahArkA/SampleAnnoSource/mvn_publish.gradle' line: 34
+
+* What went wrong:
+Execution failed for task ':SampleAnnoSource:generatePomFileForAnnoSourcePublication'.
+> Could not apply withXml() to generated POM
+   > Cannot create a Publication named 'dependenciesNode' because this container does not support creating elements by name alone. Please specify which subtype of Publication to create. Known subtypes are: MavenPublication
 ```
 
 ##### ModuleCommon工程：使用 AnnotationProcessing

@@ -18,7 +18,7 @@ publishing {
             from components.java
 
             // [参考](https://docs.gradle.org/7.0.2/dsl/org.gradle.api.publish.maven.MavenPom.html#org.gradle.api.publish.maven.MavenPom:withXml(org.gradle.api.Action))
-            pom.withXml {
+//            pom.withXml {
 //                asNode().appendNode('dependencies')
 //                        .appendNode('dependency')
 //                        .appendNode('groupId', 'com.squareup')
@@ -40,7 +40,7 @@ publishing {
 //                    }
 //                }
 //                println 'after: '+dependenciesNode.toString()
-            }
+//            }
         }
     }
     // [存储库-参考配置](https://docs.gradle.org/7.0/userguide/publishing_maven.html#publishing_maven:repositories)
