@@ -172,8 +172,8 @@ maven/gradle 等构建工具都有对 Annotation Processor 的配置和支持，
 在未向javac注册 `APT` 的情况下，手动调用APT：
 
 ```shell
-javac com/cwj/common/anno_ref_apt/apt/sample/HelloProcess.java 
-javac -processor com.cwj.common.anno_ref_apt.apt.sample.HelloProcess com/cwj/common/anno_ref_apt/apt/sample/HelloMain.java
+javac com/cwj/anno/apt/HelloProcess.java 
+javac -processor com.cwj.anno.apt.HelloProcess com/cwj/anno/HelloMain.java
 ```
 
 #### 方式2：自动注册

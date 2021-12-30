@@ -8,7 +8,7 @@
 publishing {
     // [出版物-配置参考](https://docs.gradle.org/7.0/userguide/publishing_maven.html#publishing_maven:publications)
     publications {
-        mavenJava(MavenPublication) {
+        AnnoSource(MavenPublication) {
             // 自定义发布标识
             groupId = POM_GROUPID
             artifactId = POM_NAME
@@ -25,6 +25,21 @@ publishing {
 //                        .appendNode('artifactId', 'javapoet')
 //                        .appendNode('version', '1.13.0')
 //                asNode().appendNode('properties').appendNode('my-property', 'my-value')
+//                def dependenciesNode = asNode().appendNode('dependencies')
+//                println dependenciesNode.toString()
+//                configurations.implementation.allDependencies.each {
+//                    // 避免出现空节点或 artifactId=unspecified 的节点
+//                    if (it.group != null && (it.name != null && "unspecified" != it.name) && it.version != null) {
+//                        println 'it des: '+it.toString()
+//                        def dependencyNode = dependenciesNode.appendNode('dependency')
+//                        dependencyNode.appendNode('groupId', it.group)
+//                        dependencyNode.appendNode('artifactId', it.name)
+//                        dependencyNode.appendNode('version', it.version)
+//                        dependencyNode.appendNode('scope', 'implementation')
+//                        println 'dependencyNode: ' + dependencyNode.toString()
+//                    }
+//                }
+//                println 'after: '+dependenciesNode.toString()
             }
         }
     }

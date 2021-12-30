@@ -1,13 +1,7 @@
 package com.cwj.anno.apt;
 
-//import com.squareup.javapoet.JavaFile;
-//import com.squareup.javapoet.MethodSpec;
-//import com.squareup.javapoet.TypeSpec;
 
 import com.cwj.anno.anno.HelloAnno;
-import com.squareup.javapoet.JavaFile;
-import com.squareup.javapoet.MethodSpec;
-import com.squareup.javapoet.TypeSpec;
 
 import javax.annotation.processing.*;
 import javax.lang.model.SourceVersion;
@@ -28,7 +22,7 @@ import java.util.Set;
  * 2021-12-28 15:24
  */
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
-@SupportedAnnotationTypes("com.cwj.common.anno_ref_apt.apt.sample.HelloAnno")
+@SupportedAnnotationTypes("com.cwj.anno.anno.HelloAnno")
 public class HelloProcess extends AbstractProcessor {
 
     private Elements elementUtils;

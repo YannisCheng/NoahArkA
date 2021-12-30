@@ -17,12 +17,18 @@ version '1.0'
 repositories {
     mavenCentral()
     // 导入本地jar包
-    flatDir {dirs 'libs'}
+    //flatDir {dirs 'libs'}
 }
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // 由square推出的开源java代码生成框架，提供Java Api生成.java源文件。
+    // 可搭配 Java APT 技术一同使用。
+    // 通过这种自动化生成代码的方式，可以让我们用更加简洁优雅的方式要替代繁琐冗杂的重复工作。
+    // https://mvnrepository.com/artifact/com.squareup/javapoet
+    implementation 'com.squareup:javapoet:1.13.0'
 }
 
 test {
