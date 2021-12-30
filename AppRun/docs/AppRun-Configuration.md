@@ -100,3 +100,58 @@ public class AppRunApplication {
   
 - 进行属性映射：
   @ConfigurationProperties(prefix = "student")
+  
+## 多个Module（@SpringBootApplication）间的依赖配置
+
+### 说明
+
+在本工程中的各个 `module` 均使保留 `SpringBoot启动类：XXXApplication`，且在最终添加依赖后仍然保留，目的是希望在尽可能简单的代码环境下测试最主要的功能。
+
+### 实现效果
+
+通过运行 `AppRun` 中的 `AppRunApplication` 启动类，能够加载 `ModuleCommon` 与 `ModuleDataSource` 中的配置，正常运行既定功能。
+
+### 配置步骤
+
+1. 通过在 `Java类` 中使用 `@Import` 导入`被依赖module`的 `启动容器类`；
+2. 通过在 `build.gradle` 文件中添加 `project(':xxx')` 实现代码依赖。
+
+### 配置示例
+
+1. **入口类：`AppRun` 依赖 `ModuleDataSource`**
+
+	java文件注解导入Application：
+	
+	```java
+	@Import(value = {DataSourceApplication.class})
+	public class AppRunApplication { }
+	```
+	
+	build.gradle 文件导入依赖：
+	
+	```gradle
+	dependencies {
+	    // 引用 ModuleDataSource 组件
+	    implementation project(':ModuleDataSource')
+	}
+	```
+
+
+2. **`ModuleDataSource` 依赖 `ModuleCommon`**
+
+
+	java文件注解导入Application：
+	
+	```java
+	@Import(value = {CommonApplication.class})
+	public class DataSourceApplication { }
+	```
+	
+	build.gradle 文件导入依赖：
+	
+	```gradle
+	dependencies {
+		implementation project(':ModuleCommon')
+	}
+	```
+

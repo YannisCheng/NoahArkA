@@ -12,7 +12,7 @@ bootJar {
 }
 
 dependencies {
-    // 引用 Common/ModuleSpringData 组件
-    implementation project(':ModuleCommon')
+    //implementation project(':ModuleCommon')
+    // 引用 ModuleDataSource 组件
     implementation project(':ModuleDataSource')
 }
