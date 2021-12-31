@@ -43,6 +43,19 @@ subprojects {
         enabled = false
     }*/
 
+// 如果打包失败则放开该注释，再进行尝试
+//    buildscript {
+//        repositories {
+//            mavenCentral();
+//        }
+//
+//
+//        dependencies {
+//            classpath("org.springframework.boot:spring-boot-gradle-plugin:2.5.0")
+//        }
+//
+//    }
+
     repositories {
         mavenCentral()
         // 声明要发布到的私有Maven存储库

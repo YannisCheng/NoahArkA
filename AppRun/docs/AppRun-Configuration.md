@@ -163,4 +163,67 @@ public class AppRunApplication {
 - api：传递的是compile依赖，就是app module中可以使用api 依赖中的接口。
 - implementation：传递的是runtime依赖，就是app module中不能使用implementation依赖中的接口，但是app module运行时能加载implementation中的代码。
 
+## Gradle构建多Module进行打包
 
+### 被依赖子 module 的gradle文件配置
+
+- ModuleCommon 的build.gradle文件配置：
+
+	```gradle
+	// 要打成可被其他项目引用的jar包时，需要加入
+	jar {
+	    enabled = true
+	}
+	```
+
+- ModuleDataSource 的build.gradle文件配置：
+
+	```gradle
+	// 要打成可被其他项目引用的jar包时，需要加入
+	jar {
+	    enabled = true
+	}
+	```
+	
+### 打包为war/jar
+
+#### 关于plain后缀
+
+jar或者war文件后缀是否带有：`plain`。
+
+- 若是**带有-plain**后缀，则该包仅为一个**普通**的包；
+- 如果未有该文字，则表示其为一个 **boot（启动包）**，则通过使用 `java -jar XXX.war/jar` 命令，即可运行该包。
+
+#### 可执行jar/war包与普通包的MANIFEST.MF文件内容区别
+
+- **普通包**
+
+ ![](/images/plain包内容.png)
+
+ 普通jar/war包的 文件中仅有一行配置：
+    
+    ```text
+    Manifest-Version: 1.0
+    ```
+
+- **可执行包**
+
+
+ 可执行jar/war包的MANIFEST.MF 文件中的配置为：
+
+    ```text
+    Manifest-Version: 1.0
+    Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
+    Spring-Boot-Layers-Index: BOOT-INF/layers.idx
+    Start-Class: com.cwj.apprun.AppRunApplication
+    Spring-Boot-Classes: BOOT-INF/classes/
+    Spring-Boot-Lib: BOOT-INF/lib/
+    Spring-Boot-Version: 2.5.0
+    Main-Class: org.springframework.boot.loader.JarLauncher
+    ```
+
+### 被依赖的子module对应的jar包
+
+该子module的jar包位于`lib文件夹`中
+
+![](/images/多个jar打成一个jar可运行.png)
