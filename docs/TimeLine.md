@@ -171,7 +171,7 @@ dependencies {
 
 注解、反射、APT、JavaPoet框架使用
 
-* [ ] 注解的3种生命周期
+* [ ] 注解的3种生命周期 《Annotation-Reflection-APT-Poet》文件夹
 * [ ] 注解Runtime与反射
-* [x] Source与APT结合生成代码(2021-12-29 17:23:31 实现完成流程，看到结果)
-* [ ] JavaPoetd代码生成辅助框架
+* [x] Source与APT结合生成代码(2021-12-29 17:23:31 实现完成流程，看到结果)- SampleAnnoSource
+* [ ] JavaPoetd代码生成辅助框架- SampleAnnoSource#PoetMain
