@@ -1,3 +1,8 @@
+// 要打成可被其他项目引用的jar包时，需要加入
+jar {
+    enabled = true
+}
+
 bootJar {
     // true：开启；false：禁用
     enabled = true

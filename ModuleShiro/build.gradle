@@ -1,8 +1,8 @@
 
-
-group = 'com.cwj'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+bootJar {
+    // true：开启；false：禁用
+    enabled = true
+}
 
 dependencies {
 
@@ -11,8 +11,4 @@ dependencies {
     implementation group: 'org.apache.shiro', name: 'shiro-core', version: '1.7.1'
 
 
-}
-
-test {
-    useJUnitPlatform()
 }

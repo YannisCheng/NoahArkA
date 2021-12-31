@@ -12,6 +12,11 @@ repositories {
     mavenCentral()
 }*/
 
+bootJar {
+    // true：开启；false：禁用
+    enabled = true
+}
+
 dependencies {
     // https://mvnrepository.com/artifact/org.apache.velocity/velocity
     implementation group: 'org.apache.velocity', name: 'velocity', version: '1.7'

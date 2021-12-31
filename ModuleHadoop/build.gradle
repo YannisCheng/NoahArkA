@@ -1,3 +1,8 @@
+bootJar {
+    // true：开启；false：禁用
+    enabled = true
+}
+
 dependencies {
 //    implementation group: 'org.apache.hadoop', name: 'hadoop-common', version: '3.2.2'
     implementation group: 'org.apache.hadoop', name: 'hadoop-client', version: '3.2.2'

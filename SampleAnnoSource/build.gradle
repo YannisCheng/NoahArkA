@@ -11,6 +11,7 @@ plugins {
 // 导入另一个gradle配置文件
 apply from: 'mvn_publish.gradle'
 
+// 此处使用的group与根build.gradle中的配置不同。
 group 'com.cwj'
 version '1.0'
 
