@@ -24,6 +24,8 @@ include 'ModuleHadoop'
 include 'ModuleGenerator'
 // 安全框架
 include 'ModuleShiro'
+// 定时任务
+include 'ModuleCron'
 
 // 综合项目入口工程
 include 'AppRun'

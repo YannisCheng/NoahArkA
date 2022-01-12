@@ -58,7 +58,7 @@
 **注意：**
 当 `Project` 中创建多个 `Module` 后，在右侧边栏 `Gradle`窗口中，会出现各个 `Module` 对应的 `Task`，且修改完根目录下的`settings.gradle` 和 `build.gradle`文件后，原`Module` 对应的 `Task`名称都将会变为 `Project` 对应的名称。
 
-此时：应当保留最下端的`Project` 对应 `Task` 名称，其之上的所有 `Task`名称均删除即可。
+此时：应当保留最下端的`Project` 对应 `Task` 名称，其之上的所有 `Task`名称均删除，然后执行 "Reload All Gradle Projects" 即可。
 
 ![](/images/gradle-task配置.png)
 

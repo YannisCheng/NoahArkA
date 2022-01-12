@@ -36,3 +36,15 @@
    - `import App from './App'就是引入同目录层次下的App.vue` 文件。
    - `import router from './router'` 引入路由文件。
 
+
+
+
+## React.js
+
+### 常用依赖
+
+```yaml
+  "devDependencies": {
+    "webpack-bundle-analyzer": "^4.4.0",
+  }
+```

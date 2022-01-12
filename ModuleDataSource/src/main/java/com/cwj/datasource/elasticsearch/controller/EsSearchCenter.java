@@ -20,10 +20,13 @@ import org.springframework.data.elasticsearch.core.SearchHits;
 import org.springframework.data.elasticsearch.core.mapping.IndexCoordinates;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQuery;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.io.IOException;
 
 /**
@@ -35,6 +38,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping(value = "/esSearchCenter")
 @Api(tags = "Search管理Center")
+@Validated
 public class EsSearchCenter {
 
     @Autowired
@@ -50,7 +54,7 @@ public class EsSearchCenter {
     @ApiImplicitParams({
             @ApiImplicitParam(name = "indexName", value = "索引名称", required = true, dataType = "String", defaultValue = "book_lao_zi", paramType = "query")
     })
-    public SearchResponse searchAllByClient(String indexName) throws IOException {
+    public SearchResponse searchAllByClient(@Valid @RequestParam("indexName") String indexName) throws IOException {
         // 限制搜索范围为：indexName 索引
         SearchRequest searchRequest = new SearchRequest(indexName);
         // 设置搜索行为限制
@@ -67,7 +71,7 @@ public class EsSearchCenter {
             @ApiImplicitParam(name = "indexName", value = "索引名称", required = true, dataType = "String", defaultValue = "book_lao_zi", paramType = "query"),
             @ApiImplicitParam(name = "params", value = "查询条件", required = true, dataType = "String", defaultValue = "道可道", paramType = "query")
     })
-    public SearchResponse searchParamByClient(String indexName, String param) throws IOException {
+    public SearchResponse searchParamByClient(@Valid @RequestParam("indexName") String indexName, @Valid @RequestParam("param") String param) throws IOException {
         // 限制搜索范围为：indexName 索引
         SearchRequest searchRequest = new SearchRequest(indexName);
         // 设置搜索行为限制
@@ -85,7 +89,7 @@ public class EsSearchCenter {
             @ApiImplicitParam(name = "from", value = "起始页", required = true, dataType = "int", defaultValue = "0", paramType = "query"),
             @ApiImplicitParam(name = "size", value = "单页数量", required = true, dataType = "int", defaultValue = "100", paramType = "query")
     })
-    public SearchResponse queryByPageClient(String indexName, int from, int size) throws IOException {
+    public SearchResponse queryByPageClient(@Valid @RequestParam("indexName") String indexName, @Valid @RequestParam("from") int from, @Valid @RequestParam("size") int size) throws IOException {
         from = from <= -1 ? 0 : from;
         size = Math.min(size, 1000);
         size = size <= 0 ? 15 : size;
@@ -104,7 +108,7 @@ public class EsSearchCenter {
     @GetMapping(value = "/searchCountByClient")
     @ApiOperation(value = "搜索：搜索查询-总数量", notes = "搜索查询-index中doc数量")
     @ApiImplicitParam(name = "indexName", value = "索引名称", required = true, dataType = "String", defaultValue = "book_lao_zi", paramType = "query")
-    public CountResponse searchCountByClient(String indexName) throws IOException {
+    public CountResponse searchCountByClient(@Valid @RequestParam("indexName") String indexName) throws IOException {
         CountRequest countRequest = new CountRequest(indexName);
         return client.count(countRequest, options);
     }
@@ -116,7 +120,7 @@ public class EsSearchCenter {
             @ApiImplicitParam(name = "paramMust", value = "查询条件Must", required = true, dataType = "String", defaultValue = "致虚极", paramType = "query"),
             @ApiImplicitParam(name = "paramMustNot", value = "查询条件MustNot", required = true, dataType = "String", defaultValue = "道", paramType = "query"),
     })
-    public SearchHits<BookOfLaoZi> searchParamByOptions(String indexName, String paramMust, String paramMustNot) {
+    public SearchHits<BookOfLaoZi> searchParamByOptions(@Valid @RequestParam("indexName") String indexName, @Valid @RequestParam("paramMust") String paramMust, @Valid @RequestParam("paramMustNot") String paramMustNot) {
 
         BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
         boolQuery.must(QueryBuilders.matchQuery("content", paramMust));
@@ -130,7 +134,7 @@ public class EsSearchCenter {
     @GetMapping(value = "/getById")
     @ApiOperation(value = "通过_id查询", notes = "通过_id查询，id为String类型")
     @ApiImplicitParam(name = "id", value = "index中的id值", required = true, dataType = "String", defaultValue = "qrdx2323-23u9h223XNf", paramType = "query")
-    public BookOfLaoZi getItemById(String id) {
+    public BookOfLaoZi getItemById(@Valid @RequestParam("id") String id) {
         return operations.get(id, BookOfLaoZi.class);
     }
 }

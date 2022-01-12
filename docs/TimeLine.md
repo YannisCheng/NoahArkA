@@ -175,3 +175,10 @@ dependencies {
 * [ ] 注解Runtime与反射
 * [x] Source与APT结合生成代码(2021-12-29 17:23:31 实现完成流程，看到结果)- SampleAnnoSource
 * [ ] JavaPoetd代码生成辅助框架- SampleAnnoSource#PoetMain
+* [ ] filter - ModuleCommon#filter#BaseFilter
+
+- **2021-12-31 16:42:32 周五**
+
+* [ ] 全局异常、统一结果包装处理、校验全局处理：测试包：ElasticSearch
+* [ ] Cron 定时任务：ModuleCron
+* [ ] Spring Security With JWT
