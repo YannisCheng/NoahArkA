@@ -38,7 +38,7 @@
 
 具体时间段为：
 
-```Java
+```Text
 SongOfCurrent
 SongOfHan
 SongOfJin
@@ -88,8 +88,16 @@ SongWeiJin
 - Hadoop生态：NoahArk-Hadoop REST API
 
 
-## Dev环境服务器与服务启动步骤
+## Dev环境服务部署、配置与启动
 
+### 服务部署
+
+- 虚拟机：had-dn1
+- 虚拟机：had-dn2
+
+### 配置说明
+
+```yaml
  服务器：虚拟机had-dn1
  服务：
     MySQL
@@ -100,12 +108,102 @@ SongWeiJin
  服务地址：localhost:8089
  用户名：yannis
  密码：adminc
+```
+
+### Dev环境TCP连接、各项服务启动
+
+具体执行的命令、服务配置参考：[【腾讯文档】内网穿透](https://docs.qq.com/doc/DY2FMQ2tnU1FsTmxH)
+
+#### （确定）启动虚拟机had-dn1、had-dn2中的 TCP ssh 连接服务 （2个）
+
+- had-dn1 ssh TCP 启动（1）:
+
+```shell
+sudo systemctl start frpc@dn1_gz1
+```
+
+- 远程连接:
+
+```shell
+ssh adminc@cn6.frp.cool -p 11496
+```
+
+- had-dn2 ssh TCP 启动（2）:
+
+```shell
+sudo systemctl start frpc@dn2_gz2
+```
+
+- 远程连接:
+
+```shell
+ssh adminc@cn-gz2.frp.cool -p 15311
+```
+
+#### 启动虚拟机had-dn1、had-dn2中的本地ES服务
+
+- 启动2台虚拟机had-dn1、had-dn12中的ES服务：
+
+```shell
+estart
+```
+
+- 确认本地是否启动成功：
+
+```shell
+curl localhost:9002
+```
+
+#### 启动ES集群对外访问地址（使用had-dn1的地址为对外地址）（1个）
+
+- 启动ES服务器对外的访问地址（3）：
+
+```shell
+sudo systemctl start frpc@dn1_es
+```
+
+- 验证是否启动成功：
+
+```shell
+curl http://es.yannises.cn/
+```
+
+#### 启动MySQL服务及对外访问（1个）
+
+- 启动MySQL服务：
+
+```shell
+sudo systemctl start  frpc@dn1_mysql_hn
+```
+
+- 验证启动结果（客户端验证通过即可）：
+
+```shell
+mysql -uadminc -p -hcn9.frp.cool -p12921
+```
+
+#### 启动Redis服务及对外访问（1个）
+
+- 启动Redis服务：
+
+```shell
+sudo systemctl start frpc@dn1_redis
+```
+
+- 验证启动结果（命令行通过即可）：
+
+```shell
+redis-cli --raw -h cn-zj2.frp.cool -p 12220
+```
+
 
 ## Dev环境前端
+
  启动地址：http://localhost:9528/ 
 
 
-## 部署
+## AppRun服务端代码打包部署
+
 ### 简单步骤
 
 - [在IDEA中如何把Gradle下的Spring boot项目打包并部署到服务器](http://www.manongjc.com/detail/10-dmhvfejsgqiponw.html)
