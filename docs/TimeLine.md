@@ -182,3 +182,6 @@ dependencies {
 * [ ] 全局异常、统一结果包装处理、校验全局处理：测试包：ElasticSearch
 * [ ] Cron 定时任务：ModuleCron
 * [ ] Spring Security With JWT
+
+- **2022-05-24 10:43:00 周二**
+* [x] Spring JWT

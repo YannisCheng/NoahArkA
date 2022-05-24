@@ -29,6 +29,8 @@
 - **`ModuleDataSource`** — **各种数据源操作相关**
 - **`ModuleGenerator`** — **代码生成相关**
 - **`ModuleShiro`** — **安全框架相关**
+- **`ModuleAuth`** - **认证、授权相关**
+- ***`ModuleCron`* - *定时任务相关*
   
 **`Hadoop` 相关 (相关服务、集群搭建、生态配置已经结束，代码项目暂未启动)：**
 

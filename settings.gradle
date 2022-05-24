@@ -26,6 +26,8 @@ include 'ModuleGenerator'
 include 'ModuleShiro'
 // 定时任务
 include 'ModuleCron'
+// 认证授权
+include 'ModuleAuth'
 
 // 综合项目入口工程
 include 'AppRun'
