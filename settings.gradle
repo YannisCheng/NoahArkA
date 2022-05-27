@@ -28,6 +28,8 @@ include 'ModuleShiro'
 include 'ModuleCron'
 // 认证授权
 include 'ModuleAuth'
+// 文件处理
+include 'ModuleFile'
 
 // 综合项目入口工程
 include 'AppRun'

@@ -156,6 +156,8 @@ dependencies {
             ModuleGenerator
             ModuleHadoop
             ModuleShiro
+            ModuleCron
+            ModuleAuth
       **3级**：[单独项目] 该项目不会加入[综合项目]中，始终以单项目的方式进行开发，该种类型的项目的目的是以学习知识点为目的存在的。
             SampleLibAsm
             SampleLibSpring
@@ -184,4 +186,11 @@ dependencies {
 * [ ] Spring Security With JWT
 
 - **2022-05-24 10:43:00 周二**
-* [x] Spring JWT
+* [ ] Spring JWT 实现
+* [ ] AOP 功能实现处理
+* [ ] 代码自动生成处理
+* [ ] 《聊斋志异》数据获取
+
+
+- **2022-05-27 14:05:00 周三**
+* [ ] 添加ModuleFile处理
