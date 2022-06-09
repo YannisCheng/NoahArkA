@@ -1,0 +1,2 @@
+#set($greet='hello')
+$greet $content
