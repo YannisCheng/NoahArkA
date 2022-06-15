@@ -1,0 +1,167 @@
+##定义初始变量
+#set($tableName = $tool.append($tableInfo.name, "Controller"))
+##设置回调
+$!callback.setFileName($tool.append($tableName, ".java"))
+$!callback.setSavePath($tool.append($tableInfo.savePath, "/controller"))
+##拿到主键
+#if(!$tableInfo.pkColumn.isEmpty())
+    #set($pk = $tableInfo.pkColumn.get(0))
+#end
+
+#if($tableInfo.savePackageName)package $!{tableInfo.savePackageName}.#{end}controller;
+
+import $!{tableInfo.savePackageName}.entity.$!{tableInfo.name};
+import $!{tableInfo.savePackageName}.service.$!{tableInfo.name}Service;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import com.cwj.common.base.result.ResultBase;
+import com.cwj.common.base.result.ResultUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import java.util.List;
+
+/**
+ * $!{tableInfo.comment}($!{tableInfo.name})表控制层
+ *
+ * @author $!author
+ * @since $!time.currTime()
+ */
+@Api(tags = "$!{tableInfo.comment}")
+@RestController
+@RequestMapping("/$!tool.firstLowerCase($tableInfo.name)")
+public class $!{tableName} {
+
+    /**
+     * 服务对象
+     */
+    @Autowired
+    private $!{tableInfo.name}Service $!tool.firstLowerCase($tableInfo.name)Service;
+
+
+    // --------------------------------------  查  --------------------------------------
+    /**
+     * 通过主键$!{pk.name}查询单条数据
+     *
+     * @param $!{pk.name} 主键
+     * @return 实例对象
+     */
+    @GetMapping("/findBy$!{tool.firstUpperCase($!{pk.name})}")
+    @ApiOperation(value = "findBy$!{tool.firstUpperCase($!{pk.name})}", notes = "通过主键$!{tool.firstUpperCase($!{pk.name})}进行查询")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
+        @ApiImplicitParam(dataType = "$!{pk.shortType}", name = "$!{pk.name}", value = "主键", required = true, defaultValue = "0")
+    })
+    public ResultBase<$!{tableInfo.name}> findBy$!{tool.firstUpperCase($!{pk.name})}(@RequestParam(name = "$!{pk.name}") $!{pk.shortType} $!{pk.name}) {
+        ResultBase<$!{tableInfo.name}> baseResult = null;
+        $!{tableInfo.name}  $!{tool.firstLowerCase($tableInfo.name)} = null;
+        Boolean present = $!{tool.firstLowerCase($tableInfo.name)}Service.findBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name}).isPresent();
+        if(present){
+            $!{tool.firstLowerCase($tableInfo.name)} = $!{tool.firstLowerCase($tableInfo.name)}Service.findBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name}).get();
+            baseResult = ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)});
+        } else {
+            baseResult =  ResultUtils.errorData();
+        }
+        return baseResult;
+    }
+
+
+    /**
+     * 不分页查询所有数据
+     *
+     * @return 所有数据
+     */
+    @GetMapping("/findAll")
+    @ApiOperation(value = "findAll", notes = "查询所有数据")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true)
+    })
+    public ResultBase<List<$!{tableInfo.name}>> findAll() {
+        // 通过主键进行排序
+        Sort sort = Sort.by(Sort.Direction.ASC, "$!{tool.firstLowerCase($!{pk.name})}");
+         List<$!{tableInfo.name}>  $!{tool.firstLowerCase($tableInfo.name)}s = $!{tool.firstLowerCase($tableInfo.name)}Service.findAll(sort);
+        return ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}s);
+    }
+
+
+    /**
+     * 通过分页查询多条数据
+     *
+     * @param  page
+     * @param  size
+     * @return 单条数据
+     */
+    @GetMapping("/findByPage")
+    @ApiOperation(value = "findByPage", notes = "通过分页进行查询")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
+        @ApiImplicitParam(dataType = "int", name = "page", value = "page", required = true),
+        @ApiImplicitParam(dataType = "int", name = "size", value = "size", required = true)
+    })
+    public ResultBase<Page<$!{tableInfo.name}>> findByPage(@RequestParam(name = "page") int page, @RequestParam(name = "size") int size) {
+        // 通过主键进行排序
+        Sort sort = Sort.by(Sort.Direction.ASC, "$!{tool.firstLowerCase($!{pk.name})}");
+        Pageable pageable = PageRequest.of(page, size, sort);
+        Page<$!{tableInfo.name}>  $!{tool.firstLowerCase($tableInfo.name)}s = $!{tool.firstLowerCase($tableInfo.name)}Service.findByAll(pageable);
+        return ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}s);
+    }
+
+
+    // --------------------------------------  增  --------------------------------------
+    /**
+     * 保存单个对象
+     *
+     * @return 保存后的对象
+     */
+    @PostMapping("/saveOne")
+    @ApiOperation(value = "saveOne", notes = "保存单个对象")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true)
+    })
+    public ResultBase<$!{tableInfo.name}> saveOne(@RequestBody $!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}) {
+         $!{tableInfo.name}  $!{tool.firstLowerCase($tableInfo.name)}s = $!{tool.firstLowerCase($tableInfo.name)}Service.saveOne($!{tool.firstLowerCase($tableInfo.name)});
+        return ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}s);
+    }
+
+
+    // --------------------------------------  改  --------------------------------------
+    /**
+     * 通过obj更新单个对象
+     *
+     * @return 保存后的对象
+     */
+    @PostMapping("/updateByObj")
+    @ApiOperation(value = "updateByObj", notes = "根据Obj保存单个对象")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true)
+    })
+    public ResultBase<$!{tableInfo.name}> updateByObj(@RequestBody $!{tableInfo.name} $!{tool.firstLowerCase($tableInfo.name)}) {
+         $!{tableInfo.name}  $!{tool.firstLowerCase($tableInfo.name)}s = $!{tool.firstLowerCase($tableInfo.name)}Service.updateByObj($!{tool.firstLowerCase($tableInfo.name)});
+        return ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}s);
+    }
+
+
+    // --------------------------------------  删  --------------------------------------
+    /**
+     * 通过主键$!{pk.name}删除单条数据
+     *
+     * @param $!{pk.name} 主键
+     * @return 单条数据
+     */
+    @GetMapping("/deleteBy$!{tool.firstUpperCase($!{pk.name})}")
+    @ApiOperation(value = "deleteBy$!{tool.firstUpperCase($!{pk.name})}", notes = "通过主键$!{tool.firstUpperCase($!{pk.name})}进行删除")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
+        @ApiImplicitParam(dataType = "$!{pk.shortType}", name = "$!{pk.name}", value = "主键", required = true, defaultValue = "0")
+    })
+    public ResultBase<$!{tableInfo.name}> deleteBy$!{tool.firstUpperCase($!{pk.name})}(@RequestParam(name = "$!{pk.name}") $!{pk.shortType} $!{pk.name}) {
+        $!{tool.firstLowerCase($tableInfo.name)}Service.deleteBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name});
+        return ResultUtils.success();
+    }
+
+}
