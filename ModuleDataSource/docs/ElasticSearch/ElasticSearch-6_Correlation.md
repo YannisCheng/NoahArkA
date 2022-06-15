@@ -205,7 +205,7 @@ GET /book_zhou_yi/_search
         // 每个入口都包含一个 description（计算的类型） 、 value（计算结果）、 details（计算细节）字段。
         "_explanation" : {
           "value" : 7.288142,
-          "description" : "weight(content:蒙 in 16) [PerFieldSimilarity], resultBase of:",
+          "description" : "weight(content:蒙 in 16) [PerFieldSimilarity], result of:",
           "details" : [
             {
               "value" : 7.288142,

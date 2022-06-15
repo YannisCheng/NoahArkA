@@ -102,7 +102,7 @@ PUT /website/blog/123
   "_type" : "blog",
   "_id" : "123",
   "_version" : 1,
-  "resultBase" : "created",
+  "result" : "created",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -142,7 +142,7 @@ POST /website/blog/
   "_type" : "blog",
   "_id" : "YzE45HkBZFS3pNflwGSU",
   "_version" : 1,
-  "resultBase" : "created",
+  "result" : "created",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -283,7 +283,7 @@ PUT /website/blog/123
   "_type" : "blog",
   "_id" : "123",
   "_version" : 2,
-  "resultBase" : "updated",
+  "result" : "updated",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -396,7 +396,7 @@ PUT /website/blog/124/_create
   "_type" : "blog",
   "_id" : "124",
   "_version" : 1,
-  "resultBase" : "created",
+  "result" : "created",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -422,7 +422,7 @@ DELETE /website/blog/124/
   "_type" : "blog",
   "_id" : "124",
   "_version" : 2,
-  "resultBase" : "deleted",
+  "result" : "deleted",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -441,7 +441,7 @@ DELETE /website/blog/124/
   "_type" : "blog",
   "_id" : "124",
   "_version" : 3,
-  "resultBase" : "not_found",
+  "result" : "not_found",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -452,7 +452,7 @@ DELETE /website/blog/124/
 }
 ```
 
-即使文档不存在`"resultBase" : "not_found"`， `_version` 值`仍然会增加`。
+即使文档不存在`"result" : "not_found"`， `_version` 值`仍然会增加`。
 这是 Elasticsearch 内部记录本的一部分，用来确保`这些改变`在`跨多节点`时以`正确的顺序执行`。
 
 
@@ -503,7 +503,7 @@ PUT /website/blog/1/_create
   "_type" : "blog",
   "_id" : "1",
   "_version" : 1,
-  "resultBase" : "created",
+  "result" : "created",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -534,7 +534,7 @@ PUT /website/blog/1?if_seq_no=7&if_primary_term=1
   "_type" : "blog",
   "_id" : "1",
   "_version" : 2,
-  "resultBase" : "updated",
+  "result" : "updated",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -585,7 +585,7 @@ POST /website/blog/123/_update
   "_type" : "blog",
   "_id" : "123",
   "_version" : 3,
-  "resultBase" : "updated",
+  "result" : "updated",
   "_shards" : {
     "total" : 2,
     "successful" : 1,
@@ -779,7 +779,7 @@ POST /_bulk
         "_type" : "blog",
         "_id" : "123",
         "_version" : 7,
-        "resultBase" : "deleted",
+        "result" : "deleted",
         "_shards" : {
           "total" : 2,
           "successful" : 1,
@@ -796,7 +796,7 @@ POST /_bulk
         "_type" : "blog",
         "_id" : "123",
         "_version" : 8,
-        "resultBase" : "created",
+        "result" : "created",
         "_shards" : {
           "total" : 2,
           "successful" : 1,
@@ -813,7 +813,7 @@ POST /_bulk
         "_type" : "blog",
         "_id" : "1234",
         "_version" : 1,
-        "resultBase" : "created",
+        "result" : "created",
         "_shards" : {
           "total" : 2,
           "successful" : 1,
@@ -830,7 +830,7 @@ POST /_bulk
         "_type" : "blog",
         "_id" : "123",
         "_version" : 9,
-        "resultBase" : "updated",
+        "result" : "updated",
         "_shards" : {
           "total" : 2,
           "successful" : 1,
