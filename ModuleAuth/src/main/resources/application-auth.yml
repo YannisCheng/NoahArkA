@@ -1,0 +1,54 @@
+
+
+spring:
+  # 邮箱验证基本配置
+  mail:
+    # 邮箱登录密码
+    # Metacomm123
+    # 邮箱名称
+    username: Metacomm@163.com
+    # 邮箱授权码
+    password: JIEMQWEKAOKWYCUY
+    host: smtp.163.com
+    default-encoding: UTF-8
+
+# 邮箱自定义配置
+email:
+  # 验证码长度: 6位
+  verifyCodeLength: 6
+  # 验证码有效时长: 5分钟
+  verifyCodeEffectTime: 5
+  # 自定义邮件验证码主题
+  cusSubject: Metacomm邮箱验证码通知
+  # 邮箱后门验证码
+  universalCode: 111111
+
+# token配置
+token:
+  # 令牌自定义标识
+  header: Authorization
+  # 令牌密钥
+  secret: abcdefghijklmnopqrstuvwxyz
+  # 令牌有效期（默认30分钟） 15天
+  expireTime: 21600
+  # JWT ID：JWT的唯一标识
+  jwtId: tokenId
+
+# 图片验证码
+captcha:
+  # 类型 math 数组计算 char 字符验证
+  captchaType: char
+  # 是否开启验证码
+  switchOn: true
+  # 有效期,单位：分钟
+  expiration: 1
+
+# 文件上传服务
+fileUpload:
+  # BaseUrl
+  serverUrl: http://60.216.119.170:50000/panserver/
+  # 图片上传url
+  uploadUrl: files/file/directupload
+  # 2个参数
+  createUser: 66662
+  parentId: 66662
