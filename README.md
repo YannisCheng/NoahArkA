@@ -27,7 +27,6 @@
 - **`AppRun`** — **项目启动入口**
 - **`ModuleCommon`** — **公共基础配置**
 - **`ModuleDataSource`** — **各种数据源操作相关**
-- **`ModuleGenerator`** — **代码生成相关**
 - **`ModuleShiro`** — **安全框架相关**
 - **`ModuleAuth`** - **认证、授权相关**
 - **`ModuleCron`** - **定时任务相关**
@@ -39,6 +38,7 @@
   
 **各个`Lib`库的`Sample`：**
 
+- **`SampleGenerator`** — **代码生成相关**
 - **`SampleLibAsm`** — **ASM库使用demo样例**
 - **`SampleLibSpring`** — **SpringFramework使用demo样例**
 - **`SampleLibSpringBoot`** — **SpringBoot使用demo样例**

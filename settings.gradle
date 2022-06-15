@@ -20,8 +20,6 @@ include 'ModuleCommon'
 include 'ModuleDataSource'
 // hadoop相关
 include 'ModuleHadoop'
-// 代码生成
-include 'ModuleGenerator'
 // 安全框架
 include 'ModuleShiro'
 // 定时任务
@@ -35,6 +33,7 @@ include 'ModuleFile'
 include 'AppRun'
 
 // 单独子工程，不参与综合项目。
+include 'SampleGenerator'
 include 'SampleLibAsm'
 include 'SampleLibSpringBoot'
 include 'SampleAnnoSource'

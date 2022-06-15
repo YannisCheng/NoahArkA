@@ -193,4 +193,9 @@ dependencies {
 
 
 - **2022-05-27 14:05:00 周三**
+- 
 * [ ] 添加ModuleFile处理
+
+- **2022-06-15 10:43:45 周三**
+- 
+* [ ] `ModuleGenerator` 转换为 `SampleGenerator`
