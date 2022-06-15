@@ -1,3 +1,14 @@
+server:
+  port: 8080
+  servlet:
+    # 应用的访问路径
+    context-path: /dev
+    # 返回结果中文乱码解决方法
+    encoding:
+      charset: UTF-8
+      force: true
+      enabled: true
+
 spring:
   profiles:
     # 激活 AppRun主工程中的application-dev.yml 配置文件

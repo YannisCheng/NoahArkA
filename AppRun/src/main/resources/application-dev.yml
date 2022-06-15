@@ -1,14 +1,43 @@
-
-
 spring:
+
   application:
     name: NoahArk_Dev
+
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+  devtools:
+    restart:
+      # 热部署设置，默认为true
+      enabled: false
+
+  jackson:
+    # 时间格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    # 时区
+    time-zone: GMT+8
+
+  mvc:
+    pathmatch:
+      # springfox 3.0前在 Spring Boot 2.5.X 使用的路径匹配是基于AntPathMatcher的，
+      # 而在Spring Boot 2.6.X使用的是PathPatternMatcher
+      matching-strategy: ant_path_matcher
+
   config:
     # 使用Import将多个配置文件导入到同一个文件中
     # Import 可以被视为在声明它们的文档下方插入的其他文档。
     import:
       - classpath:application-student.yml
+      - classpath:application-common-base.yml
       - classpath:application-common-dev-actuator.yml
       - classpath:application-common-dev-server.yml
       - classpath:application-common-dev-security.yml
       - classpath:application-data-dev.yml
+      - classpath:application-auth.yml
+
+# Swagger配置
+swagger:
+  # 是否开启swagger
+  enabled: true
