@@ -61,9 +61,3 @@ spring:
   elasticsearch:
     rest:
       uris: http://es.yannises.cn
-
-
-# -------- MyBatis配置 --------
-mybatis-plus:
-  # 设置mapper的xml文件扫描路径
-  mapper-locations: classpath:/mapper/*Dao.xml

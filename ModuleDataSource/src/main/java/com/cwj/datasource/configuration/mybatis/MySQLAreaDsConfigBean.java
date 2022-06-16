@@ -1,4 +1,4 @@
-package com.cwj.datasource.configuration;
+package com.cwj.datasource.configuration.mybatis;
 
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,15 +12,15 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
 
 /**
- * com.cwj.datasource.configuration.MySQLAreaDsConfigBean 行政区划数据库
+ * com.cwj.datasource.configuration.mybatis.MySQLAreaDsConfigBean 行政区划数据库
  *
  * @author ChengWenjia  cwj1714@163.com
  * @date 2021-09-01 19:53
  */
-@Data
-@Configuration
-@PropertySource(value = "classpath:application-data-dev.yml", encoding = "UTF-8")
-@ConfigurationProperties(value = "spring.datasource.area")
+//@Data
+//@Configuration
+//@PropertySource(value = "classpath:application-data-dev.yml", encoding = "UTF-8")
+//@ConfigurationProperties(prefix = "spring.datasource.area")
 public class MySQLAreaDsConfigBean {
 
     private String url;
@@ -33,7 +33,7 @@ public class MySQLAreaDsConfigBean {
      *
      * @return DataSource
      */
-    @Bean(name = "setSecondDataSource")
+    //@Bean(name = "setSecondDataSource")
     public DataSource setDataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUrl(url);
@@ -49,7 +49,7 @@ public class MySQLAreaDsConfigBean {
      * @param dataSource 数据源
      * @return JdbcTemplate
      */
-    @Bean(name = "secondJdbcTemplate")
+    //@Bean(name = "secondJdbcTemplate")
     public JdbcTemplate getJdbcTemplate(@Qualifier("setSecondDataSource") DataSource dataSource){
         return new JdbcTemplate(dataSource);
     }
