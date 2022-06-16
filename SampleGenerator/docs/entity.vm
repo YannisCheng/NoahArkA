@@ -1,0 +1,57 @@
+##引入宏定义
+$!define
+
+##使用宏定义设置回调（保存位置与文件后缀）
+#save("/entity", ".java")
+
+##使用宏定义设置包后缀
+#setPackageSuffix("entity")
+
+##使用全局变量实现默认包导入
+$!autoImport
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.annotation.CreatedDate;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModelProperty;
+import io.swagger.annotations.ApiModel;
+import javax.persistence.*;
+import java.io.Serializable;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "${tool.hump2Underline($!{tableInfo.name})}")
+@ApiModel(value="$!{tableInfo.name}", description = "$!{tableInfo.comment}")
+@EntityListeners(AuditingEntityListener.class)
+@org.hibernate.annotations.Table(appliesTo = "${tool.hump2Underline($!{tableInfo.name})}", comment = "$!{tableInfo.comment}")
+##使用宏定义实现类注释信息
+#tableComment("实体类")
+public class $!{tableInfo.name} implements Serializable {
+
+    private static final long serialVersionUID = $!tool.serial();
+
+#foreach($column in $tableInfo.fullColumn)
+
+    @Column(name = "${tool.hump2Underline(${column.name})}")
+    @ApiModelProperty("$!{column.comment}")
+    #if(${column.name} == "id")
+@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    #end
+    #if(${column.name} == "createDate")
+@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @CreationTimestamp
+    @CreatedDate
+    #end
+    #if(${column.name} == "updateDate")
+@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @UpdateTimestamp
+    @LastModifiedDate
+    #end
+public $!{tool.getClsNameByFullName($column.type)} $!{column.name};
+#end
+
+}

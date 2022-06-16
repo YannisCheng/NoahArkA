@@ -55,20 +55,69 @@ public class $!{tableName} {
     @ApiOperation(value = "findBy$!{tool.firstUpperCase($!{pk.name})}", notes = "通过主键$!{tool.firstUpperCase($!{pk.name})}进行查询")
     @ApiImplicitParams({
         @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
-        @ApiImplicitParam(dataType = "$!{pk.shortType}", name = "$!{pk.name}", value = "主键", required = true, defaultValue = "0")
+        @ApiImplicitParam(dataType = "$!{pk.shortType}", name = "$!{pk.name}", value = "主键", required = true, defaultValue = "1")
     })
     public ResultBase<$!{tableInfo.name}> findBy$!{tool.firstUpperCase($!{pk.name})}(@RequestParam(name = "$!{pk.name}") $!{pk.shortType} $!{pk.name}) {
         ResultBase<$!{tableInfo.name}> baseResult = null;
-        $!{tableInfo.name}  $!{tool.firstLowerCase($tableInfo.name)} = null;
-        Boolean present = $!{tool.firstLowerCase($tableInfo.name)}Service.findBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name}).isPresent();
+        boolean present = $!{tool.firstLowerCase($tableInfo.name)}Service.findBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name}).isPresent();
         if(present){
-            $!{tool.firstLowerCase($tableInfo.name)} = $!{tool.firstLowerCase($tableInfo.name)}Service.findBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name}).get();
-            baseResult = ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)});
+            baseResult = ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}Service.findBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name}).get());
         } else {
             baseResult =  ResultUtils.errorData();
         }
         return baseResult;
     }
+
+
+    #if(${tableInfo.name.indexOf("Table")}!=-1)
+/**
+     * 通过 idcard_stu：身份证号 查询单条数据
+     *
+     * @param idCard 身份证号
+     * @return 实例对象
+     */
+    @GetMapping("/findByIdCard")
+    @ApiOperation(value = "findByIdCard", notes = "通过 idcard_stu：身份证号 查询单条数据")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
+        @ApiImplicitParam(dataType = "String", name = "idCard", value = "身份证号", required = true, defaultValue = "370784199211276833")
+    })
+    public ResultBase<$!{tableInfo.name}> findByIdCard(@RequestParam(name = "idCard") String idCard) {
+        ResultBase<$!{tableInfo.name}> baseResult = null;
+        boolean present = $!{tool.firstLowerCase($tableInfo.name)}Service.findByIdCard(idCard).isPresent();
+        if(present){
+            baseResult = ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}Service.findByIdCard(idCard).get());
+        } else {
+            baseResult =  ResultUtils.errorData();
+        }
+        return baseResult;
+    }
+    #end
+
+    #if(${tableInfo.name.indexOf("Table")}!=-1)
+/**
+     * 通过 stu_id：学号 查询单条数据
+     *
+     * @param stuId 学号
+     * @return 实例对象
+     */
+    @GetMapping("/findByStuId")
+    @ApiOperation(value = "findByStuId", notes = "通过 stu_id：学号 查询单条数据")
+    @ApiImplicitParams({
+        @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
+        @ApiImplicitParam(dataType = "String", name = "stuId", value = "学号", required = true, defaultValue = "2009370301000530037")
+    })
+    public ResultBase<$!{tableInfo.name}> findByStuId(@RequestParam(name = "stuId") String stuId) {
+        ResultBase<$!{tableInfo.name}> baseResult = null;
+        boolean present = $!{tool.firstLowerCase($tableInfo.name)}Service.findByStuId(stuId).isPresent();
+        if(present){
+            baseResult = ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}Service.findByStuId(stuId).get());
+        } else {
+            baseResult =  ResultUtils.errorData();
+        }
+        return baseResult;
+    }
+    #end
 
 
     /**
@@ -92,22 +141,22 @@ public class $!{tableName} {
     /**
      * 通过分页查询多条数据
      *
-     * @param  page
-     * @param  size
-     * @return 单条数据
+     * @param  page 页码
+     * @param  size 每页数量
+     * @return 返回当前页的数据
      */
     @GetMapping("/findByPage")
     @ApiOperation(value = "findByPage", notes = "通过分页进行查询")
     @ApiImplicitParams({
         @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
-        @ApiImplicitParam(dataType = "int", name = "page", value = "page", required = true),
-        @ApiImplicitParam(dataType = "int", name = "size", value = "size", required = true)
+        @ApiImplicitParam(dataType = "int", name = "page", value = "页码", defaultValue = "1", required = true),
+        @ApiImplicitParam(dataType = "int", name = "size", value = "每页数量", defaultValue = "20", required = true)
     })
     public ResultBase<Page<$!{tableInfo.name}>> findByPage(@RequestParam(name = "page") int page, @RequestParam(name = "size") int size) {
         // 通过主键进行排序
         Sort sort = Sort.by(Sort.Direction.ASC, "$!{tool.firstLowerCase($!{pk.name})}");
         Pageable pageable = PageRequest.of(page, size, sort);
-        Page<$!{tableInfo.name}>  $!{tool.firstLowerCase($tableInfo.name)}s = $!{tool.firstLowerCase($tableInfo.name)}Service.findByAll(pageable);
+        Page<$!{tableInfo.name}>  $!{tool.firstLowerCase($tableInfo.name)}s = $!{tool.firstLowerCase($tableInfo.name)}Service.findByPage(pageable);
         return ResultUtils.success($!{tool.firstLowerCase($tableInfo.name)}s);
     }
 
@@ -133,7 +182,7 @@ public class $!{tableName} {
     /**
      * 通过obj更新单个对象
      *
-     * @return 保存后的对象
+     * @return 更新后的对象
      */
     @PostMapping("/updateByObj")
     @ApiOperation(value = "updateByObj", notes = "根据Obj保存单个对象")
@@ -157,7 +206,7 @@ public class $!{tableName} {
     @ApiOperation(value = "deleteBy$!{tool.firstUpperCase($!{pk.name})}", notes = "通过主键$!{tool.firstUpperCase($!{pk.name})}进行删除")
     @ApiImplicitParams({
         @ApiImplicitParam(paramType = "header", dataType = "String", name = "Authorization", value = "token标记", required = true),
-        @ApiImplicitParam(dataType = "$!{pk.shortType}", name = "$!{pk.name}", value = "主键", required = true, defaultValue = "0")
+        @ApiImplicitParam(dataType = "$!{pk.shortType}", name = "$!{pk.name}", value = "主键", required = true, defaultValue = "1")
     })
     public ResultBase<$!{tableInfo.name}> deleteBy$!{tool.firstUpperCase($!{pk.name})}(@RequestParam(name = "$!{pk.name}") $!{pk.shortType} $!{pk.name}) {
         $!{tool.firstLowerCase($tableInfo.name)}Service.deleteBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.name});

@@ -73,6 +73,34 @@ public class $!{tableName} implements $!{tableInfo.name}Service {
     }
 
 
+    #if(${tableInfo.name.indexOf("Table")}!=-1)
+/**
+     * 通过 idcard_stu：身份证号 查询单条数据
+     *
+     * @param idCard 身份证号
+     * @return 实例对象
+     */
+    @Override
+    public Optional<$!{tableInfo.name}> findByIdCard(String idCard){
+        return $!{tool.firstLowerCase($!{tableInfo.name})}Repository.findByIdcardStu(idCard);
+    }
+    #end
+
+
+    #if(${tableInfo.name.indexOf("Table")}!=-1)
+/**
+     * 通过 stu_id：学号 查询单条数据
+     *
+     * @param stuId 学号
+     * @return 实例对象
+     */
+    @Override
+    public Optional<$!{tableInfo.name}> findByStuId(String stuId){
+        return $!{tool.firstLowerCase($!{tableInfo.name})}Repository.findByStuId(stuId);
+    }
+    #end
+
+
     // --------------------------------------  增  --------------------------------------
     /**
      * 保存单个对象

@@ -16,9 +16,9 @@ package $!{tableInfo.savePackageName}.repository;
 ##导包
 import $!{tableInfo.savePackageName}.entity.$!{tableInfo.name};
 import java.util.Optional;
-##import org.springframework.transaction.annotation.Transactional;
-##import org.springframework.data.jpa.repository.JpaRepository;
-##import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 
 
 /**
@@ -28,6 +28,26 @@ import java.util.Optional;
  * @since $!time.currTime()
  */
 public interface $!{tableName} extends JpaRepository<$!{tableInfo.name}, $!pk.shortType> {
+
+    #if(${tableInfo.name.indexOf("Table")}!=-1)
+/**
+     * 通过 idcard_stu：身份证号 查询单条数据
+     *
+     * @param idCardStu 身份证号
+     * @return 实例对象
+     */
+    Optional<$!{tableInfo.name}> findByIdcardStu(String idCardStu);
+    #end
+
+    #if(${tableInfo.name.indexOf("Table")}!=-1)
+/**
+     * 通过 stu_id：学号 查询单条数据
+     *
+     * @param StuId 学号
+     * @return 实例对象
+     */
+    Optional<$!{tableInfo.name}> findByStuId(String StuId);
+    #end
 
 	#if(${pk.name} != "id")
 	Optional<$!{tableInfo.name}> findBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.shortType} $!{pk.name});
@@ -39,6 +59,6 @@ public interface $!{tableName} extends JpaRepository<$!{tableInfo.name}, $!pk.sh
 	void deleteBy$!{tool.firstUpperCase($!{pk.name})}($!{pk.shortType} $!{pk.name});
 	#end
 }
-##@Modifying
+    ##@Modifying
 ##@Transactional
 ##void $tool.append("deleteBy", $tool.firstUpperCase($!{pk.name}))($!{pk.shortType} $!{pk.name});
