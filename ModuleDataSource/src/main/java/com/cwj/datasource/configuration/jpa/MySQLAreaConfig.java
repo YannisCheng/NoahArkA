@@ -60,7 +60,7 @@ public class MySQLAreaConfig {
     }
 
     @Bean(name = "areaTransactionManager")
-    public PlatformTransactionManager fnClassTransactionManager(EntityManagerFactoryBuilder builder) {
+    public PlatformTransactionManager areaTransactionManager(EntityManagerFactoryBuilder builder) {
         return new JpaTransactionManager(Objects.requireNonNull(areaEntityManagerFactoryBean().getObject()));
     }
 }
