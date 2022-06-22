@@ -12,7 +12,8 @@ bootJar {
 }
 
 dependencies {
-    //implementation project(':ModuleCommon')
+    implementation project(':ModuleCommon')
+    implementation project(':ModuleAuth')
     // 引用 ModuleDataSource 组件
     implementation project(':ModuleDataSource')
 }
