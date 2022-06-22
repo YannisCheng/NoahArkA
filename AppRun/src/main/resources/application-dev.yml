@@ -35,7 +35,7 @@ spring:
       - classpath:application-common-dev-server.yml
       - classpath:application-common-dev-security.yml
       - classpath:application-data-dev.yml
-      #- classpath:application-auth.yml
+      - classpath:application-auth-dev.yml
 
 # Swagger配置
 swagger:
