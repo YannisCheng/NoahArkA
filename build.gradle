@@ -13,6 +13,9 @@ plugins {
 // 所有子Module均使用到的配置
 subprojects {
 
+    // [为什么我使用gradle构建java的多模块项目时依赖不能正常传递呢](https://www.h5w3.com/177286.html)
+    // [springboot在Gradle7以上版本不识别compile解决方案](https://blog.csdn.net/qq_30729829/article/details/123049239)
+    //apply plugin: 'java-library'
     apply plugin: 'java'
     apply plugin: 'war'
     apply plugin: 'idea'
@@ -142,7 +145,7 @@ subprojects {
         implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
 
 
-        // 由square推出的开源java代码生成框架，提供Java Api生成.java源文件。
+        // 由square推出的开源java代码生成框架，提供Java implementation生成.java源文件。
         // 可搭配 Java APT 技术一同使用。
         // 通过这种自动化生成代码的方式，可以让我们用更加简洁优雅的方式要替代繁琐冗杂的重复工作。
         // https://mvnrepository.com/artifact/com.squareup/javapoet
@@ -162,6 +165,34 @@ subprojects {
 
         // https://mvnrepository.com/artifact/com.alibaba/fastjson
         implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.79'
+
+        implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+
+        implementation "org.elasticsearch.client:x-pack-transport:7.12.1"
+        implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
+
+        // Mongodb
+        //implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+
+        // Redis
+        implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+        implementation 'org.apache.commons:commons-pool2'
+
+        // JDBC
+        implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+
+        // JPA
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation group: 'com.github.pagehelper', name: 'pagehelper-spring-boot-starter', version: '1.4.1'
+
+        // MySQL
+        runtimeOnly 'mysql:mysql-connector-java'
+
+        // https://mvnrepository.com/artifact/com.github.penggle/kaptcha
+        implementation group: 'com.github.penggle', name: 'kaptcha', version: '2.3.2'
+
+        // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+        implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 
     }
 

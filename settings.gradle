@@ -20,8 +20,6 @@ include 'ModuleCommon'
 include 'ModuleDataSource'
 // hadoop相关
 include 'ModuleHadoop'
-// 安全框架
-include 'ModuleShiro'
 // 定时任务
 include 'ModuleCron'
 // 认证授权
