@@ -148,6 +148,34 @@ public class SwaggerConfigureCenter {
     }
 
     /**
+     * SpringBoot+Redis 接口API
+     *
+     * @return Docket
+     */
+    @Bean
+    public Docket createSysUserRestApi() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                //.host(host)
+                .groupName("系统用户服务 API")
+                .apiInfo(sysUserApiInfo())
+                .enable(true)
+                .select()
+                .apis(RequestHandlerSelectors.basePackage("com.cwj.auth.server"))
+                .paths(PathSelectors.any())
+                .build();
+    }
+
+    private ApiInfo sysUserApiInfo() {
+        return new ApiInfoBuilder()
+                .contact(new Contact("YannisCheng", "", "cwj1714@163.com"))
+                .title("NoahArk-系统用户服务 REST API")
+                .description("SpringBoot与系统用户服务 API集合")
+                .termsOfServiceUrl("")
+                .version("1.0")
+                .build();
+    }
+
+    /**
      * Actuator组件：项目健康报告API集合
      *
      * @return Docket
