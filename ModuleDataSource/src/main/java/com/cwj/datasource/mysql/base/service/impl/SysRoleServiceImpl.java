@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * 角色信息表(SysRole)表服务实现类
@@ -60,6 +61,11 @@ public class SysRoleServiceImpl implements SysRoleService {
     @Override
     public Page<SysRole> findByPage(Pageable pageable) {
         return sysRoleRepository.findAll(pageable);
+    }
+
+    @Override
+    public Set<String> findSysRolesByUserId(Long userId) {
+        return null;
     }
 
 

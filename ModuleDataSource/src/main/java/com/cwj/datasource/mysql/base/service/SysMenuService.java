@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * 菜单权限表(SysMenu)表服务接口
@@ -43,6 +44,42 @@ public interface SysMenuService {
      * @return 分页数据
      */
     Page<SysMenu> findByPage(Pageable pageable);
+
+    /**
+     * 根据用户ID查询菜单树信息
+     *
+     * @param userId 用户ID
+     * @return 菜单列表
+     */
+    //List<SysMenu> selectMenuTreeByUserId(Long userId);
+    //
+    ///**
+    // * 根据角色ID查询菜单树信息
+    // *
+    // * @param roleId 角色ID
+    // * @return 选中菜单列表
+    // */
+    //List<Long> selectMenuListByRoleId(Long roleId);
+
+
+    /**
+     * 根据用户ID查询权限
+     *
+     * @param userId 用户ID
+     * @return 权限列表
+     */
+    public Set<String> findSysMenusByUserId(Long userId);
+
+
+    public List<SysMenu> selectMenuByUserId(Long userId, String name, String status);
+
+    /**
+     * 校验菜单名称是否唯一
+     *
+     * @param menu 菜单信息
+     * @return 结果
+     */
+    public boolean checkMenuNameUnique(SysMenu menu);
 
 
     // --------------------------------------  增  --------------------------------------

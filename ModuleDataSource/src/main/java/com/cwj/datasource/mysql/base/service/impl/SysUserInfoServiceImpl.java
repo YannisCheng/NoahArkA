@@ -2,7 +2,7 @@ package com.cwj.datasource.mysql.base.service.impl;
 
 import com.cwj.datasource.mysql.base.entity.SysUser;
 import com.cwj.datasource.mysql.base.repository.SysUserRepository;
-import com.cwj.datasource.mysql.base.service.SysUserService;
+import com.cwj.datasource.mysql.base.service.SysUserInfoService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,7 +20,7 @@ import java.util.Optional;
  * @since 2022-06-16 20:46:17
  */
 @Service("sysUserService")
-public class SysUserServiceImpl implements SysUserService {
+public class SysUserInfoServiceImpl implements SysUserInfoService {
 
     @Autowired
     private SysUserRepository sysUserRepository;
@@ -60,6 +60,11 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     public Page<SysUser> findByPage(Pageable pageable) {
         return sysUserRepository.findAll(pageable);
+    }
+
+    @Override
+    public SysUser selectUserByUserEmail(String userEmail) {
+        return sysUserRepository.findByEmail(userEmail);
     }
 
 

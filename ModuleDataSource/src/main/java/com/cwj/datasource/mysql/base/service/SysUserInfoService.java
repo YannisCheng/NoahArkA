@@ -14,7 +14,7 @@ import java.util.Optional;
  * @author WenjiaCheng
  * @since 2022-06-16 20:46:17
  */
-public interface SysUserService {
+public interface SysUserInfoService {
 
 
     // --------------------------------------  查  --------------------------------------
@@ -43,6 +43,15 @@ public interface SysUserService {
      * @return 分页数据
      */
     Page<SysUser> findByPage(Pageable pageable);
+
+
+    /**
+     * 通过userEmail查询用户
+     *
+     * @param userEmail userEmail
+     * @return 用户对象信息
+     */
+    SysUser selectUserByUserEmail(String userEmail);
 
 
     // --------------------------------------  增  --------------------------------------

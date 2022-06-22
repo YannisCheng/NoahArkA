@@ -7,6 +7,7 @@ import org.springframework.data.domain.Sort;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * 角色信息表(SysRole)表服务接口
@@ -43,6 +44,14 @@ public interface SysRoleService {
      * @return 分页数据
      */
     Page<SysRole> findByPage(Pageable pageable);
+
+    /**
+     * 根据用户ID查询权限
+     *
+     * @param userId 用户ID
+     * @return 权限列表
+     */
+    public Set<String> findSysRolesByUserId(Long userId);
 
 
     // --------------------------------------  增  --------------------------------------

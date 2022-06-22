@@ -3,7 +3,7 @@ package com.cwj.datasource.mysql.base.controller;
 import com.cwj.common.base.result.ResultBase;
 import com.cwj.common.base.result.ResultUtils;
 import com.cwj.datasource.mysql.base.entity.SysUser;
-import com.cwj.datasource.mysql.base.service.SysUserService;
+import com.cwj.datasource.mysql.base.service.SysUserInfoService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -26,13 +26,13 @@ import java.util.List;
 @Api(tags = "基础库-用户信息表")
 @RestController
 @RequestMapping("/sysUser")
-public class SysUserController {
+public class SysUserInfoController {
 
     /**
      * 服务对象
      */
     @Autowired
-    private SysUserService sysUserService;
+    private SysUserInfoService sysUserService;
 
 
     // --------------------------------------  查  --------------------------------------

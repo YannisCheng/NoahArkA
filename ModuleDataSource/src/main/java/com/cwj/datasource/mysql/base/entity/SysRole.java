@@ -84,4 +84,8 @@ public class SysRole implements Serializable {
     @ApiModelProperty("备注")
     public String remark;
 
+    @Transient
+    @ApiModelProperty("菜单组")
+    private Long[] menuIds;
+
 }

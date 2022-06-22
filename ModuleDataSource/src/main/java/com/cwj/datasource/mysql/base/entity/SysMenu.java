@@ -7,7 +7,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -103,5 +105,9 @@ public class SysMenu implements Serializable {
     @Column(name = "remark")
     @ApiModelProperty("备注")
     public String remark;
+
+    @Transient
+    @ApiModelProperty("子菜单")
+    private List<SysMenu> children = new ArrayList<SysMenu>();
 
 }

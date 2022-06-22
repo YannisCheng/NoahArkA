@@ -12,5 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface SysRoleMenuRepository extends JpaRepository<SysRoleMenu, Integer> {
 
+    SysRoleMenu findByRoleId(int roleId);
+    SysRoleMenu findByMenuId(int menuId);
 
 }

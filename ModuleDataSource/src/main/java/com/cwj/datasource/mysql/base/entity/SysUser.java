@@ -104,4 +104,16 @@ public class SysUser implements Serializable {
     @ApiModelProperty("备注")
     public String remark;
 
+    @Transient
+    private String token;
+
+    public static boolean isAdmin(Long userId) {
+        return userId != null && 1 == userId;
+    }
+
+    @Transient
+    public boolean isAdmin() {
+        return isAdmin(this.id);
+    }
+
 }
