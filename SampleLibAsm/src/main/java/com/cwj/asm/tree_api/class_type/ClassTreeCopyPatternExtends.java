@@ -9,7 +9,7 @@ import static org.objectweb.asm.Opcodes.ASM6;
  * ClassTreeCopyPatternExtends  转换类模式1：继承
  *
  * @author wenjia.Cheng  cwj1714@163.com
- * @date 2021/2/8 11:17
+ * @since 2021/2/8 11:17
  */
 public class ClassTreeCopyPatternExtends extends ClassNode {
 

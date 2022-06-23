@@ -10,7 +10,7 @@ import javax.sql.DataSource;
  * com.cwj.datasource.configuration.mybatis.MySQLMiddleDsConfigBean MySQl数据库-中间数据保 存配置bean
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-09-01 20:00
+ * @since 2021-09-01 20:00
  */
 //@Data
 //@Configuration

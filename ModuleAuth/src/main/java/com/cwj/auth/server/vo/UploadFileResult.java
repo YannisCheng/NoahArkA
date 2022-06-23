@@ -10,7 +10,7 @@ import java.io.Serializable;
  * UploadFileResult 文件上传返回值
  *
  * @author ChengWenjia
- * @date 2022-02-23 17:07
+ * @since 2022-02-23 17:07
  */
 @NoArgsConstructor
 @Data

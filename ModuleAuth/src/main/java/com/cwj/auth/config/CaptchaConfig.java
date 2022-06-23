@@ -13,7 +13,7 @@ import static com.google.code.kaptcha.Constants.*;
  * CaptchaConfig  验证码配置
  *
  * @author ChengWenjia
- * @date 2022/2/16 10:34
+ * @since 2022/2/16 10:34
  */
 @Configuration
 public class CaptchaConfig {

@@ -8,7 +8,7 @@ import com.cwj.asm.core_api.metadata_type.annotation.annotations.AnnotaMethod;
  * TargetAnnotaClass  注解测试的 目标示例
  *
  * @author  wenjia.Cheng  cwj1714@163.com
- * @date    2021/2/7 14:12
+ * @since    2021/2/7 14:12
 */
 @AnnotaAll
 public class TargetAnnotaClass {

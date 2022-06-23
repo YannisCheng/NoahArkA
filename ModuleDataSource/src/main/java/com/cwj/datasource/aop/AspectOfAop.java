@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * com.cwj.common.interceptor
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-23 15:58
+ * @since 2021-12-23 15:58
  */
 // 表示它是一个切面
 @Aspect

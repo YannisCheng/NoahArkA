@@ -8,7 +8,7 @@ import java.util.Date;
  * DateUtil 时间格式化工具类
  *
  * @author ChengWenjia
- * @date 2022-02-15 11:13
+ * @since 2022-02-15 11:13
  */
 public class DateUtil {
 

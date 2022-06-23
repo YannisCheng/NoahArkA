@@ -15,7 +15,7 @@ import javax.sql.DataSource;
  * com.cwj.datasource.configuration.mybatis.MySQLAreaDsConfigBean 行政区划数据库
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-09-01 19:53
+ * @since 2021-09-01 19:53
  */
 //@Data
 //@Configuration

@@ -22,7 +22,7 @@ import java.io.IOException;
  * JwtAuthenticationTokenFilter  token过滤器，验证token有效性
  *
  * @author ChengWenjia
- * @date 2022/2/9 14:13
+ * @since 2022/2/9 14:13
  */
 @Component
 @Order(Ordered.HIGHEST_PRECEDENCE)

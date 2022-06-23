@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * 测试代码的限制范围为：com.cwj.datasource.elasticsearch.controller.EsSearchCenter 类中的所有接口。
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-23 14:49
+ * @since 2021-12-23 14:49
  */
 @Configuration
 public class BaseWebConfig implements WebMvcConfigurer {

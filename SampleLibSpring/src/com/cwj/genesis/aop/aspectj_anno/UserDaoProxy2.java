@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * com.cwj.genesis.aop.aspectj_anno
  * 增强类
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-05-26 16:49
+ * @since 2021-05-26 16:49
  */
 // 创建Aspect代理对象
 @Aspect

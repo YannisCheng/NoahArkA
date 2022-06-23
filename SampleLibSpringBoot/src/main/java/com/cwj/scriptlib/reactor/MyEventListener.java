@@ -6,7 +6,7 @@ import java.util.List;
  * com.cwj.scriptlib.reactor
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-10 21:05
+ * @since 2021-08-10 21:05
  */
 public interface MyEventListener<T> {
     void onDataChunk(List<T> chunk);

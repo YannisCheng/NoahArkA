@@ -10,7 +10,7 @@ import java.util.List;
  * RouterVo  路由配置信息
  *
  * @author ChengWenjia
- * @date 2022/3/10 17:13
+ * @since 2022/3/10 17:13
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_EMPTY)

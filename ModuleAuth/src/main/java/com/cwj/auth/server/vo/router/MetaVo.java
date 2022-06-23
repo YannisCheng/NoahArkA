@@ -6,7 +6,7 @@ import lombok.Data;
  * MetaVo  路由显示信息
  *
  * @author ChengWenjia
- * @date 2022/3/10 17:13
+ * @since 2022/3/10 17:13
  */
 @Data
 public class MetaVo {

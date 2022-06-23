@@ -7,7 +7,7 @@ import org.springframework.beans.factory.FactoryBean;
  * com.cwj.genesis.bean_manager.xml.factory_bean
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-05-25 19:35
+ * @since 2021-05-25 19:35
  */
 public class MyFactoryBean implements FactoryBean<Book> {
 

@@ -7,7 +7,7 @@ import com.cwj.common.base.result.ResultBase;
  * SysEmailService 邮箱验证码操作
  *
  * @author ChengWenjia
- * @date 2022-02-14 09:46
+ * @since 2022-02-14 09:46
  */
 public interface SysEmailService {
 

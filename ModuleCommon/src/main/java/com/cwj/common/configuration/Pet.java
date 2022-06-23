@@ -6,7 +6,7 @@ import lombok.Data;
  * com.cwj.common.configuration
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-04 10:12
+ * @since 2021-08-04 10:12
  */
 //@Component
 //@PropertySource(value = {"classpath:student.yml"}, encoding = "UTF-8")

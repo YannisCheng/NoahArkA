@@ -8,7 +8,7 @@ import lombok.Data;
  * com.cwj.scriptlib.restservice
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-07-30 14:43
+ * @since 2021-07-30 14:43
  */
 @ApiModel(value = "Greeting", description = "这是返回值bean的描述信息")
 @Data

@@ -28,7 +28,7 @@ import java.util.Map;
  * 则接下来都会执行54321的afterCompletion方法，因为只要12345的preHandle方法执行完，当前拦截器的拦截器就会记录成编号5的拦截器，而afterCompletion总是从当前的拦截器逆向的向前执行。
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-23 14:35
+ * @since 2021-12-23 14:35
  */
 @Component
 public class BaseHandlerInterceptor implements HandlerInterceptor {

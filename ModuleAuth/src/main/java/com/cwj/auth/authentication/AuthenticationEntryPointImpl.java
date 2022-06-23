@@ -18,7 +18,7 @@ import java.io.Serializable;
  * AuthenticationEntryPointImpl  用户登录认证失败处理类
  *
  * @author ChengWenjia
- * @date 2022/2/9 14:51
+ * @since 2022/2/9 14:51
  */
 @Component
 @Slf4j

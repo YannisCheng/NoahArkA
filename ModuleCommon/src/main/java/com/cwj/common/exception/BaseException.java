@@ -9,7 +9,7 @@ import java.util.Map;
  * com.cwj.common.result 系统中其他异常类的父类
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-31 14:11
+ * @since 2021-12-31 14:11
  */
 public abstract class BaseException extends RuntimeException {
 

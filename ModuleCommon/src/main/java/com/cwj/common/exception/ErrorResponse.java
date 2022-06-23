@@ -11,7 +11,7 @@ import java.util.Map;
  * com.cwj.common.result 返回给客户端具体的异常对象
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-31 14:09
+ * @since 2021-12-31 14:09
  */
 @Data
 public class ErrorResponse {

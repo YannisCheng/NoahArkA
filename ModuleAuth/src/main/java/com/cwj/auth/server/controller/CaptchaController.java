@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
  * CaptchaController  验证码操作处理
  *
  * @author ChengWenjia
- * @date 2022/2/16 10:36
+ * @since 2022/2/16 10:36
  */
 @RestController
 @Api(tags = "验证码相关")

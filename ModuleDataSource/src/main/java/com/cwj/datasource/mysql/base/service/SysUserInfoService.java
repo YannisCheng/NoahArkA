@@ -54,6 +54,14 @@ public interface SysUserInfoService {
     SysUser selectUserByUserEmail(String userEmail);
 
 
+    /**
+     * 通过phonenumber查询用户
+     *
+     * @param phonenumber 手机号
+     * @return 用户对象信息
+     */
+    SysUser findByPhonenumber(String phonenumber);
+
     // --------------------------------------  增  --------------------------------------
 
     /**

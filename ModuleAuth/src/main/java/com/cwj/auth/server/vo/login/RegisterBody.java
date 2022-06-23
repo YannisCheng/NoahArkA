@@ -8,7 +8,7 @@ import java.io.Serializable;
  * LoginBody  用户注册实体对象
  *
  * @author ChengWenjia
- * @date 2022/2/10 09:30
+ * @since 2022/2/10 09:30
  */
 @Data
 public class RegisterBody implements Serializable {

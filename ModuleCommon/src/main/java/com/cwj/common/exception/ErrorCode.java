@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
  * com.cwj.common.result
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-31 14:05
+ * @since 2021-12-31 14:05
  */
 @AllArgsConstructor
 public enum ErrorCode {

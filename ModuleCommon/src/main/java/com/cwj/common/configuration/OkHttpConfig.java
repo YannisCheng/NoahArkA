@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
  * OkHttpConfig OkHttpConfig
  *
  * @author ChengWenjia
- * @date 2022-02-18 11:13
+ * @since 2022-02-18 11:13
  */
 @Configuration
 public class OkHttpConfig {

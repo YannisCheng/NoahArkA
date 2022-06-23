@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
  * com.cwj.datasource.configuration.RedisIndex1DsConfigBean Redis-索引为1的数据库 配置bean
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-09-01 20:06
+ * @since 2021-09-01 20:06
  */
 @Data
 @Configuration

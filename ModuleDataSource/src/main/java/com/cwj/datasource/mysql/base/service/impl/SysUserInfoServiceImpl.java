@@ -67,6 +67,11 @@ public class SysUserInfoServiceImpl implements SysUserInfoService {
         return sysUserRepository.findByEmail(userEmail);
     }
 
+    @Override
+    public SysUser findByPhonenumber(String phonenumber) {
+        return sysUserRepository.findByPhonenumber(phonenumber);
+    }
+
 
     // --------------------------------------  增  --------------------------------------
 

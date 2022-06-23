@@ -9,7 +9,7 @@ import java.util.Set;
  * com.cwj.common.anno_ref_apt.apt
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-27 13:55
+ * @since 2021-12-27 13:55
  */
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 @SupportedAnnotationTypes("com.cwj.common.anno_ref_apt.annotation.BindView")

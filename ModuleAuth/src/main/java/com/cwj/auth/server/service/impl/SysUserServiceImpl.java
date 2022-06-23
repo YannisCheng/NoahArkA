@@ -3,6 +3,7 @@ package com.cwj.auth.server.service.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.cwj.auth.authentication.LoginUserDetails;
 import com.cwj.auth.authentication.TokenService;
+import com.cwj.auth.exception.ServiceException;
 import com.cwj.auth.server.service.SysUserService;
 import com.cwj.auth.server.vo.login.LoginBody;
 import com.cwj.auth.server.vo.login.RegisterBody;
@@ -14,7 +15,6 @@ import com.cwj.datasource.mysql.base.entity.SysUser;
 import com.cwj.datasource.mysql.base.repository.SysUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
@@ -30,7 +30,7 @@ import static com.cwj.common.Constants.Constants.TAG_PHONE;
  * SysUserInfoServiceImpl
  *
  * @author ChengWenjia
- * @date 2022-02-09 15:23
+ * @since 2022-02-09 15:23
  */
 @Service
 public class SysUserServiceImpl implements SysUserService {
@@ -42,8 +42,6 @@ public class SysUserServiceImpl implements SysUserService {
     @Autowired
     private SysUserRepository sysUserRepository;
 
-    private String userIMPwd = "";
-
     /**
      * 用户登录
      *
@@ -51,42 +49,29 @@ public class SysUserServiceImpl implements SysUserService {
      * @return 结果
      */
     @Override
-    public ResultBase login(LoginBody loginBody) {
+    public ResultBase<JSONObject> login(LoginBody loginBody) {
 
 
-        ResultBase result = null;
+        ResultBase<JSONObject> result = null;
         LoginUserDetails userDetails = null;
         String exceptionStr = "";
-        try {
-            if (loginBody.getLoginTag() == TAG_MAIL) {
-                // 邮箱登录
-                userDetails = doAuthentication(loginBody.getUserEmail(), loginBody.getPassword());
-            } else if (loginBody.getLoginTag() == TAG_PHONE) {
-                // 手机登录
-                System.out.println("手机登录方式");
-            }
-        } catch (Exception e) {
-            System.out.println("login exception is : " + e.toString());
-            exceptionStr = "当前用户认证失败。" + e.getMessage();
-            if (e instanceof BadCredentialsException) {
-                System.out.println("AAAAAAAA========密码错误");
-                exceptionStr = "当前用户认证失败。密码错误";
-            } else {
-                System.out.println("AAAAAAAA========" + e.getMessage());
-                exceptionStr = "当前用户认证失败。" + e.getMessage();
-            }
-        }
 
-        if (userDetails == null) {
-            result = ResultUtils.errorData(exceptionStr);
-        } else {
-            // 生成token
-            String userToken = tokenService.createUserToken(userDetails);
-            // TODO  2022-06-21 17:31:39 其他信息配置
-            JSONObject jsonObject = new JSONObject();
-            jsonObject.put("userInfo", userDetails.getSysUser());
-            jsonObject.put("token", userToken);
-            result = ResultUtils.success("", jsonObject);
+        if (loginBody.getLoginTag() == TAG_MAIL) {
+            // 邮箱登录
+            try {
+                userDetails = doAuthentication(loginBody.getUserEmail(), loginBody.getPassword());
+                // 生成token
+                String userToken = tokenService.createUserToken(userDetails);
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("userInfo", userDetails.getSysUser());
+                jsonObject.put("token", userToken);
+                result = ResultUtils.success("", jsonObject);
+            } catch (Exception e) {
+                throw new ServiceException("'" + loginBody.getUserEmail() + "' 对应的用户不存在");
+            }
+        } else if (loginBody.getLoginTag() == TAG_PHONE) {
+            // 手机登录
+            System.out.println("手机登录方式");
         }
 
         return result;
@@ -122,8 +107,8 @@ public class SysUserServiceImpl implements SysUserService {
      * @return 结果
      */
     @Override
-    public ResultBase logout() {
-        ResultBase resultMap = null;
+    public ResultBase<String> logout() {
+        ResultBase<String> resultMap = null;
 
         LoginUserDetails loginUserDetails = tokenService.getLoginUser(ServletUtil.getRequest());
         if (loginUserDetails != null) {
@@ -147,9 +132,9 @@ public class SysUserServiceImpl implements SysUserService {
      * @return 注册结果
      */
     @Override
-    public ResultBase registryUser(RegisterBody registerBody) {
+    public ResultBase<SysUser> registryUser(RegisterBody registerBody) {
 
-        ResultBase resultMap = null;
+        ResultBase<SysUser> resultMap = null;
         if (registerBody.getUserGender() == null || !StringUtils.hasLength(registerBody.getUserGender())) {
             registerBody.setUserGender("0");
         }

@@ -10,7 +10,7 @@ import javax.annotation.Resource;
  * com.cwj.genesis.bean_manager.annotation
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-05-25 23:16
+ * @since 2021-05-25 23:16
  */
 //@Component(value = "userAnnotation")
 //默认值：userAnno

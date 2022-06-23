@@ -11,7 +11,7 @@ import java.io.*;
 
 /**
  * @author ChengWenjia
- * @date 2022-06-08 14:22
+ * @since 2022-06-08 14:22
  */
 public class SampleHello {
     public static void main(String[] args) throws IOException {

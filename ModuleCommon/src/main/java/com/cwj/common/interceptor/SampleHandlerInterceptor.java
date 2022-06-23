@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  * com.cwj.common.interceptor
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-23 14:52
+ * @since 2021-12-23 14:52
  */
 @Component
 public class SampleHandlerInterceptor implements HandlerInterceptor {

@@ -23,7 +23,7 @@ import org.springframework.web.filter.CorsFilter;
  * SecurityConfig  spring security配置
  *
  * @author ChengWenjia
- * @date 2022/2/9 16:40
+ * @since 2022/2/9 16:40
  */
 @Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)

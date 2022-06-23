@@ -8,7 +8,7 @@ import reactor.core.publisher.SignalType;
  * com.cwj.scriptlib.reactor
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-10 17:22
+ * @since 2021-08-10 17:22
  */
 public class SampleSubscriber extends BaseSubscriber<String> {
     @Override

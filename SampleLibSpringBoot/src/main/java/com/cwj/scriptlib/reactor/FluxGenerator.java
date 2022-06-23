@@ -14,7 +14,7 @@ import java.util.function.Consumer;
  * 也可以调用 error(Throwable) 或者 complete()，不过是可选的。
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-10 21:00
+ * @since 2021-08-10 21:00
  */
 public class FluxGenerator {
 

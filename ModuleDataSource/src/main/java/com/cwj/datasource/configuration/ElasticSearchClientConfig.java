@@ -13,7 +13,7 @@ import org.springframework.context.annotation.PropertySource;
  * com.cwj.datasource.elasticsearch.curd
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-16 10:12
+ * @since 2021-12-16 10:12
  */
 @Data
 @Configuration

@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  * 参考：https://blog.csdn.net/weixin_44806772/article/details/106083152
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-05 09:56
+ * @since 2021-08-05 09:56
  */
 @RestController
 @Api(tags = "Redis:连接测试")

@@ -9,7 +9,7 @@ import java.io.IOException;
  * com.cwj.common.filter
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-12-23 23:50
+ * @since 2021-12-23 23:50
  */
 @WebFilter(filterName = "BaseFilter", urlPatterns = "/esSearchCenter/*")
 public class BaseFilter implements Filter {

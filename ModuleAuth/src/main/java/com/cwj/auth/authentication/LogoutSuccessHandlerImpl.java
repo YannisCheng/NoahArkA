@@ -16,7 +16,7 @@ import java.io.IOException;
  * LogoutSuccessHandlerImpl  自定义退出处理类 返回成功
  *
  * @author ChengWenjia
- * @date 2022/2/9 15:09
+ * @since 2022/2/9 15:09
  */
 //@Configuration
 public class LogoutSuccessHandlerImpl implements LogoutSuccessHandler {

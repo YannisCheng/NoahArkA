@@ -26,7 +26,7 @@ import javax.annotation.Resource;
  * com.cwj.datasource.redis.RedisConfiguration Reids数据源及数据序列化模板的配置
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-05 11:42
+ * @since 2021-08-05 11:42
  */
 @Configuration
 @EnableCaching

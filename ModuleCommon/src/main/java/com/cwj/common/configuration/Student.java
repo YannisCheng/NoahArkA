@@ -13,7 +13,7 @@ import java.util.Map;
  * com.cwj.common.configuration
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-04 09:50
+ * @since 2021-08-04 09:50
  */
 @Component
 @Data

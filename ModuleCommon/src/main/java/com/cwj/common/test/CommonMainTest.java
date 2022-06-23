@@ -11,7 +11,7 @@ import javax.annotation.Resource;
  * 功能验证测试类
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-08-04 09:54
+ * @since 2021-08-04 09:54
  */
 @Component
 public class CommonMainTest {

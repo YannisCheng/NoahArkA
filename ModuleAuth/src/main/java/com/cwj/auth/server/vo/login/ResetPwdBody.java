@@ -8,7 +8,7 @@ import java.io.Serializable;
  * ResetPwdBody 修改密码
  *
  * @author ChengWenjia
- * @date 2022-02-18 14:38
+ * @since 2022-02-18 14:38
  */
 @Data
 public class ResetPwdBody implements Serializable {

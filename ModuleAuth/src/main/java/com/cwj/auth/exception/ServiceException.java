@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
  * ServiceException  业务异常
  *
  * @author ChengWenjia
- * @date 2022/2/9 14:36
+ * @since 2022/2/9 14:36
  */
 public final class ServiceException extends RuntimeException {
     private static final long serialVersionUID = 1L;
@@ -33,6 +33,7 @@ public final class ServiceException extends RuntimeException {
     }
 
     public ServiceException(String message) {
+        this.code = 1;
         this.message = message;
     }
 

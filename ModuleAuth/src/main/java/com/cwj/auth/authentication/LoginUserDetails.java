@@ -13,7 +13,7 @@ import java.util.Set;
  * LoginUserDetails Authentication中 UserDetails接口 的具体实现
  *
  * @author ChengWenjia
- * @date 2022-02-09 11:31
+ * @since 2022-02-09 11:31
  */
 @Data
 public class LoginUserDetails implements UserDetails {

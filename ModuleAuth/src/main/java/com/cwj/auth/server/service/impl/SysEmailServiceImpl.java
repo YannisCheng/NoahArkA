@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  * SysEmailServiceImpl 邮箱操作
  *
  * @author ChengWenjia
- * @date 2022-02-14 09:48
+ * @since 2022-02-14 09:48
  */
 @Service
 public class SysEmailServiceImpl implements SysEmailService {

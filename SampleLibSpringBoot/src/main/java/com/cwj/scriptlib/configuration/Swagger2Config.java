@@ -16,7 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Spring Data Swagger2配置
  *
  * @author ChengWenjia  cwj1714@163.com
- * @date 2021-07-31 11:00
+ * @since 2021-07-31 11:00
  */
 // 声明此类为配置类
 @Configuration

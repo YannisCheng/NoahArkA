@@ -18,7 +18,7 @@ import javax.annotation.Resource;
  * UserDetailsServiceImpl  实现UserDetailsService接口，从系统DB获取当前用户信息，并返回UserDetails类。
  *
  * @author ChengWenjia
- * @date 2022/2/11 08:56
+ * @since 2022/2/11 08:56
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
@@ -31,28 +31,30 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private SysUserInfoService sysUserInfoService;
 
     @Override
-    public UserDetails loadUserByUsername(String userEmail) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String userContent) throws UsernameNotFoundException {
 
         //logger.info("UserDetailService ---> : " + userEmail);
         UserDetails userDetails = null;
 
-        if (!StringUtils.hasLength(userEmail)) {
-            throw new ServiceException("用户名不能为空");
+        if (!StringUtils.hasLength(userContent)) {
+            throw new ServiceException("登录内容不能为空");
         } else {
-            SysUser metaUser = sysUserInfoService.selectUserByUserEmail(userEmail);
-            if (metaUser == null) {
-                //logger.info("用户名：'{}' 不存在.", userEmail);
-                throw new ServiceException("用户名：'" + userEmail + "' 不存在");
+            if (userContent.contains("@")) {
+                // 登录内容为邮箱
+                SysUser metaUser = sysUserInfoService.selectUserByUserEmail(userContent);
+                userDetails = createLoginUser(metaUser);
             } else {
+                // 登录内容为手机号
+                SysUser metaUser = sysUserInfoService.findByPhonenumber(userContent);
                 userDetails = createLoginUser(metaUser);
             }
         }
         return userDetails;
     }
 
-    public UserDetails createLoginUser(SysUser metaUser) {
+    public UserDetails createLoginUser(SysUser sysUser) {
         //LoginUserDetails loginUserDetails = new LoginUserDetails(metaUser.getUserId(), metaUser);
-        LoginUserDetails loginUserDetails = new LoginUserDetails(metaUser.getId(), metaUser, sysRoleMenuService.getMenu(metaUser));
+        LoginUserDetails loginUserDetails = new LoginUserDetails(sysUser.getId(), sysUser, sysRoleMenuService.getMenu(sysUser));
         logger.warn("new LoginUserDetails is: {}", loginUserDetails.toString());
         //logger.info("登录用户 ：{} ", loginUserDetails.toString());
         return loginUserDetails;

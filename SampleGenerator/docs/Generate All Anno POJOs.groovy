@@ -73,7 +73,7 @@ def generate(out, className, fields, table) {
             " * " +
             " * " + className + " "+table.getComment() +"\n" + //1. 类名及描述
             " * @author  WenjiaCheng\n" + //2. 自己名字
-            " * @date " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + " \n" +
+            " * @since " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()) + " \n" +
             " */"
     out.println "@Data"
     out.println "@Entity"

@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
  * MetaServerConfig Meta服务端配置
  *
  * @author ChengWenjia
- * @date 2022-02-10 09:46
+ * @since 2022-02-10 09:46
  */
 @Component
 public class MetaServerConfig {

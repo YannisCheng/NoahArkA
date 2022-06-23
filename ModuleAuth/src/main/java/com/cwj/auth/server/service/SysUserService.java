@@ -8,7 +8,7 @@ import com.cwj.common.base.result.ResultBase;
  * SysUserInfoService 系统层级操作用户
  *
  * @author ChengWenjia
- * @date 2022-02-09 15:22
+ * @since 2022-02-09 15:22
  */
 public interface SysUserService {
 

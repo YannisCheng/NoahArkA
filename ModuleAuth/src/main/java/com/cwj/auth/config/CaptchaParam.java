@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * CaptchaParam 图片验证码配置参数
  *
  * @author ChengWenjia
- * @date 2022-02-16 10:43
+ * @since 2022-02-16 10:43
  */
 @Data
 @Configuration
