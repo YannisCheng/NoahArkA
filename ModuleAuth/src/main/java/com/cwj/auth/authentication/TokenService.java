@@ -73,10 +73,11 @@ public class TokenService {
                 // 解析对应的权限以及用户信息
                 String uuid = (String) claims.get(Constants.LOGIN_USER_KEY);
                 String userKey = getTokenKey(uuid);
-                LoginUserDetails user = redisCacheUtil.getCacheObject(userKey);
                 //logger.info("getLoginUser parse info : {}", user);
-                return user;
+                System.out.println("get obj user: " + redisCacheUtil.getCacheObject(userKey));
+                return redisCacheUtil.getCacheObject(userKey);
             } catch (Exception e) {
+                System.out.println("details: "+ e.toString());
             }
         }
         return null;
