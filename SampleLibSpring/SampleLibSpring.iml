@@ -122,5 +122,9 @@
     </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="lib (2)" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-context:5.3.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-beans:5.3.7" level="project" />
+    <orderEntry type="library" name="Gradle: org.aspectj:aspectjweaver:1.9.6" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:5.3.7" level="project" />
   </component>
 </module>
