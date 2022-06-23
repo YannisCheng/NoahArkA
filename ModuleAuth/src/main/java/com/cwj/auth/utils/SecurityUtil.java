@@ -1,7 +1,7 @@
 package com.cwj.auth.utils;
 
 import com.cwj.auth.authentication.LoginUserDetails;
-import com.cwj.auth.exception.ServiceException;
+import com.cwj.auth.exception.DealAnyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,7 +20,7 @@ public class SecurityUtil {
         try {
             return getLoginUser().getUserId();
         } catch (Exception e) {
-            throw new ServiceException("获取用户ID异常", HttpStatus.UNAUTHORIZED);
+            throw new DealAnyException("获取用户ID异常", HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -31,7 +31,7 @@ public class SecurityUtil {
         try {
             return getLoginUser().getSysUser().getNickName();
         } catch (Exception e) {
-            throw new ServiceException("获取用户账户异常", HttpStatus.UNAUTHORIZED);
+            throw new DealAnyException("获取用户账户异常", HttpStatus.UNAUTHORIZED);
         }
     }
 
@@ -42,7 +42,7 @@ public class SecurityUtil {
         try {
             return (LoginUserDetails) getAuthentication().getPrincipal();
         } catch (Exception e) {
-            throw new ServiceException("获取用户信息异常", HttpStatus.UNAUTHORIZED);
+            throw new DealAnyException("获取用户信息异常", HttpStatus.UNAUTHORIZED);
         }
     }
 

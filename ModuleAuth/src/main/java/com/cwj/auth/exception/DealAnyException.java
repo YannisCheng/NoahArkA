@@ -3,12 +3,12 @@ package com.cwj.auth.exception;
 import org.springframework.http.HttpStatus;
 
 /**
- * ServiceException  业务异常
+ * DealAnyException  业务异常
  *
  * @author ChengWenjia
  * @since 2022/2/9 14:36
  */
-public final class ServiceException extends RuntimeException {
+public final class DealAnyException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -29,27 +29,27 @@ public final class ServiceException extends RuntimeException {
     /**
      * 空构造方法，避免反序列化问题
      */
-    public ServiceException() {
+    public DealAnyException() {
     }
 
-    public ServiceException(String message) {
+    public DealAnyException(String message) {
         this.code = 1;
         this.message = message;
     }
 
-    public ServiceException(String message, Integer code) {
+    public DealAnyException(String message, Integer code) {
         this.message = message;
         this.code = code;
     }
 
-    public ServiceException(String message, HttpStatus unauthorized) {
+    public DealAnyException(String message, HttpStatus unauthorized) {
     }
 
     public String getDetailMessage() {
         return detailMessage;
     }
 
-    public ServiceException setDetailMessage(String detailMessage) {
+    public DealAnyException setDetailMessage(String detailMessage) {
         this.detailMessage = detailMessage;
         return this;
     }
@@ -58,7 +58,7 @@ public final class ServiceException extends RuntimeException {
         return message;
     }
 
-    public ServiceException setMessage(String message) {
+    public DealAnyException setMessage(String message) {
         this.message = message;
         return this;
     }

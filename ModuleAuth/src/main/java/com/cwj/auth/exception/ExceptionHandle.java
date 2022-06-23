@@ -42,10 +42,10 @@ public class ExceptionHandle {
     @ResponseBody
     public ResultBase handle(Exception e) {
         log.error("【系统异常】{}", e);
-        if (e instanceof ServiceException) {
+        if (e instanceof DealAnyException) {
             // 自定义异常
-            ServiceException serviceException = (ServiceException) e;
-            return ResultUtils.errorData(serviceException.getCode(), serviceException.getMessage());
+            DealAnyException dealAnyException = (DealAnyException) e;
+            return ResultUtils.errorData(dealAnyException.getCode(), dealAnyException.getMessage());
         } else if (e instanceof ConstraintViolationException
                 || e instanceof MissingServletRequestParameterException) {
             // 参数校验异常

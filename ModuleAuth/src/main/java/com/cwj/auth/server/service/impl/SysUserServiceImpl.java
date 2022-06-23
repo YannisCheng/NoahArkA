@@ -3,7 +3,7 @@ package com.cwj.auth.server.service.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.cwj.auth.authentication.LoginUserDetails;
 import com.cwj.auth.authentication.TokenService;
-import com.cwj.auth.exception.ServiceException;
+import com.cwj.auth.exception.DealAnyException;
 import com.cwj.auth.server.service.SysUserService;
 import com.cwj.auth.server.vo.login.LoginBody;
 import com.cwj.auth.server.vo.login.RegisterBody;
@@ -67,7 +67,7 @@ public class SysUserServiceImpl implements SysUserService {
                 jsonObject.put("token", userToken);
                 result = ResultUtils.success("", jsonObject);
             } catch (Exception e) {
-                throw new ServiceException("'" + loginBody.getUserEmail() + "' 对应的用户不存在");
+                throw new DealAnyException("'" + loginBody.getUserEmail() + "' 对应的用户不存在");
             }
         } else if (loginBody.getLoginTag() == TAG_PHONE) {
             // 手机登录

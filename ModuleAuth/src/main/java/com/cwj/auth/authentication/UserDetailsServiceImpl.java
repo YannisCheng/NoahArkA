@@ -1,6 +1,6 @@
 package com.cwj.auth.authentication;
 
-import com.cwj.auth.exception.ServiceException;
+import com.cwj.auth.exception.DealAnyException;
 import com.cwj.datasource.mysql.base.entity.SysUser;
 import com.cwj.datasource.mysql.base.service.SysRoleMenuService;
 import com.cwj.datasource.mysql.base.service.SysUserInfoService;
@@ -37,7 +37,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserDetails userDetails = null;
 
         if (!StringUtils.hasLength(userContent)) {
-            throw new ServiceException("登录内容不能为空");
+            throw new DealAnyException("登录内容不能为空");
         } else {
             if (userContent.contains("@")) {
                 // 登录内容为邮箱
