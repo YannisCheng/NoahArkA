@@ -1,4 +1,4 @@
-package com.cwj.auth.exception;
+package com.cwj.common.exception;
 
 import org.springframework.http.HttpStatus;
 

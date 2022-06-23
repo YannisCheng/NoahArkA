@@ -1,7 +1,7 @@
 package com.cwj.auth.utils;
 
 import com.cwj.auth.authentication.LoginUserDetails;
-import com.cwj.auth.exception.DealAnyException;
+import com.cwj.common.exception.DealAnyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;

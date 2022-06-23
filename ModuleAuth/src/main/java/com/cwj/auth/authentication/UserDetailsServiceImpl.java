@@ -1,6 +1,5 @@
 package com.cwj.auth.authentication;
 
-import com.cwj.auth.exception.DealAnyException;
 import com.cwj.datasource.mysql.base.entity.SysUser;
 import com.cwj.datasource.mysql.base.service.SysRoleMenuService;
 import com.cwj.datasource.mysql.base.service.SysUserInfoService;
@@ -10,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
 
@@ -34,21 +32,18 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     public UserDetails loadUserByUsername(String userContent) throws UsernameNotFoundException {
 
         //logger.info("UserDetailService ---> : " + userEmail);
-        UserDetails userDetails = null;
+        UserDetails userDetails;
 
-        if (!StringUtils.hasLength(userContent)) {
-            throw new DealAnyException("登录内容不能为空");
+        if (userContent.contains("@")) {
+            // 登录内容为邮箱
+            SysUser metaUser = sysUserInfoService.selectUserByUserEmail(userContent);
+            userDetails = createLoginUser(metaUser);
         } else {
-            if (userContent.contains("@")) {
-                // 登录内容为邮箱
-                SysUser metaUser = sysUserInfoService.selectUserByUserEmail(userContent);
-                userDetails = createLoginUser(metaUser);
-            } else {
-                // 登录内容为手机号
-                SysUser metaUser = sysUserInfoService.findByPhonenumber(userContent);
-                userDetails = createLoginUser(metaUser);
-            }
+            // 登录内容为手机号
+            SysUser metaUser = sysUserInfoService.findByPhonenumber(userContent);
+            userDetails = createLoginUser(metaUser);
         }
+
         return userDetails;
     }
 

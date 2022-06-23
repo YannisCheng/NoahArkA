@@ -1,4 +1,4 @@
-package com.cwj.auth.exception;
+package com.cwj.common.exception;
 
 import com.cwj.common.base.result.ResultBase;
 import com.cwj.common.base.result.ResultEnum;
@@ -30,7 +30,7 @@ public class ExceptionHandle {
      * 权限校验异常
      */
     @ExceptionHandler(AccessDeniedException.class)
-    public ResultBase handleAccessDeniedException(AccessDeniedException e, HttpServletRequest request) {
+    public ResultBase<String> handleAccessDeniedException(AccessDeniedException e, HttpServletRequest request) {
         HttpServletResponse response = ServletUtil.getResponse();
         String requestURI = request.getRequestURI();
         String msg = "请求地址'" + requestURI + "'，权限校验失败：" + e.getMessage() + "，请联系管理员授权";
@@ -40,7 +40,7 @@ public class ExceptionHandle {
 
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
-    public ResultBase handle(Exception e) {
+    public ResultBase<String> handle(Exception e) {
         log.error("【系统异常】{}", e);
         if (e instanceof DealAnyException) {
             // 自定义异常

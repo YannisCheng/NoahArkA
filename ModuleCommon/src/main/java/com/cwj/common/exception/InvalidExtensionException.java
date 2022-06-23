@@ -1,4 +1,4 @@
-package com.cwj.auth.exception.file;
+package com.cwj.common.exception;
 
 
 import org.apache.tomcat.util.http.fileupload.FileUploadException;

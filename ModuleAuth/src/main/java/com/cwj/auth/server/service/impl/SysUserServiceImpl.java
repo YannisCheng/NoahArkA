@@ -3,13 +3,13 @@ package com.cwj.auth.server.service.impl;
 import com.alibaba.fastjson.JSONObject;
 import com.cwj.auth.authentication.LoginUserDetails;
 import com.cwj.auth.authentication.TokenService;
-import com.cwj.auth.exception.DealAnyException;
 import com.cwj.auth.server.service.SysUserService;
 import com.cwj.auth.server.vo.login.LoginBody;
 import com.cwj.auth.server.vo.login.RegisterBody;
 import com.cwj.auth.utils.SecurityUtil;
 import com.cwj.common.base.result.ResultBase;
 import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.exception.DealAnyException;
 import com.cwj.common.utils.ServletUtil;
 import com.cwj.datasource.mysql.base.entity.SysUser;
 import com.cwj.datasource.mysql.base.repository.SysUserRepository;
@@ -57,17 +57,22 @@ public class SysUserServiceImpl implements SysUserService {
         String exceptionStr = "";
 
         if (loginBody.getLoginTag() == TAG_MAIL) {
-            // 邮箱登录
-            try {
-                userDetails = doAuthentication(loginBody.getUserEmail(), loginBody.getPassword());
-                // 生成token
-                String userToken = tokenService.createUserToken(userDetails);
-                JSONObject jsonObject = new JSONObject();
-                jsonObject.put("userInfo", userDetails.getSysUser());
-                jsonObject.put("token", userToken);
-                result = ResultUtils.success("", jsonObject);
-            } catch (Exception e) {
-                throw new DealAnyException("'" + loginBody.getUserEmail() + "' 对应的用户不存在");
+            if (StringUtils.hasLength(loginBody.getUserEmail())) {
+
+                // 邮箱登录
+                try {
+                    userDetails = doAuthentication(loginBody.getUserEmail(), loginBody.getPassword());
+                    // 生成token
+                    String userToken = tokenService.createUserToken(userDetails);
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("userInfo", userDetails.getSysUser());
+                    jsonObject.put("token", userToken);
+                    result = ResultUtils.success("", jsonObject);
+                } catch (Exception e) {
+                    throw new DealAnyException("'" + loginBody.getUserEmail() + "' 对应的用户不存在");
+                }
+            } else {
+                throw new DealAnyException("登录内容不能为空");
             }
         } else if (loginBody.getLoginTag() == TAG_PHONE) {
             // 手机登录
@@ -115,8 +120,6 @@ public class SysUserServiceImpl implements SysUserService {
             // 删除用户缓存记录
             tokenService.delLoginUser(loginUserDetails.getToken());
             // TODO 2022-02-14 17:12:36 记录用户退出日志
-            // String userName = loginUserDetails.getUsername();
-            //AsyncManager.me().execute(AsyncFactory.recordLogininfor(userName, Constants.LOGOUT, "退出成功"));
             resultMap = ResultUtils.success("登出成功");
         } else {
             resultMap = ResultUtils.errorData("登出异常");
