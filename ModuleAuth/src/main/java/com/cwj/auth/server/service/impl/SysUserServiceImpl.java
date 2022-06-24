@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 import static com.cwj.common.Constants.Constants.TAG_MAIL;
 import static com.cwj.common.Constants.Constants.TAG_PHONE;
@@ -146,10 +147,10 @@ public class SysUserServiceImpl implements SysUserService {
             if (sysUserRepository.existsByEmail(registerBody.getUserEmail())) {
                 resultMap = ResultUtils.errorData("当前邮箱已注册，请重新编辑。");
             } else {
-                SysUser metaUser = setMetaUser(registerBody);
-                SysUser insertMetaUser = sysUserRepository.save(metaUser);
-                if (insertMetaUser.getId() != 0) {
-                    resultMap = ResultUtils.success("注册成功", insertMetaUser);
+                SysUser sysUser = setSysUser(registerBody);
+                SysUser insertSysUser = sysUserRepository.save(sysUser);
+                if (insertSysUser.getId() != 0) {
+                    resultMap = ResultUtils.success("注册成功", insertSysUser);
                 } else {
                     resultMap = ResultUtils.errorData("注册失败");
                 }
@@ -163,18 +164,23 @@ public class SysUserServiceImpl implements SysUserService {
     }
 
     /**
-     * 设置MetaUser信息
+     * 设置SysUser信息
      *
      * @param registerBody 用户信息
      * @return 结果
      */
-    private SysUser setMetaUser(RegisterBody registerBody) {
-        SysUser metaUser = new SysUser();
-        metaUser.setPassword(SecurityUtil.encryptPassword(registerBody.getPassword()));
-        metaUser.setEmail(registerBody.getUserEmail());
-        metaUser.setNickName(registerBody.getUserNickName());
-        metaUser.setSex(registerBody.getUserGender());
-        metaUser.setUserName(registerBody.getUserName());
-        return metaUser;
+    private SysUser setSysUser(RegisterBody registerBody) {
+        SysUser sysUser = new SysUser();
+        sysUser.setPassword(SecurityUtil.encryptPassword(registerBody.getPassword()));
+        sysUser.setEmail(registerBody.getUserEmail());
+        sysUser.setNickName(registerBody.getUserNickName());
+        sysUser.setSex(registerBody.getUserGender());
+        sysUser.setUserName(registerBody.getUserName());
+        // 设置默认值
+        sysUser.setCreateTime(new Date());
+        sysUser.setUserType("00");
+        sysUser.setStatus("0");
+        sysUser.setDelFlag("0");
+        return sysUser;
     }
 }

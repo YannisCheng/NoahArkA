@@ -10,6 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -98,8 +99,10 @@ public class SysUserInfoServiceImpl implements SysUserInfoService {
         Optional<SysUser> optional = sysUserRepository.findById(sysUser.id);
         boolean present = optional.isPresent();
         if (present) {
-            BeanUtils.copyProperties(sysUser, optional.get());
-            return sysUserRepository.save(optional.get());
+            SysUser sysUserTarget = optional.get();
+            BeanUtils.copyProperties(sysUser,sysUserTarget);
+            sysUserTarget.setUpdateTime(new Date());
+            return sysUserRepository.save(sysUserTarget);
         }
         return null;
     }

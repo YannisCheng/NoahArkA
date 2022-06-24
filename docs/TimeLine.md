@@ -199,3 +199,7 @@ dependencies {
 - **2022-06-15 10:43:45 周三**
 - 
 * [ ] `ModuleGenerator` 转换为 `SampleGenerator`
+
+- **2022-06-23 15:45:04 周四**
+-
+* [x] `token`认证功能实现
