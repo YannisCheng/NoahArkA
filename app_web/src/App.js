@@ -1,24 +1,26 @@
 import logo from './logo.svg';
-import './App.css';
+import './App.less';
+import {Button, ConfigProvider, DatePicker, message} from "antd";
+import React, { useState } from 'react';
+import zhCN from 'antd/lib/locale/zh_CN';
+import 'moment/locale/zh-cn';
 
 function App() {
+  const [date, setDate] = useState(null);
+  const handleChange = value => {
+    message.info(`您选择的日期是: ${value ? value.format('YYYY年MM月DD日') : '未选择'}`);
+    setDate(value);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ConfigProvider locale={zhCN}>
+      <div style={{ width: 400, margin: '100px auto' }}>
+        <DatePicker onChange={handleChange} />
+        <div style={{ marginTop: 16 }}>
+          当前日期：{date ? date.format('YYYY年MM月DD日') : '未选择'}
+        </div>
+        <Button type="primary">Button</Button>
+      </div>
+    </ConfigProvider>
   );
 }
 
