@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * ResourcesConfig  通用配置
+ * 拦截、静态资源、跨域、信息转换 配置
  *
  * @author ChengWenjia
  * @since 2022/2/10 09:33
@@ -21,10 +21,8 @@ public class ResourcesConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
-        //registry.addResourceHandler(Constants.RESOURCE_PREFIX_THUMB + "/**")
-        //        .addResourceLocations("file:" + metaServerConfig.getProfileThumbnail());
-
+        //  静态资源处理
+        //  上传文件的映射路径：url访问路径与本地实际存储路径
         registry.addResourceHandler(Constants.RESOURCE_PREFIX_ZIP + "/**")
                 .addResourceLocations("file:" + MetaServerConfig.getProfile());
     }
