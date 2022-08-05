@@ -1,4 +1,4 @@
-package com.cwj.auth.server.vo;
+package com.cwj.common.result;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

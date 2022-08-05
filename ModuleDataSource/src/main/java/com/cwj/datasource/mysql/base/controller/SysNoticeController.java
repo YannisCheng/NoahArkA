@@ -1,7 +1,7 @@
 package com.cwj.datasource.mysql.base.controller;
 
-import com.cwj.common.base.result.ResultBase;
-import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.result.ResultBase;
+import com.cwj.common.result.ResultUtils;
 import com.cwj.datasource.mysql.base.entity.SysNotice;
 import com.cwj.datasource.mysql.base.service.SysNoticeService;
 import io.swagger.annotations.Api;

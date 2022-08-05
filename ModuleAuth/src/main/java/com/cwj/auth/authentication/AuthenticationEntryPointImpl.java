@@ -1,7 +1,7 @@
 package com.cwj.auth.authentication;
 
 import com.alibaba.fastjson.JSON;
-import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.result.ResultUtils;
 import com.cwj.common.utils.ServletUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.AuthenticationException;

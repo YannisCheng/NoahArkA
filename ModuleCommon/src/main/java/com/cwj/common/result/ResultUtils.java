@@ -1,4 +1,4 @@
-package com.cwj.common.base.result;
+package com.cwj.common.result;
 
 /**
  * ResultUtils  Result响应工具类

@@ -2,7 +2,7 @@ package com.cwj.auth.server.service;
 
 import com.cwj.auth.server.vo.login.LoginBody;
 import com.cwj.auth.server.vo.login.RegisterBody;
-import com.cwj.common.base.result.ResultBase;
+import com.cwj.common.result.ResultBase;
 
 /**
  * SysUserInfoService 系统层级操作用户

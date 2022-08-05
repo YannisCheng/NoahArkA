@@ -1,7 +1,7 @@
 package com.cwj.datasource.mysql.fnclass.controller;
 
-import com.cwj.common.base.result.ResultBase;
-import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.result.ResultBase;
+import com.cwj.common.result.ResultUtils;
 import com.cwj.datasource.mysql.fnclass.entity.Table7;
 import com.cwj.datasource.mysql.fnclass.service.Table7Service;
 import io.swagger.annotations.Api;

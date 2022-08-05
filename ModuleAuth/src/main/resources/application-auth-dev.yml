@@ -40,13 +40,3 @@ captcha:
   switchOn: true
   # 有效期,单位：分钟
   expiration: 1
-
-# 文件上传服务
-fileUpload:
-  # BaseUrl
-  serverUrl: http://60.216.119.170:50000/panserver/
-  # 图片上传url
-  uploadUrl: files/file/directupload
-  # 2个参数
-  createUser: 66662
-  parentId: 66662

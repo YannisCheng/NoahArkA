@@ -1,7 +1,7 @@
 package com.cwj.auth.authentication;
 
 import com.alibaba.fastjson.JSON;
-import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.result.ResultUtils;
 import com.cwj.common.utils.ServletUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;

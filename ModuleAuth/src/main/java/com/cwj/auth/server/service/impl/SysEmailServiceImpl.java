@@ -3,8 +3,8 @@ package com.cwj.auth.server.service.impl;
 
 import com.cwj.auth.server.service.SysEmailService;
 import com.cwj.common.Constants.Constants;
-import com.cwj.common.base.result.ResultBase;
-import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.result.ResultBase;
+import com.cwj.common.result.ResultUtils;
 import com.cwj.common.utils.DateUtil;
 import com.cwj.datasource.mysql.base.repository.SysUserRepository;
 import com.cwj.datasource.redis.RedisCacheUtil;

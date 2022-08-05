@@ -1,4 +1,4 @@
-package com.cwj.common.base.result;
+package com.cwj.common.result;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;

@@ -1,7 +1,7 @@
 package com.cwj.auth.server.service;
 
 
-import com.cwj.common.base.result.ResultBase;
+import com.cwj.common.result.ResultBase;
 
 /**
  * SysEmailService 邮箱验证码操作

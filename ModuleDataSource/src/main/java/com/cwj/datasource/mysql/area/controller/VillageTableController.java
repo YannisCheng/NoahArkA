@@ -1,7 +1,7 @@
 package com.cwj.datasource.mysql.area.controller;
 
-import com.cwj.common.base.result.ResultBase;
-import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.result.ResultBase;
+import com.cwj.common.result.ResultUtils;
 import com.cwj.datasource.mysql.area.entity.VillageTable;
 import com.cwj.datasource.mysql.area.service.VillageTableService;
 import io.swagger.annotations.Api;

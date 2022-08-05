@@ -1,8 +1,8 @@
 package com.cwj.common.exception;
 
-import com.cwj.common.base.result.ResultBase;
-import com.cwj.common.base.result.ResultEnum;
-import com.cwj.common.base.result.ResultUtils;
+import com.cwj.common.result.ResultBase;
+import com.cwj.common.result.ResultEnum;
+import com.cwj.common.result.ResultUtils;
 import com.cwj.common.utils.ServletUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.AccessDeniedException;

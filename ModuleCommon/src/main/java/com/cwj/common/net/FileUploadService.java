@@ -1,21 +1,19 @@
-package com.cwj.auth.server.service.impl;
+package com.cwj.common.net;
 
 import com.alibaba.fastjson.JSON;
-import com.cwj.auth.server.vo.UploadFileResult;
 import com.cwj.common.configuration.MetaServerConfig;
 import com.cwj.common.configuration.ServerConfig;
-import com.cwj.common.utils.OkHttpUtil;
+import com.cwj.common.result.UploadFileResult;
 import com.cwj.common.utils.file.FileUploadUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
 
 import static com.cwj.common.Constants.Constants.SUCCESS;
 
@@ -24,22 +22,27 @@ import static com.cwj.common.Constants.Constants.SUCCESS;
  * @since 2022-02-24 18:02
  */
 @Service
+// 导入配置文件。注意增加编码方式，否则可能中文乱码
+// @PropertySource(value = {"classpath:application-common-net.yml"}, encoding = "UTF-8")
 public class FileUploadService {
 
-    @Value("${fileUpload.serverUrl}")
-    private String serverUrl;
+    //@Value("${file.upload.serverUrl}")
+    private String serverUrl = "";
 
-    @Value("${fileUpload.createUser}")
-    private String createUser;
+    //@Value("${file.upload.createUser}")
+    private String createUser = "";
 
-    @Value("${fileUpload.parentId}")
-    private String parentId;
+    //@Value("${file.upload.parentId}")
+    private String parentId = "";
 
-    @Value("${fileUpload.uploadUrl}")
-    private String uploadUrl;
+    //@Value("${file.upload.uploadUrl}")
+    private String uploadUrl = "";
 
     @Resource
     private ServerConfig serverConfig;
+
+    @Resource
+    private OkHttp3Cli okHttp3Cli;
 
     /**
      * 封装云盘文件上传接口
@@ -67,7 +70,7 @@ public class FileUploadService {
                 ins.close();
 
                 try {
-                    String response = OkHttpUtil.uploadFile(serverUrl + uploadUrl, createUser, parentId, file);
+                    String response = okHttp3Cli.uploadFile(serverUrl + uploadUrl, createUser, parentId, file);
                     UploadFileResult uploadFileResult = JSON.parseObject(response, UploadFileResult.class);
                     if (file.exists()) {
                         file.delete();
@@ -98,7 +101,7 @@ public class FileUploadService {
      */
     private void inputStreamToFile(InputStream ins, File file) {
         try {
-            OutputStream os = new FileOutputStream(file);
+            OutputStream os = Files.newOutputStream(file.toPath());
             int bytesRead = 0;
             byte[] buffer = new byte[8192];
             while ((bytesRead = ins.read(buffer, 0, 8192)) != -1) {
